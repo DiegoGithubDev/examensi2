@@ -35,6 +35,7 @@ gem 'pg','~> 0.19.0'
 gem 'coffee-script-source', '1.8.0'
 gem 'materialize-sass', '~> 1.0.0.beta'
 gem 'material_icons'
+gem 'jquery-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

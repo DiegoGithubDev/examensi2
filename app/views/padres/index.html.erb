@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Padres</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Apellido</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @padres.each do |padre| %>
+      <tr>
+        <td><%= padre.name %></td>
+        <td><%= padre.apellido %></td>
+        <td><%= link_to 'Show', padre %></td>
+        <td><%= link_to 'Edit', edit_padre_path(padre) %></td>
+        <td><%= link_to 'Destroy', padre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Padre', new_padre_path %>

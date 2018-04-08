@@ -1,0 +1,27 @@
+<%= form_with(model: padre, local: true) do |form| %>
+  <% if padre.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(padre.errors.count, "error") %> prohibited this padre from being saved:</h2>
+
+      <ul>
+      <% padre.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :padre_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apellido %>
+    <%= form.text_field :apellido, id: :padre_apellido %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

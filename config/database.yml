@@ -9,7 +9,7 @@ development:
   username: root
   password: root
   host: 127.0.0.1
-  database: ABCEnglishBook
+  database: Agenda
   encoding: UTF8
 
 # Warning: The database defined as "test" will be erased and

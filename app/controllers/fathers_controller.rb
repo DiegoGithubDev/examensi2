@@ -3,6 +3,10 @@ class FathersController < ApplicationController
 
   # GET /fathers
   # GET /fathers.json
+  def read_notes
+    @current_father = get_current_father
+    @notes_from_student = @current_father
+  end
   def index
     @fathers = Father.all
   end
@@ -70,5 +74,8 @@ class FathersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def father_params
       params.require(:father).permit(:nombre, :apellido, :celular, :tipo)
+    end
+    def get_current_father
+      Father.find(1)
     end
 end

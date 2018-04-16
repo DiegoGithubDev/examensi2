@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>AgendaEscolar</title>
@@ -6,27 +7,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="turbolinks-cache-control" content="no-cache">
   </head>
 
   <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#!" class="brand-logo">SI II</a>
+      <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="sassProfesor.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
+        <li><a href="fathers">Padres</a></li>
+        <li><a href="students">Estudiantes</a></li>
+        <li><a href="read_notes">Notas </a></li>
+        <li><a href="courses"> Cursos</a></li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav " id="mobile-demo">
-    <li><a href="Profesor.html">Sass</a></li>
-    <li><a href="Notas.html">Components</a></li>
-    <li><a href="informacion.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
+    <li><a href="fathers">Padres</a></li>
+    <li><a href="students">Estudiantes</a></li>
+    <li><a href="read_notes" data-turbolinks="false">Notas </a></li>
+    <li><a href="courses"> Cursos</a></li>
   </ul>
     <%= yield %>
   </body>

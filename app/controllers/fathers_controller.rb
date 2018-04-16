@@ -4,8 +4,9 @@ class FathersController < ApplicationController
   # GET /fathers
   # GET /fathers.json
   def read_notes
-    @current_father = get_current_father
-    @notes_from_student = @current_father
+    @current_father_id = get_current_father.id
+    @student_from_father_id = Student.find_by(father_id: @current_father_id ).id
+    @notes = Note.find_by(student_id: @student_from_father_id)
   end
   def index
     @fathers = Father.all

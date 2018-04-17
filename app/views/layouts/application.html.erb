@@ -7,29 +7,36 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="turbolinks-cache-control" content="no-cache">
   </head>
 
-  <body>
   <nav>
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo">SI II</a>
       <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
+<!--      <ul class="right hide-on-med-and-down">
         <li><a href="fathers">Padres</a></li>
         <li><a href="students">Estudiantes</a></li>
         <li><a href="read_notes">Notas </a></li>
         <li><a href="courses"> Cursos</a></li>
-      </ul>
+      </ul>-->
     </div>
   </nav>
-
   <ul class="sidenav " id="mobile-demo">
-    <li><a href="fathers">Padres</a></li>
-    <li><a href="students">Estudiantes</a></li>
+    <li><a href="fathers" data-turbolinks="false">Padres</a></li>
+    <li><a href="students" data-turbolinks="false">Estudiantes</a></li>
     <li><a href="read_notes" data-turbolinks="false">Notas </a></li>
-    <li><a href="courses"> Cursos</a></li>
+    <li><a href="courses" data-turbolinks="false"> Cursos</a></li>
   </ul>
-    <%= yield %>
+  <body>
+    <div class="container">
+      <%= yield %>
+      <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+          <i class="large material-icons">mode_edit</i>
+        </a>
+      </div>
+    </div>
   </body>
 </html>

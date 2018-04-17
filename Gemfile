@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'pg','~> 0.19.0'
+
 gem 'coffee-script-source', '1.8.0'
 gem 'materialize-sass', '~> 1.0.0.beta'
 gem 'material_icons'
@@ -49,6 +49,9 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
+group :production do
+  gem 'rails_12factor'
+  gem 'pg','~> 0.19.0'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'rails_12factor', group: :production

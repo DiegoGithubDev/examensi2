@@ -26,4 +26,4 @@ production:
   <<: *default
     database: Agenda
     username: root
-    password: <%= ENV["PROJECT_PASSWORD"] {5}%>
+    password: <%= ENV['PROJECT_PASSWORD'] {5}%>

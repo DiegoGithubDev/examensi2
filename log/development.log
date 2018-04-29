@@ -7028,3 +7028,107 @@ Processing by NotesController#new as HTML
 Completed 200 OK in 652ms (Views: 620.5ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (41.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (38.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (51.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (432.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses" CASCADE[0m
+  [1m[35m (469.7ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "numero" integer, "nivel" character varying, "teacher_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (70.9ms)[0m  [1m[35mCREATE  INDEX  "index_courses_on_teacher_id" ON "courses"  ("teacher_id")[0m
+  [1m[35m (43.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "fathers" CASCADE[0m
+  [1m[35m (110.6ms)[0m  [1m[35mCREATE TABLE "fathers" ("id" bigserial primary key, "nombre" character varying, "apellido" character varying, "celular" character varying, "tipo" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (59.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "notes" CASCADE[0m
+  [1m[35m (93.9ms)[0m  [1m[35mCREATE TABLE "notes" ("id" bigserial primary key, "teacher_id" bigint, "student_id" bigint, "materia" character varying, "fecha_destino" character varying, "body" character varying, "estado" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (37.8ms)[0m  [1m[35mCREATE  INDEX  "index_notes_on_student_id" ON "notes"  ("student_id")[0m
+  [1m[35m (50.3ms)[0m  [1m[35mCREATE  INDEX  "index_notes_on_teacher_id" ON "notes"  ("teacher_id")[0m
+  [1m[35m (30.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "padres" CASCADE[0m
+  [1m[35m (82.6ms)[0m  [1m[35mCREATE TABLE "padres" ("id" bigserial primary key, "name" character varying, "apellido" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (49.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (93.1ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "course_id" bigint, "father_id" bigint, "nombre" character varying, "apellido" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (36.5ms)[0m  [1m[35mCREATE  INDEX  "index_students_on_course_id" ON "students"  ("course_id")[0m
+  [1m[35m (33.9ms)[0m  [1m[35mCREATE  INDEX  "index_students_on_father_id" ON "students"  ("father_id")[0m
+  [1m[35m (34.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "teachers" CASCADE[0m
+  [1m[35m (102.6ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" bigserial primary key, "nombre" character varying, "apellido" character varying, "celular" character varying, "direccion" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (66.3ms)[0m  [1m[35mALTER TABLE "courses" ADD CONSTRAINT "fk_rails_a68eff6aff"
+FOREIGN KEY ("teacher_id")
+  REFERENCES "teachers" ("id")
+[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "notes" ADD CONSTRAINT "fk_rails_c171a9785d"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "notes" ADD CONSTRAINT "fk_rails_e403b924dc"
+FOREIGN KEY ("teacher_id")
+  REFERENCES "teachers" ("id")
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "students" ADD CONSTRAINT "fk_rails_a258d82422"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "students" ADD CONSTRAINT "fk_rails_b22b19c53c"
+FOREIGN KEY ("father_id")
+  REFERENCES "fathers" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (13.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses" CASCADE[0m
+  [1m[35m (357.5ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "numero" integer, "nivel" character varying, "teacher_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (55.4ms)[0m  [1m[35mCREATE  INDEX  "index_courses_on_teacher_id" ON "courses"  ("teacher_id")[0m
+  [1m[35m (10.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "fathers" CASCADE[0m
+  [1m[35m (97.1ms)[0m  [1m[35mCREATE TABLE "fathers" ("id" bigserial primary key, "nombre" character varying, "apellido" character varying, "celular" character varying, "tipo" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (28.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "notes" CASCADE[0m
+  [1m[35m (106.8ms)[0m  [1m[35mCREATE TABLE "notes" ("id" bigserial primary key, "teacher_id" bigint, "student_id" bigint, "materia" character varying, "fecha_destino" character varying, "body" character varying, "estado" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (36.2ms)[0m  [1m[35mCREATE  INDEX  "index_notes_on_student_id" ON "notes"  ("student_id")[0m
+  [1m[35m (34.7ms)[0m  [1m[35mCREATE  INDEX  "index_notes_on_teacher_id" ON "notes"  ("teacher_id")[0m
+  [1m[35m (9.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "padres" CASCADE[0m
+  [1m[35m (90.4ms)[0m  [1m[35mCREATE TABLE "padres" ("id" bigserial primary key, "name" character varying, "apellido" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (15.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (86.2ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "course_id" bigint, "father_id" bigint, "nombre" character varying, "apellido" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (40.1ms)[0m  [1m[35mCREATE  INDEX  "index_students_on_course_id" ON "students"  ("course_id")[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCREATE  INDEX  "index_students_on_father_id" ON "students"  ("father_id")[0m
+  [1m[35m (9.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "teachers" CASCADE[0m
+  [1m[35m (132.2ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" bigserial primary key, "nombre" character varying, "apellido" character varying, "celular" character varying, "direccion" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mALTER TABLE "courses" ADD CONSTRAINT "fk_rails_a68eff6aff"
+FOREIGN KEY ("teacher_id")
+  REFERENCES "teachers" ("id")
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "notes" ADD CONSTRAINT "fk_rails_c171a9785d"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "notes" ADD CONSTRAINT "fk_rails_e403b924dc"
+FOREIGN KEY ("teacher_id")
+  REFERENCES "teachers" ("id")
+[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "students" ADD CONSTRAINT "fk_rails_a258d82422"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+[0m
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "students" ADD CONSTRAINT "fk_rails_b22b19c53c"
+FOREIGN KEY ("father_id")
+  REFERENCES "fathers" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-04-29 15:58:48.194360"], ["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]

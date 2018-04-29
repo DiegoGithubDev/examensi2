@@ -7,7 +7,8 @@ default: &default
   password: root
 
 development:
- <<: *default
+  <<: *default
+  adapter: postgresql
   database: Agenda
   username: root
   password: root
@@ -16,14 +17,16 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
+    <<: *default
+    adapter: postgresql
     database: Agenda
     username: root
     password: root
 
 
 production:
-  <<: *default
+    <<: *default
+    adapter: postgresql
     database: Agenda
     username: root
     password: <%= ENV['PROJECT_PASSWORD']%>

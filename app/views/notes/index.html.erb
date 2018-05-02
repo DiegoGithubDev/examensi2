@@ -2,11 +2,9 @@
 
 <h1>Notes</h1>
 
-<table>
+<table class="responsive-table">
   <thead>
     <tr>
-      <th>Teacher</th>
-      <th>Student</th>
       <th>Materia</th>
       <th>Fecha destino</th>
       <th>Body</th>
@@ -18,8 +16,6 @@
   <tbody>
     <% @notes.each do |note| %>
       <tr>
-        <td><%= note.teacher %></td>
-        <td><%= note.student %></td>
         <td><%= note.materia %></td>
         <td><%= note.fecha_destino %></td>
         <td><%= note.body %></td>

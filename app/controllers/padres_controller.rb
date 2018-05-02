@@ -1,6 +1,11 @@
 class PadresController < ApplicationController
   before_action :set_padre, only: [:show, :edit, :update, :destroy]
+  before_action :login
 
+
+  def login
+    redirect_to users_login_path
+  end
   # GET /padres
   # GET /padres.json
   def index

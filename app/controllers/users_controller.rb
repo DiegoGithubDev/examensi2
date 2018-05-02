@@ -7,6 +7,29 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def login
+
+  end
+
+  def verificar_usuario
+    if existe_usuario
+      if usuario_is_profesor
+        redireccionar_a_crear_nota
+      end
+      if usuario_is_padre
+        redirecionar_a_ver_nota
+      end
+    else
+      render login
+    end
+  end
+  def redireccionar_a_crear_nota
+    redirect_to  new_note_path
+  end
+  def  redirecionar_a_ver_nota
+    redirect_to  :controller => :notes
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show
@@ -71,4 +94,33 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :password, :type_user)
     end
+    def existe_usuario
+      @user = User.find_by(name: params[:name])
+      @password = User.find_by(password: params[:password])
+      if @user and @password
+        true
+      else
+        false
+      end
+    end
+
+    def usuario_is_profesor
+      @tipo = params[:type_user]
+      if @tipo =='profesor'
+       true
+      else
+        false
+      end
+    end
+
+    def usuario_is_padre
+      @tipo = params[:type_user]
+      if @tipo =='padre'
+        true
+      else
+        false
+      end
+    end
+
+
 end

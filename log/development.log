@@ -20204,3 +20204,91 @@ Processing by NotesController#index as HTML
 Completed 200 OK in 1430ms (Views: 1341.1ms | ActiveRecord: 4.0ms)
 
 
+Started GET "/notes" for 127.0.0.1 at 2018-05-02 11:50:29 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (2.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  Rendered notes/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 7455ms (Views: 7382.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/%3Cimg" for 127.0.0.1 at 2018-05-02 11:51:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/%3Cimg"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/notes" for 127.0.0.1 at 2018-05-02 11:54:10 -0500
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  Rendered notes/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 627ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `image' for #<#<Class:0x570ced0>:0x67c7808>
+Did you mean?  image_url):
+    4:   <head>
+    5:     <meta name="viewport" content="width=device-width">
+    6:     <meta name="mobile-web-app-capable" content="yes">
+    7:     <link rel="icon" sizes="192x192" href=<%= asset_url("agenda.png", image) %>>
+    8:     <title>AgendaEscolar</title>
+    9:     <%= csrf_meta_tags %>
+   10:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___941395240_108051648'
+Started GET "/notes" for 127.0.0.1 at 2018-05-02 11:55:33 -0500
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  Rendered notes/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 808ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `image' for #<#<Class:0x570ced0>:0x6dc9608>
+Did you mean?  image_url):
+    4:   <head>
+    5:     <meta name="viewport" content="width=device-width">
+    6:     <meta name="mobile-web-app-capable" content="yes">
+    7:     <link rel="icon" sizes="192x192" href=<%= asset_url("agenda.png", type:image) %>>
+    8:     <title>AgendaEscolar</title>
+    9:     <%= csrf_meta_tags %>
+   10:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___941395240_57491952'
+Started GET "/notes" for 127.0.0.1 at 2018-05-02 11:57:23 -0500
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  Rendered notes/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 516ms (Views: 484.5ms | ActiveRecord: 0.0ms)
+
+

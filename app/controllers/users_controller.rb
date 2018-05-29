@@ -13,16 +13,25 @@ class UsersController < ApplicationController
 
   def verificar_usuario
     if existe_usuario
-      if usuario_is_profesor
-        redireccionar_a_crear_nota
+      if usuario_is_policia
+        redirecionar_a_crear_boleta
       end
-      if usuario_is_padre
-        redirecionar_a_ver_nota
+      if usuario_is_infractor
+        redirecionar_a_ver_infracciones
       end
     else
-      render login
+       login
     end
   end
+
+  def redirecionar_a_ver_infracciones
+    redirect_to :controller => :mulct , :action => :index
+  end
+
+  def redirecionar_a_crear_boleta
+      redirect_to :controller => :mulct , :action => :new
+  end
+
   def redireccionar_a_crear_nota
     redirect_to  new_note_path
   end
@@ -116,6 +125,24 @@ class UsersController < ApplicationController
     def usuario_is_padre
       @tipo = params[:type_user]
       if @tipo =='padre'
+        true
+      else
+        false
+      end
+    end
+
+    def usuario_is_policia
+      @tipo = params[:type_user]
+      if @tipo =='policia'
+        true
+      else
+        false
+      end
+    end
+
+    def usuario_is_infractor
+      @tipo = params[:type_user]
+      if @tipo =='infractor'
         true
       else
         false

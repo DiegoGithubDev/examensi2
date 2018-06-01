@@ -1,0 +1,2 @@
+module InfractorsHelper
+end

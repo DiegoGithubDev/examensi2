@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @infractor.nombre %>
+</p>
+
+<p>
+  <strong>Apellido paterno:</strong>
+  <%= @infractor.apellido_paterno %>
+</p>
+
+<p>
+  <strong>Apellido materno:</strong>
+  <%= @infractor.apellido_materno %>
+</p>
+
+<p>
+  <strong>Numero de licencia:</strong>
+  <%= @infractor.numero_de_licencia %>
+</p>
+
+<p>
+  <strong>Fecha de emision:</strong>
+  <%= @infractor.fecha_de_emision %>
+</p>
+
+<p>
+  <strong>Fecha de vencimiento:</strong>
+  <%= @infractor.fecha_de_vencimiento %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <%= @infractor.sexo %>
+</p>
+
+<p>
+  <strong>Nacionalidad:</strong>
+  <%= @infractor.nacionalidad %>
+</p>
+
+<%= link_to 'Edit', edit_infractor_path(@infractor) %> |
+<%= link_to 'Back', infractors_path %>

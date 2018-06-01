@@ -1,0 +1,2 @@
+class Infractor < ApplicationRecord
+end

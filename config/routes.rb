@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :infractors
   resources :policia
   get 'mulct/index'
 

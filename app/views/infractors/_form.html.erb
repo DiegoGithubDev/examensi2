@@ -1,0 +1,57 @@
+<%= form_with(model: infractor, local: true) do |form| %>
+  <% if infractor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(infractor.errors.count, "error") %> prohibited this infractor from being saved:</h2>
+
+      <ul>
+      <% infractor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :infractor_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apellido_paterno %>
+    <%= form.text_field :apellido_paterno, id: :infractor_apellido_paterno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apellido_materno %>
+    <%= form.text_field :apellido_materno, id: :infractor_apellido_materno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero_de_licencia %>
+    <%= form.text_field :numero_de_licencia, id: :infractor_numero_de_licencia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_de_emision %>
+    <%= form.text_field :fecha_de_emision, id: :infractor_fecha_de_emision %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_de_vencimiento %>
+    <%= form.text_field :fecha_de_vencimiento, id: :infractor_fecha_de_vencimiento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sexo %>
+    <%= form.text_field :sexo, id: :infractor_sexo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nacionalidad %>
+    <%= form.text_field :nacionalidad, id: :infractor_nacionalidad %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

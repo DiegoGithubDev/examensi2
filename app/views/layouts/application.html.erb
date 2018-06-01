@@ -13,19 +13,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   </head>
 
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Sistema de infracciones</a>
-      <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-<!--      <ul class="right hide-on-med-and-down">
-        <li><a href="fathers">Padres</a></li>
-        <li><a href="students">Estudiantes</a></li>
-        <li><a href="read_notes">Notas </a></li>
-        <li><a href="courses"> Cursos</a></li>
-      </ul>-->
-    </div>
-  </nav>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Infracciones</a>
+        <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
   <ul class="sidenav " id="mobile-demo">
+    <li><a href="/tipo_infraccions" data-turbolinks="false">Tipos de infraciones</a></li>
     <li><a href="/vehiculos" data-turbolinks="false">Vehiculos</a></li>
     <li><a href="/infractors" data-turbolinks="false">Infractores</a></li>
     <li><a href="/infraccions" data-turbolinks="false">Multas</a></li>

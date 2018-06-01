@@ -20920,3 +20920,232 @@ Processing by InfraccionsController#new as HTML
 Completed 200 OK in 668ms (Views: 620.8ms | ActiveRecord: 21.0ms)
 
 
+Started GET "/infraccions/new" for 127.0.0.1 at 2018-06-01 03:56:24 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InfraccionsController#new as HTML
+  Rendering infraccions/new.html.erb within layouts/application
+  [1m[36mInfractor Load (51.2ms)[0m  [1m[34mSELECT "infractors".* FROM "infractors"[0m
+  [1m[36mPolicium Load (46.3ms)[0m  [1m[34mSELECT "policia".* FROM "policia"[0m
+  [1m[36mTipoInfraccion Load (1.0ms)[0m  [1m[34mSELECT "tipo_infraccions".* FROM "tipo_infraccions"[0m
+  [1m[36mVehiculo Load (15.9ms)[0m  [1m[34mSELECT "vehiculos".* FROM "vehiculos"[0m
+  Rendered infraccions/_form.html.erb (244.7ms)
+  Rendered infraccions/new.html.erb within layouts/application (264.7ms)
+Completed 200 OK in 5084ms (Views: 4884.1ms | ActiveRecord: 138.5ms)
+
+
+Started GET "/vehiculos" for 127.0.0.1 at 2018-06-01 03:57:20 -0500
+Processing by VehiculosController#index as HTML
+  Rendering vehiculos/index.html.erb within layouts/application
+  [1m[36mVehiculo Load (1.0ms)[0m  [1m[34mSELECT "vehiculos".* FROM "vehiculos"[0m
+  Rendered vehiculos/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 509ms (Views: 453.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/vehiculos/new" for 127.0.0.1 at 2018-06-01 03:57:27 -0500
+Processing by VehiculosController#new as HTML
+  Rendering vehiculos/new.html.erb within layouts/application
+  Rendered vehiculos/_form.html.erb (21.7ms)
+  Rendered vehiculos/new.html.erb within layouts/application (74.2ms)
+Completed 200 OK in 641ms (Views: 597.3ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/vehiculos" for 127.0.0.1 at 2018-06-01 03:57:58 -0500
+Processing by VehiculosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"osmjQ6fb11KIWov2jU2BYedB0XJt8V6/0CNE09uIzx/2X3m0kTN3QEtpAvh90pxdgqnlwYNVxabboYF1LZdVAA==", "vehiculo"=>{"placa"=>"314o5iu", "marca"=>"toyota", "modelo"=>"93", "color"=>"blanco con azul"}, "commit"=>"Create Vehiculo"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (74.8ms)[0m  [1m[32mINSERT INTO "vehiculos" ("placa", "marca", "modelo", "color", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["placa", "314o5iu"], ["marca", "toyota"], ["modelo", "93"], ["color", "blanco con azul"], ["created_at", "2018-06-01 08:57:58.229002"], ["updated_at", "2018-06-01 08:57:58.229002"]]
+  [1m[35m (46.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vehiculos/1
+Completed 302 Found in 130ms (ActiveRecord: 120.9ms)
+
+
+Started GET "/vehiculos/1" for 127.0.0.1 at 2018-06-01 03:57:58 -0500
+Processing by VehiculosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVehiculo Load (1.0ms)[0m  [1m[34mSELECT  "vehiculos".* FROM "vehiculos" WHERE "vehiculos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering vehiculos/show.html.erb within layouts/application
+  Rendered vehiculos/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 2228ms (Views: 2142.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/infractors" for 127.0.0.1 at 2018-06-01 03:58:05 -0500
+Processing by InfractorsController#index as HTML
+  Rendering infractors/index.html.erb within layouts/application
+  [1m[36mInfractor Load (0.0ms)[0m  [1m[34mSELECT "infractors".* FROM "infractors"[0m
+  Rendered infractors/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 544ms (Views: 468.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/policia" for 127.0.0.1 at 2018-06-01 03:58:13 -0500
+Processing by PoliciaController#index as HTML
+  Rendering policia/index.html.erb within layouts/application
+  [1m[36mPolicium Load (1.0ms)[0m  [1m[34mSELECT "policia".* FROM "policia"[0m
+  Rendered policia/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 2235ms (Views: 564.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/policia/new" for 127.0.0.1 at 2018-06-01 03:58:32 -0500
+Processing by PoliciaController#new as HTML
+  Rendering policia/new.html.erb within layouts/application
+  Rendered policia/_form.html.erb (5.0ms)
+  Rendered policia/new.html.erb within layouts/application (3018.4ms)
+Completed 200 OK in 5075ms (Views: 5050.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/policia" for 127.0.0.1 at 2018-06-01 03:59:14 -0500
+Processing by PoliciaController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p2IYsfuzVJsnVI/e1V0jmPp2UQO3pf9fYssNqfc0SA39tHLANnqHUAQVx98IMJOec4nZXj4DOZOOhgk9+HkTvA==", "policium"=>{"nombre"=>"marcel", "apellido_paterno"=>"marcel", "apellido_materno"=>"macel", "cargo"=>"teniente"}, "commit"=>"Create Policium"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "policia" ("nombre", "apellido_paterno", "apellido_materno", "cargo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["nombre", "marcel"], ["apellido_paterno", "marcel"], ["apellido_materno", "macel"], ["cargo", "teniente"], ["created_at", "2018-06-01 08:59:14.154884"], ["updated_at", "2018-06-01 08:59:14.154884"]]
+  [1m[35m (1541.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/policia/2
+Completed 302 Found in 1551ms (ActiveRecord: 1542.2ms)
+
+
+Started GET "/policia/2" for 127.0.0.1 at 2018-06-01 03:59:15 -0500
+Processing by PoliciaController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPolicium Load (1.0ms)[0m  [1m[34mSELECT  "policia".* FROM "policia" WHERE "policia"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering policia/show.html.erb within layouts/application
+  Rendered policia/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 600ms (Views: 569.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/vehiculos" for 127.0.0.1 at 2018-06-01 04:00:30 -0500
+Processing by VehiculosController#index as HTML
+  Rendering vehiculos/index.html.erb within layouts/application
+  [1m[36mVehiculo Load (1.0ms)[0m  [1m[34mSELECT "vehiculos".* FROM "vehiculos"[0m
+  Rendered vehiculos/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 491ms (Views: 474.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tipo_infraccions" for 127.0.0.1 at 2018-06-01 04:00:38 -0500
+Processing by TipoInfraccionsController#index as HTML
+  Rendering tipo_infraccions/index.html.erb within layouts/application
+  [1m[36mTipoInfraccion Load (0.0ms)[0m  [1m[34mSELECT "tipo_infraccions".* FROM "tipo_infraccions"[0m
+  Rendered tipo_infraccions/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 499ms (Views: 475.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tipo_infraccions/new" for 127.0.0.1 at 2018-06-01 04:00:41 -0500
+Processing by TipoInfraccionsController#new as HTML
+  Rendering tipo_infraccions/new.html.erb within layouts/application
+  Rendered tipo_infraccions/_form.html.erb (6.9ms)
+  Rendered tipo_infraccions/new.html.erb within layouts/application (68.2ms)
+Completed 200 OK in 602ms (Views: 561.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tipo_infraccions" for 127.0.0.1 at 2018-06-01 04:01:27 -0500
+Processing by TipoInfraccionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YAQYYY2I/zrdFpw6muOqM0UhmkD964PMafZRqxLrLIyoW8ZbIsz4W28o7+2D1+6+7RoITEeiM0M/s8y37Dtp0w==", "tipo_infraccion"=>{"nombre"=>"Mal parqueado", "monto"=>"20"}, "commit"=>"Create Tipo infraccion"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "tipo_infraccions" ("nombre", "monto", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["nombre", "Mal parqueado"], ["monto", 20], ["created_at", "2018-06-01 09:01:27.170677"], ["updated_at", "2018-06-01 09:01:27.170677"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tipo_infraccions/1
+Completed 302 Found in 18ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/tipo_infraccions/1" for 127.0.0.1 at 2018-06-01 04:01:27 -0500
+Processing by TipoInfraccionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTipoInfraccion Load (0.0ms)[0m  [1m[34mSELECT  "tipo_infraccions".* FROM "tipo_infraccions" WHERE "tipo_infraccions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tipo_infraccions/show.html.erb within layouts/application
+  Rendered tipo_infraccions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 507ms (Views: 473.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tipo_infraccions" for 127.0.0.1 at 2018-06-01 04:01:39 -0500
+Processing by TipoInfraccionsController#index as HTML
+  Rendering tipo_infraccions/index.html.erb within layouts/application
+  [1m[36mTipoInfraccion Load (0.0ms)[0m  [1m[34mSELECT "tipo_infraccions".* FROM "tipo_infraccions"[0m
+  Rendered tipo_infraccions/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 478ms (Views: 450.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tipo_infraccions/new" for 127.0.0.1 at 2018-06-01 04:01:41 -0500
+Processing by TipoInfraccionsController#new as HTML
+  Rendering tipo_infraccions/new.html.erb within layouts/application
+  Rendered tipo_infraccions/_form.html.erb (3.0ms)
+  Rendered tipo_infraccions/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 582ms (Views: 565.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tipo_infraccions" for 127.0.0.1 at 2018-06-01 04:01:58 -0500
+Processing by TipoInfraccionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"67tP+yoSBACG5YBesbLjbFreSkW9+3p6XPixn+XF+Gwj5JHBhVYDYTTb84mohqfh8uXYSQeyyvUKvSyDGxW9Mw==", "tipo_infraccion"=>{"nombre"=>"Borracho", "monto"=>"300"}, "commit"=>"Create Tipo infraccion"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "tipo_infraccions" ("nombre", "monto", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["nombre", "Borracho"], ["monto", 300], ["created_at", "2018-06-01 09:01:58.703015"], ["updated_at", "2018-06-01 09:01:58.703015"]]
+  [1m[35m (28.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tipo_infraccions/2
+Completed 302 Found in 39ms (ActiveRecord: 30.0ms)
+
+
+Started GET "/tipo_infraccions/2" for 127.0.0.1 at 2018-06-01 04:01:58 -0500
+Processing by TipoInfraccionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTipoInfraccion Load (0.0ms)[0m  [1m[34mSELECT  "tipo_infraccions".* FROM "tipo_infraccions" WHERE "tipo_infraccions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering tipo_infraccions/show.html.erb within layouts/application
+  Rendered tipo_infraccions/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 499ms (Views: 471.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tipo_infraccions" for 127.0.0.1 at 2018-06-01 04:02:06 -0500
+Processing by TipoInfraccionsController#index as HTML
+  Rendering tipo_infraccions/index.html.erb within layouts/application
+  [1m[36mTipoInfraccion Load (1.0ms)[0m  [1m[34mSELECT "tipo_infraccions".* FROM "tipo_infraccions"[0m
+  Rendered tipo_infraccions/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 487ms (Views: 471.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/infraccions" for 127.0.0.1 at 2018-06-01 04:02:10 -0500
+Processing by InfraccionsController#index as HTML
+  Rendering infraccions/index.html.erb within layouts/application
+  [1m[36mInfraccion Load (0.0ms)[0m  [1m[34mSELECT "infraccions".* FROM "infraccions"[0m
+  Rendered infraccions/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 509ms (Views: 493.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/infraccions" for 127.0.0.1 at 2018-06-01 04:02:15 -0500
+Processing by InfraccionsController#index as HTML
+  Rendering infraccions/index.html.erb within layouts/application
+  [1m[36mInfraccion Load (0.0ms)[0m  [1m[34mSELECT "infraccions".* FROM "infraccions"[0m
+  Rendered infraccions/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 478ms (Views: 464.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/infraccions/new" for 127.0.0.1 at 2018-06-01 04:02:19 -0500
+Processing by InfraccionsController#new as HTML
+  Rendering infraccions/new.html.erb within layouts/application
+  [1m[36mInfractor Load (0.0ms)[0m  [1m[34mSELECT "infractors".* FROM "infractors"[0m
+  [1m[36mPolicium Load (0.0ms)[0m  [1m[34mSELECT "policia".* FROM "policia"[0m
+  [1m[36mTipoInfraccion Load (1.0ms)[0m  [1m[34mSELECT "tipo_infraccions".* FROM "tipo_infraccions"[0m
+  [1m[36mVehiculo Load (1.0ms)[0m  [1m[34mSELECT "vehiculos".* FROM "vehiculos"[0m
+  Rendered infraccions/_form.html.erb (15.4ms)
+  Rendered infraccions/new.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 498ms (Views: 480.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/infraccions/new" for 127.0.0.1 at 2018-06-01 04:04:49 -0500
+Processing by InfraccionsController#new as HTML
+  Rendering infraccions/new.html.erb within layouts/application
+  [1m[36mInfractor Load (1.0ms)[0m  [1m[34mSELECT "infractors".* FROM "infractors"[0m
+  [1m[36mPolicium Load (1.0ms)[0m  [1m[34mSELECT "policia".* FROM "policia"[0m
+  [1m[36mTipoInfraccion Load (0.0ms)[0m  [1m[34mSELECT "tipo_infraccions".* FROM "tipo_infraccions"[0m
+  [1m[36mVehiculo Load (1.0ms)[0m  [1m[34mSELECT "vehiculos".* FROM "vehiculos"[0m
+  Rendered infraccions/_form.html.erb (18.0ms)
+  Rendered infraccions/new.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 560ms (Views: 536.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/infraccions/new" for 127.0.0.1 at 2018-06-01 04:08:05 -0500
+Processing by InfraccionsController#new as HTML
+  Rendering infraccions/new.html.erb within layouts/application
+  [1m[36mInfractor Load (0.0ms)[0m  [1m[34mSELECT "infractors".* FROM "infractors"[0m
+  [1m[36mPolicium Load (1.0ms)[0m  [1m[34mSELECT "policia".* FROM "policia"[0m
+  [1m[36mTipoInfraccion Load (1.0ms)[0m  [1m[34mSELECT "tipo_infraccions".* FROM "tipo_infraccions"[0m
+  [1m[36mVehiculo Load (0.0ms)[0m  [1m[34mSELECT "vehiculos".* FROM "vehiculos"[0m
+  Rendered infraccions/_form.html.erb (17.0ms)
+  Rendered infraccions/new.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 532ms (Views: 516.2ms | ActiveRecord: 2.0ms)
+
+

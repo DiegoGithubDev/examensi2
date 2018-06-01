@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Infraccions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Infractor</th>
+      <th>Policia</th>
+      <th>Tipo infraccion</th>
+      <th>Vehiculo</th>
+      <th>Monto infracion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @infraccions.each do |infraccion| %>
+      <tr>
+        <td><%= infraccion.fecha %></td>
+        <td><%= infraccion.infractor_id %></td>
+        <td><%= infraccion.policia_id %></td>
+        <td><%= infraccion.tipo_infraccion_id %></td>
+        <td><%= infraccion.vehiculo_id %></td>
+        <td><%= infraccion.monto_infracion %></td>
+        <td><%= link_to 'Show', infraccion %></td>
+        <td><%= link_to 'Edit', edit_infraccion_path(infraccion) %></td>
+        <td><%= link_to 'Destroy', infraccion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Infraccion', new_infraccion_path %>

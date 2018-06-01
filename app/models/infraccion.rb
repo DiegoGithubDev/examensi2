@@ -1,0 +1,2 @@
+class Infraccion < ApplicationRecord
+end

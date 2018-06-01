@@ -20761,3 +20761,24 @@ Migrating to CreateVehiculos (20180601024757)
   [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/vehiculos" for 127.0.0.1 at 2018-05-31 21:51:27 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VehiculosController#index as HTML
+  Rendering vehiculos/index.html.erb within layouts/application
+  [1m[36mVehiculo Load (1.5ms)[0m  [1m[34mSELECT "vehiculos".* FROM "vehiculos"[0m
+  Rendered vehiculos/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 8751ms (Views: 8712.6ms | ActiveRecord: 4.0ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1954666767916056390)[0m
+  [1m[35m (68.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateInfraccions (20180601073633)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (768.8ms)[0m  [1m[35mCREATE TABLE "infraccions" ("id" bigserial primary key, "fecha" character varying, "infractor_id" integer, "policia_id" integer, "tipo_infraccion_id" integer, "vehiculo_id" integer, "monto_infracion" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180601073633"]]
+  [1m[35m (33.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (58.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

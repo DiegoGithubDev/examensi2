@@ -1,0 +1,48 @@
+<%= form_with(model: infraccion, local: true) do |form| %>
+  <% if infraccion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(infraccion.errors.count, "error") %> prohibited this infraccion from being saved:</h2>
+
+      <ul>
+      <% infraccion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fecha %>
+    <%= form.text_field :fecha, id: :infraccion_fecha %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :infractor_id %>
+    <%= form.number_field :infractor_id, id: :infraccion_infractor_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policia_id %>
+    <%= form.number_field :policia_id, id: :infraccion_policia_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo_infraccion_id %>
+    <%= form.number_field :tipo_infraccion_id, id: :infraccion_tipo_infraccion_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vehiculo_id %>
+    <%= form.number_field :vehiculo_id, id: :infraccion_vehiculo_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :monto_infracion %>
+    <%= form.number_field :monto_infracion, id: :infraccion_monto_infracion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

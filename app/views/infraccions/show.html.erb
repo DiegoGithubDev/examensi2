@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @infraccion.fecha %>
+</p>
+
+<p>
+  <strong>Infractor:</strong>
+  <%= @infraccion.infractor_id %>
+</p>
+
+<p>
+  <strong>Policia:</strong>
+  <%= @infraccion.policia_id %>
+</p>
+
+<p>
+  <strong>Tipo infraccion:</strong>
+  <%= @infraccion.tipo_infraccion_id %>
+</p>
+
+<p>
+  <strong>Vehiculo:</strong>
+  <%= @infraccion.vehiculo_id %>
+</p>
+
+<p>
+  <strong>Monto infracion:</strong>
+  <%= @infraccion.monto_infracion %>
+</p>
+
+<%= link_to 'Edit', edit_infraccion_path(@infraccion) %> |
+<%= link_to 'Back', infraccions_path %>

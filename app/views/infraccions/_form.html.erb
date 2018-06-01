@@ -1,4 +1,7 @@
 <script>
+    $(document).ready(function () {
+        $('select').material_select();
+    });
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15, // Creates a dropdown of 15 years to control year,
@@ -23,7 +26,7 @@
 
   <div class="field">
     <%= form.label :fecha %>
-    <%= form.text_field :fecha, id: :infraccion_fecha %>
+    <%= form.date_field :fecha, id: :infraccion_fecha %>
   </div>
   <div class="field">
     <input type="text" class="datepicker">

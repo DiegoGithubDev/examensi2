@@ -1,0 +1,2 @@
+class TipoInfraccion < ApplicationRecord
+end

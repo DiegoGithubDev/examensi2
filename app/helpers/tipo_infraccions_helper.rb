@@ -1,0 +1,2 @@
+module TipoInfraccionsHelper
+end

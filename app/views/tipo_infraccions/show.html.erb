@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @tipo_infraccion.nombre %>
+</p>
+
+<p>
+  <strong>Monto:</strong>
+  <%= @tipo_infraccion.monto %>
+</p>
+
+<%= link_to 'Edit', edit_tipo_infraccion_path(@tipo_infraccion) %> |
+<%= link_to 'Back', tipo_infraccions_path %>

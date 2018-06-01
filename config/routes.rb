@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tipo_infraccions
   resources :infraccions
   resources :vehiculos
   resources :infractors

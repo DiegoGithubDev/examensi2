@@ -1,0 +1,2 @@
+class Policium < ApplicationRecord
+end

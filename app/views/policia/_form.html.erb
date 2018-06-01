@@ -1,0 +1,37 @@
+<%= form_with(model: policium, local: true) do |form| %>
+  <% if policium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(policium.errors.count, "error") %> prohibited this policium from being saved:</h2>
+
+      <ul>
+      <% policium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :policium_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apellido_paterno %>
+    <%= form.text_field :apellido_paterno, id: :policium_apellido_paterno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apellido_materno %>
+    <%= form.text_field :apellido_materno, id: :policium_apellido_materno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cargo %>
+    <%= form.text_field :cargo, id: :policium_cargo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

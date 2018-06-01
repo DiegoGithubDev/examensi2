@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Policia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido paterno</th>
+      <th>Apellido materno</th>
+      <th>Cargo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @policia.each do |policium| %>
+      <tr>
+        <td><%= policium.nombre %></td>
+        <td><%= policium.apellido_paterno %></td>
+        <td><%= policium.apellido_materno %></td>
+        <td><%= policium.cargo %></td>
+        <td><%= link_to 'Show', policium %></td>
+        <td><%= link_to 'Edit', edit_policium_path(policium) %></td>
+        <td><%= link_to 'Destroy', policium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Policium', new_policium_path %>

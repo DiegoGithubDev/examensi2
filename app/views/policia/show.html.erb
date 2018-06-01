@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @policium.nombre %>
+</p>
+
+<p>
+  <strong>Apellido paterno:</strong>
+  <%= @policium.apellido_paterno %>
+</p>
+
+<p>
+  <strong>Apellido materno:</strong>
+  <%= @policium.apellido_materno %>
+</p>
+
+<p>
+  <strong>Cargo:</strong>
+  <%= @policium.cargo %>
+</p>
+
+<%= link_to 'Edit', edit_policium_path(@policium) %> |
+<%= link_to 'Back', policia_path %>

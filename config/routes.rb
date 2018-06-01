@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :policia
   get 'mulct/index'
 
   get 'users/verificar_usuario'

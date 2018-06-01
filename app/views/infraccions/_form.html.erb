@@ -1,16 +1,10 @@
 <script>
     $(document).ready(function () {
-        $('select').material_select();
+        $('select').formSelect();
     });
-    $('.datepicker').pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15, // Creates a dropdown of 15 years to control year,
-        today: 'Today',
-        clear: 'Clear',
-        close: 'Ok',
-        closeOnSelect: false // Close upon selecting a date,
-    });
+
 </script>
+<div class="card-panel ">
 <%= form_with(model: infraccion, local: true) do |form| %>
   <% if infraccion.errors.any? %>
     <div id="error_explanation">
@@ -28,28 +22,25 @@
     <%= form.label :fecha %>
     <%= form.date_field :fecha, id: :infraccion_fecha %>
   </div>
-  <div class="field">
-    <input type="text" class="datepicker">
-  </div>
 
   <div class="field">
     <%= form.label :infractor_id %>
-    <%= form.number_field :infractor_id, id: :infraccion_infractor_id %>
+    <%= form.collection_select :infractor_id, Infractor.all, :id, :nombre %>
   </div>
 
   <div class="field">
     <%= form.label :policia_id %>
-    <%= form.number_field :policia_id, id: :infraccion_policia_id %>
+    <%= form.collection_select :policia_id, Policium.all, :id, :nombre %>
   </div>
 
   <div class="field">
     <%= form.label :tipo_infraccion_id %>
-    <%= form.number_field :tipo_infraccion_id, id: :infraccion_tipo_infraccion_id %>
+    <%= form.collection_select :tipo_infraccion_id, TipoInfraccion.all, :id, :nombre  %>
   </div>
 
   <div class="field">
     <%= form.label :vehiculo_id %>
-    <%= form.number_field :vehiculo_id, id: :infraccion_vehiculo_id %>
+    <%= form.collection_select :vehiculo_id,  Vehiculo.all, :id, :placa  %>
   </div>
 
   <div class="field">
@@ -61,3 +52,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

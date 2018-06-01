@@ -20850,3 +20850,73 @@ Migrating to CreateTipoInfraccions (20180601081445)
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/infraccions/new" for 127.0.0.1 at 2018-06-01 03:21:43 -0500
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InfraccionsController#new as HTML
+  Rendering infraccions/new.html.erb within layouts/application
+  Rendered infraccions/_form.html.erb (37.5ms)
+  Rendered infraccions/new.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 17686ms (Views: 17515.6ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/infraccions/new" for 127.0.0.1 at 2018-06-01 03:22:56 -0500
+Processing by InfraccionsController#new as HTML
+  Rendering infraccions/new.html.erb within layouts/application
+  Rendered infraccions/_form.html.erb (10.0ms)
+  Rendered infraccions/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 860ms (Views: 841.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/infraccions/new" for 127.0.0.1 at 2018-06-01 03:27:40 -0500
+Processing by InfraccionsController#new as HTML
+  Rendering infraccions/new.html.erb within layouts/application
+  Rendered infraccions/_form.html.erb (5.5ms)
+  Rendered infraccions/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 625ms (Views: 609.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/infraccions/new" for 127.0.0.1 at 2018-06-01 03:39:02 -0500
+Processing by InfraccionsController#new as HTML
+  Rendering infraccions/new.html.erb within layouts/application
+  [1m[36mInfractor Load (31.0ms)[0m  [1m[34mSELECT "infractors".* FROM "infractors"[0m
+  Rendered infraccions/_form.html.erb (179.2ms)
+  Rendered infraccions/new.html.erb within layouts/application (207.2ms)
+Completed 200 OK in 820ms (Views: 748.0ms | ActiveRecord: 45.0ms)
+
+
+Started GET "/infraccions/new" for 127.0.0.1 at 2018-06-01 03:45:16 -0500
+Processing by InfraccionsController#new as HTML
+  Rendering infraccions/new.html.erb within layouts/application
+  [1m[36mInfractor Load (0.0ms)[0m  [1m[34mSELECT "infractors".* FROM "infractors"[0m
+  [1m[36mPolicium Load (2994.9ms)[0m  [1m[34mSELECT "policia".* FROM "policia"[0m
+  [1m[36mTipoInfraccion Load (2.0ms)[0m  [1m[34mSELECT "tipo_infraccions".* FROM "tipo_infraccions"[0m
+  Rendered infraccions/_form.html.erb (3105.9ms)
+  Rendered infraccions/new.html.erb within layouts/application (3123.0ms)
+Completed 500 Internal Server Error in 3183ms (ActiveRecord: 3010.9ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 4, expected 1..2)):
+    40: 
+    41:   <div class="field">
+    42:     <%= form.label :vehiculo_id %>
+    43:     <%= form.number_field :vehiculo_id,  Vehiculo.all, :id, :placa  %>
+    44:   </div>
+    45: 
+    46:   <div class="field">
+  
+app/views/infraccions/_form.html.erb:43:in `block in _app_views_infraccions__form_html_erb___217529686_90855888'
+app/views/infraccions/_form.html.erb:8:in `_app_views_infraccions__form_html_erb___217529686_90855888'
+app/views/infraccions/new.html.erb:3:in `_app_views_infraccions_new_html_erb___404896686_90883968'
+Started GET "/infraccions/new" for 127.0.0.1 at 2018-06-01 03:48:11 -0500
+Processing by InfraccionsController#new as HTML
+  Rendering infraccions/new.html.erb within layouts/application
+  [1m[36mInfractor Load (0.0ms)[0m  [1m[34mSELECT "infractors".* FROM "infractors"[0m
+  [1m[36mPolicium Load (0.0ms)[0m  [1m[34mSELECT "policia".* FROM "policia"[0m
+  [1m[36mTipoInfraccion Load (0.0ms)[0m  [1m[34mSELECT "tipo_infraccions".* FROM "tipo_infraccions"[0m
+  [1m[36mVehiculo Load (18.0ms)[0m  [1m[34mSELECT "vehiculos".* FROM "vehiculos"[0m
+  Rendered infraccions/_form.html.erb (41.0ms)
+  Rendered infraccions/new.html.erb within layouts/application (62.0ms)
+Completed 200 OK in 668ms (Views: 620.8ms | ActiveRecord: 21.0ms)
+
+

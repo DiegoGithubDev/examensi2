@@ -1,3 +1,9 @@
+<script>
+    $(document).ready(function () {
+        $('select').formSelect();
+    });
+
+</script>
 <%= form_with(model: inscripcion, local: true) do |form| %>
   <% if inscripcion.errors.any? %>
     <div id="error_explanation">
@@ -18,12 +24,13 @@
 
   <div class="field">
     <%= form.label :estudiante_id %>
-    <%= form.number_field :estudiante_id, id: :inscripcion_estudiante_id %>
+    <%= form.collection_select :estudiante_id, Student.all, :id, :nombre %>
   </div>
+
 
   <div class="field">
     <%= form.label :curso_id %>
-    <%= form.number_field :curso_id, id: :inscripcion_curso_id %>
+    <%= form.collection_select :curso_id, Curso.all, :id, :numero %>
   </div>
 
   <div class="field">

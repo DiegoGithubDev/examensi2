@@ -21215,3 +21215,286 @@ Migrating to CreateParalelos (20180615165522)
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1954666767916056390)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/curso" for 127.0.0.1 at 2018-06-15 12:06:20 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/curso"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/cursos" for 127.0.0.1 at 2018-06-15 12:07:22 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 15128ms (Views: 15093.1ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/cursos/new" for 127.0.0.1 at 2018-06-15 12:08:03 -0500
+Processing by CursosController#new as HTML
+  Rendering cursos/new.html.erb within layouts/application
+  Rendered cursos/_form.html.erb (17.5ms)
+  Rendered cursos/new.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 604ms (Views: 575.1ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/cursos" for 127.0.0.1 at 2018-06-15 12:08:18 -0500
+Processing by CursosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zZE4VshzKeeskOonTV7q5LpwbGoxdwHu2p/mk9N9vnXonXfvtMNJafxcCGfqt2kaiao1FpozwaPUiD32CrM39g==", "curso"=>{"numero"=>"1"}, "commit"=>"Create Curso"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (10.0ms)[0m  [1m[32mINSERT INTO "cursos" ("numero", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["numero", 1], ["created_at", "2018-06-15 17:08:18.371781"], ["updated_at", "2018-06-15 17:08:18.371781"]]
+  [1m[35m (47.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cursos/1
+Completed 302 Found in 68ms (ActiveRecord: 57.7ms)
+
+
+Started GET "/cursos/1" for 127.0.0.1 at 2018-06-15 12:08:18 -0500
+Processing by CursosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCurso Load (0.5ms)[0m  [1m[34mSELECT  "cursos".* FROM "cursos" WHERE "cursos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cursos/show.html.erb within layouts/application
+  Rendered cursos/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 597ms (Views: 542.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-06-15 12:08:21 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (0.5ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 539ms (Views: 522.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cursos/new" for 127.0.0.1 at 2018-06-15 12:08:23 -0500
+Processing by CursosController#new as HTML
+  Rendering cursos/new.html.erb within layouts/application
+  Rendered cursos/_form.html.erb (4.0ms)
+  Rendered cursos/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 560ms (Views: 543.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cursos" for 127.0.0.1 at 2018-06-15 12:08:27 -0500
+Processing by CursosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZiZdjOTbD7D9v96yIASl5AG25X+F6YJgJGeuDsEaBcJDKhI1mGtvPq1zPPKH7SYaMmy8Ay6tQi0qcHVrGNSMQQ==", "curso"=>{"numero"=>"2"}, "commit"=>"Create Curso"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "cursos" ("numero", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["numero", 2], ["created_at", "2018-06-15 17:08:27.916837"], ["updated_at", "2018-06-15 17:08:27.916837"]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cursos/2
+Completed 302 Found in 18ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/cursos/2" for 127.0.0.1 at 2018-06-15 12:08:27 -0500
+Processing by CursosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCurso Load (1.5ms)[0m  [1m[34mSELECT  "cursos".* FROM "cursos" WHERE "cursos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cursos/show.html.erb within layouts/application
+  Rendered cursos/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 573ms (Views: 551.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-06-15 12:08:31 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (0.5ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 531ms (Views: 514.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/paralelos" for 127.0.0.1 at 2018-06-15 12:08:42 -0500
+Processing by ParalelosController#index as HTML
+  Rendering paralelos/index.html.erb within layouts/application
+  [1m[36mParalelo Load (1.0ms)[0m  [1m[34mSELECT "paralelos".* FROM "paralelos"[0m
+  Rendered paralelos/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 571ms (Views: 537.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/paralelos/new" for 127.0.0.1 at 2018-06-15 12:08:46 -0500
+Processing by ParalelosController#new as HTML
+  Rendering paralelos/new.html.erb within layouts/application
+  Rendered paralelos/_form.html.erb (3.0ms)
+  Rendered paralelos/new.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 647ms (Views: 621.4ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/paralelos" for 127.0.0.1 at 2018-06-15 12:08:50 -0500
+Processing by ParalelosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xh0maD6ZBjcFfKgcxewevzusJBwynSVhkWT4udS56PQOhaSf5Cfw9DXxCZH/OyC3puyUA+pBKBz0C8e2nIEuZA==", "paralelo"=>{"letra"=>"A"}, "commit"=>"Create Paralelo"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "paralelos" ("letra", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["letra", "A"], ["created_at", "2018-06-15 17:08:50.558667"], ["updated_at", "2018-06-15 17:08:50.558667"]]
+  [1m[35m (46.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/paralelos/1
+Completed 302 Found in 59ms (ActiveRecord: 48.2ms)
+
+
+Started GET "/paralelos/1" for 127.0.0.1 at 2018-06-15 12:08:50 -0500
+Processing by ParalelosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParalelo Load (39.9ms)[0m  [1m[34mSELECT  "paralelos".* FROM "paralelos" WHERE "paralelos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering paralelos/show.html.erb within layouts/application
+  Rendered paralelos/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 649ms (Views: 587.5ms | ActiveRecord: 39.9ms)
+
+
+Started GET "/paralelos" for 127.0.0.1 at 2018-06-15 12:08:53 -0500
+Processing by ParalelosController#index as HTML
+  Rendering paralelos/index.html.erb within layouts/application
+  [1m[36mParalelo Load (0.5ms)[0m  [1m[34mSELECT "paralelos".* FROM "paralelos"[0m
+  Rendered paralelos/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 543ms (Views: 525.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/paralelos/new" for 127.0.0.1 at 2018-06-15 12:08:56 -0500
+Processing by ParalelosController#new as HTML
+  Rendering paralelos/new.html.erb within layouts/application
+  Rendered paralelos/_form.html.erb (2.5ms)
+  Rendered paralelos/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 555ms (Views: 537.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/paralelos" for 127.0.0.1 at 2018-06-15 12:09:00 -0500
+Processing by ParalelosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EeR73ujxicGqwT4ntX+/gc+SHi1eJOkW72p9dtDKklnZfPkpMk9/AppMn6qPqIGJUtKuMob45GuKBUJ5mPJUyQ==", "paralelo"=>{"letra"=>"B"}, "commit"=>"Create Paralelo"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "paralelos" ("letra", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["letra", "B"], ["created_at", "2018-06-15 17:09:00.297810"], ["updated_at", "2018-06-15 17:09:00.297810"]]
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/paralelos/2
+Completed 302 Found in 28ms (ActiveRecord: 19.7ms)
+
+
+Started GET "/paralelos/2" for 127.0.0.1 at 2018-06-15 12:09:00 -0500
+Processing by ParalelosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mParalelo Load (0.5ms)[0m  [1m[34mSELECT  "paralelos".* FROM "paralelos" WHERE "paralelos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering paralelos/show.html.erb within layouts/application
+  Rendered paralelos/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 562ms (Views: 537.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/paralelos" for 127.0.0.1 at 2018-06-15 12:09:02 -0500
+Processing by ParalelosController#index as HTML
+  Rendering paralelos/index.html.erb within layouts/application
+  [1m[36mParalelo Load (0.5ms)[0m  [1m[34mSELECT "paralelos".* FROM "paralelos"[0m
+  Rendered paralelos/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 560ms (Views: 542.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/inscripcions" for 127.0.0.1 at 2018-06-15 12:09:26 -0500
+Processing by InscripcionsController#index as HTML
+  Rendering inscripcions/index.html.erb within layouts/application
+  [1m[36mInscripcion Load (1.0ms)[0m  [1m[34mSELECT "inscripcions".* FROM "inscripcions"[0m
+  Rendered inscripcions/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 562ms (Views: 528.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-06-15 12:09:30 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  Rendered inscripcions/_form.html.erb (5.0ms)
+  Rendered inscripcions/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 585ms (Views: 553.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-06-15 12:15:10 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  Rendered inscripcions/_form.html.erb (5.0ms)
+  Rendered inscripcions/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 571ms (Views: 553.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-06-15 12:15:16 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mStudent Load (4029.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  [1m[36mCurso Load (0.5ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (4056.1ms)
+  Rendered inscripcions/new.html.erb within layouts/application (4076.1ms)
+Completed 200 OK in 4693ms (Views: 642.3ms | ActiveRecord: 4033.1ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-06-15 12:16:27 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  [1m[36mCurso Load (0.5ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (9.5ms)
+  Rendered inscripcions/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 570ms (Views: 551.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2018-06-15 12:17:03 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 4396ms (Views: 554.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2018-06-15 12:17:44 -0500
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (5.0ms)
+  Rendered students/new.html.erb within layouts/application (138.1ms)
+Completed 200 OK in 768ms (Views: 726.1ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/students" for 127.0.0.1 at 2018-06-15 12:17:58 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GNQg/2II7F9RJZr1/q0Sz73n+3sCZdrO1A9mZ8FJSP0bj6UPrbnvDGnKpusjAxxSBhmtjy9KqEuj4CBJdy+eew==", "student"=>{"course_id"=>"1", "father_id"=>"1", "nombre"=>"diego", "apellido"=>"mansilla"}, "commit"=>"Create Student"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (230.9ms)[0m  [1m[32mINSERT INTO "students" ("course_id", "father_id", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["course_id", 1], ["father_id", 1], ["nombre", "diego"], ["apellido", "mansilla"], ["created_at", "2018-06-15 17:17:58.827738"], ["updated_at", "2018-06-15 17:17:58.827738"]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 243ms (ActiveRecord: 231.4ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  inserción o actualización en la tabla «students» viola la llave foránea «fk_rails_a258d82422»
+DETAIL:  La llave (course_id)=(1) no está presente en la tabla «courses».
+: INSERT INTO "students" ("course_id", "father_id", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"):
+  
+app/controllers/students_controller.rb:30:in `block in create'
+app/controllers/students_controller.rb:29:in `create'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1954666767916056390)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEstudiantes (20180615172548)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (125.5ms)[0m  [1m[35mCREATE TABLE "estudiantes" ("id" bigserial primary key, "nombre" character varying, "apellido_paterno" character varying, "apellido_materno" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180615172548"]]
+  [1m[35m (14.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

@@ -21586,3 +21586,65 @@ Processing by InscripcionsController#new as HTML
 Completed 200 OK in 654ms (Views: 627.4ms | ActiveRecord: 8.0ms)
 
 
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-06-15 13:06:48 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (1.5ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (0.5ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (91.9ms)
+  Rendered inscripcions/new.html.erb within layouts/application (112.4ms)
+Completed 200 OK in 1825ms (Views: 1745.2ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-06-15 13:07:38 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (0.5ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 648ms (Views: 626.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/estudiantes" for 127.0.0.1 at 2018-06-15 13:07:42 -0500
+Processing by EstudiantesController#index as HTML
+  Rendering estudiantes/index.html.erb within layouts/application
+  [1m[36mEstudiante Load (0.5ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  Rendered estudiantes/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 617ms (Views: 598.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-06-15 13:07:47 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 558ms (Views: 540.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-06-15 13:10:07 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 581ms (Views: 564.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-06-15 13:10:10 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 583ms (Views: 565.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-06-15 13:10:12 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 556ms (Views: 538.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-06-15 13:10:30 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 614ms (Views: 589.3ms | ActiveRecord: 0.0ms)
+
+

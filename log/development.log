@@ -21648,3 +21648,142 @@ Processing by UsersController#login as HTML
 Completed 200 OK in 614ms (Views: 589.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/inscripcions" for 127.0.0.1 at 2018-06-15 13:11:26 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InscripcionsController#index as HTML
+  Rendering inscripcions/index.html.erb within layouts/application
+  [1m[36mInscripcion Load (1.0ms)[0m  [1m[34mSELECT "inscripcions".* FROM "inscripcions"[0m
+  Rendered inscripcions/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 1600ms (Views: 1549.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-06-15 13:12:11 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (1.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (98.1ms)
+  Rendered inscripcions/new.html.erb within layouts/application (116.8ms)
+Completed 200 OK in 825ms (Views: 705.4ms | ActiveRecord: 33.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-06-15 16:42:44 -0500
+  [1m[35m (10.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 3920ms (Views: 3787.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-06-15 16:43:25 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (8.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (128.4ms)
+Completed 200 OK in 722ms (Views: 602.5ms | ActiveRecord: 47.5ms)
+
+
+Started GET "/estudiantes" for 127.0.0.1 at 2018-06-15 16:43:31 -0500
+Processing by EstudiantesController#index as HTML
+  Rendering estudiantes/index.html.erb within layouts/application
+  [1m[36mEstudiante Load (1.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  Rendered estudiantes/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 683ms (Views: 564.1ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/estudiantes/new" for 127.0.0.1 at 2018-06-15 16:43:34 -0500
+Processing by EstudiantesController#new as HTML
+  Rendering estudiantes/new.html.erb within layouts/application
+  Rendered estudiantes/_form.html.erb (289.3ms)
+  Rendered estudiantes/new.html.erb within layouts/application (350.8ms)
+Completed 200 OK in 4413ms (Views: 910.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/estudiantes" for 127.0.0.1 at 2018-06-15 16:43:43 -0500
+Processing by EstudiantesController#index as HTML
+  Rendering estudiantes/index.html.erb within layouts/application
+  [1m[36mEstudiante Load (1.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  Rendered estudiantes/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 4189ms (Views: 4173.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/inscripcions" for 127.0.0.1 at 2018-06-15 16:43:50 -0500
+Processing by InscripcionsController#index as HTML
+  Rendering inscripcions/index.html.erb within layouts/application
+  [1m[36mInscripcion Load (1.0ms)[0m  [1m[34mSELECT "inscripcions".* FROM "inscripcions"[0m
+  Rendered inscripcions/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 685ms (Views: 529.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-06-15 16:43:52 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (1.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (68.1ms)
+  Rendered inscripcions/new.html.erb within layouts/application (153.8ms)
+Completed 200 OK in 711ms (Views: 667.1ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/inscripcions" for 127.0.0.1 at 2018-06-15 16:44:15 -0500
+Processing by InscripcionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Esqwnk/aXfouoNzCYgC7RF6zgoVSCnDBoDB+RDwQQIADsedTz0+93S2PwG99fzm05pv5YEl2hNfTppWyh4jBFw==", "inscripcion"=>{"fecha"=>"2018-06-15", "estudiante_id"=>"1", "curso_id"=>"2", "monto"=>"100"}, "commit"=>"Create Inscripcion"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEstudiante Load (1.0ms)[0m  [1m[34mSELECT  "estudiantes".* FROM "estudiantes" WHERE "estudiantes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT  "cursos".* FROM "cursos" WHERE "cursos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (0.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (0.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (10.0ms)
+  Rendered inscripcions/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 732ms (Views: 542.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/inscripcions" for 127.0.0.1 at 2018-06-15 16:45:44 -0500
+Processing by InscripcionsController#index as HTML
+  Rendering inscripcions/index.html.erb within layouts/application
+  [1m[36mInscripcion Load (1.0ms)[0m  [1m[34mSELECT "inscripcions".* FROM "inscripcions"[0m
+  Rendered inscripcions/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 591ms (Views: 567.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-06-15 16:45:47 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (1.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (0.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (57.0ms)
+  Rendered inscripcions/new.html.erb within layouts/application (74.1ms)
+Completed 200 OK in 626ms (Views: 574.6ms | ActiveRecord: 24.0ms)
+
+
+Started POST "/inscripcions" for 127.0.0.1 at 2018-06-15 16:45:58 -0500
+Processing by InscripcionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CupDiEntQzkEyBiuuHes0gO5oDCCmuhLnDwRV/PXGk4bkRRFyXijHgfnBAOnCC4iu5Hb1ZnmHF3vqvqhSE+b2Q==", "inscripcion"=>{"fecha"=>"2018-06-15", "estudiante_id"=>"1", "curso_id"=>"1", "monto"=>"100"}, "commit"=>"Create Inscripcion"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEstudiante Load (0.0ms)[0m  [1m[34mSELECT  "estudiantes".* FROM "estudiantes" WHERE "estudiantes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT  "cursos".* FROM "cursos" WHERE "cursos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (36.0ms)[0m  [1m[32mINSERT INTO "inscripcions" ("fecha", "estudiante_id", "curso_id", "monto", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["fecha", "2018-06-15"], ["estudiante_id", 1], ["curso_id", 1], ["monto", 100], ["created_at", "2018-06-15 21:45:58.077992"], ["updated_at", "2018-06-15 21:45:58.077992"]]
+  [1m[35m (28.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/inscripcions/1
+Completed 302 Found in 94ms (ActiveRecord: 65.4ms)
+
+
+Started GET "/inscripcions/1" for 127.0.0.1 at 2018-06-15 16:45:58 -0500
+Processing by InscripcionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInscripcion Load (15.0ms)[0m  [1m[34mSELECT  "inscripcions".* FROM "inscripcions" WHERE "inscripcions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering inscripcions/show.html.erb within layouts/application
+  Rendered inscripcions/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 576ms (Views: 523.6ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/inscripcions" for 127.0.0.1 at 2018-06-15 16:46:01 -0500
+Processing by InscripcionsController#index as HTML
+  Rendering inscripcions/index.html.erb within layouts/application
+  [1m[36mInscripcion Load (0.0ms)[0m  [1m[34mSELECT "inscripcions".* FROM "inscripcions"[0m
+  Rendered inscripcions/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 527ms (Views: 510.1ms | ActiveRecord: 0.0ms)
+
+

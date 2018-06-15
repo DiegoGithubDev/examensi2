@@ -19,12 +19,13 @@
 
   <div class="field">
     <%= form.label :fecha %>
-    <%= form.text_field :fecha, id: :inscripcion_fecha %>
+    <%= form.date_field :fecha, id: :inscripcion_fecha %>
   </div>
+
 
   <div class="field">
     <%= form.label :estudiante_id %>
-    <%= form.collection_select :estudiante_id, Student.all, :id, :nombre %>
+    <%= form.collection_select :estudiante_id, Estudiante.all, :id, :nombre  %>
   </div>
 
 

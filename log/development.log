@@ -21498,3 +21498,91 @@ Migrating to CreateEstudiantes (20180615172548)
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/estudiantes" for 127.0.0.1 at 2018-06-15 12:28:53 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EstudiantesController#index as HTML
+  Rendering estudiantes/index.html.erb within layouts/application
+  [1m[36mEstudiante Load (1.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  Rendered estudiantes/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 9645ms (Views: 9593.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/estudiantes/new" for 127.0.0.1 at 2018-06-15 12:30:40 -0500
+Processing by EstudiantesController#new as HTML
+  Rendering estudiantes/new.html.erb within layouts/application
+  Rendered estudiantes/_form.html.erb (29.5ms)
+  Rendered estudiantes/new.html.erb within layouts/application (46.5ms)
+Completed 200 OK in 754ms (Views: 721.3ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/estudiantes" for 127.0.0.1 at 2018-06-15 12:30:50 -0500
+Processing by EstudiantesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QQaAbgD7OEtwadk2H+ldNAajRN5Md5a770cbAm5pYEV5ecE1WtUjqKBpU3lqLWAF7mTNhHJm3B8hgWpmIAe2aQ==", "estudiante"=>{"nombre"=>"diego", "apellido_paterno"=>"mansilla", "apellido_materno"=>" chavez"}, "commit"=>"Create Estudiante"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "estudiantes" ("nombre", "apellido_paterno", "apellido_materno", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["nombre", "diego"], ["apellido_paterno", "mansilla"], ["apellido_materno", " chavez"], ["created_at", "2018-06-15 17:30:50.259428"], ["updated_at", "2018-06-15 17:30:50.259428"]]
+  [1m[35m (97.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/estudiantes/1
+Completed 302 Found in 111ms (ActiveRecord: 99.0ms)
+
+
+Started GET "/estudiantes/1" for 127.0.0.1 at 2018-06-15 12:30:50 -0500
+Processing by EstudiantesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEstudiante Load (0.5ms)[0m  [1m[34mSELECT  "estudiantes".* FROM "estudiantes" WHERE "estudiantes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering estudiantes/show.html.erb within layouts/application
+  Rendered estudiantes/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 607ms (Views: 574.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-06-15 12:31:00 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  Rendered inscripcions/_form.html.erb (24.5ms)
+  Rendered inscripcions/new.html.erb within layouts/application (41.8ms)
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 6.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :apellido:Symbol):
+    24: 
+    25:   <div class="field">
+    26:     <%= form.label :estudiante_id %>
+    27:     <%= form.collection_select :estudiante_id, Estudiante.all, :id, :nombre, :apellido %>
+    28:   </div>
+    29: 
+    30: 
+  
+app/views/inscripcions/_form.html.erb:27:in `block in _app_views_inscripcions__form_html_erb___758892043_114099600'
+app/views/inscripcions/_form.html.erb:7:in `_app_views_inscripcions__form_html_erb___758892043_114099600'
+app/views/inscripcions/new.html.erb:3:in `_app_views_inscripcions_new_html_erb___263839979_114121164'
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-06-15 12:31:29 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  Rendered inscripcions/_form.html.erb (21.0ms)
+  Rendered inscripcions/new.html.erb within layouts/application (39.8ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :apellido_paterno:Symbol):
+    24: 
+    25:   <div class="field">
+    26:     <%= form.label :estudiante_id %>
+    27:     <%= form.collection_select :estudiante_id, Estudiante.all, :id, :nombre, :apellido_paterno %>
+    28:   </div>
+    29: 
+    30: 
+  
+app/views/inscripcions/_form.html.erb:27:in `block in _app_views_inscripcions__form_html_erb___758892043_86147796'
+app/views/inscripcions/_form.html.erb:7:in `_app_views_inscripcions__form_html_erb___758892043_86147796'
+app/views/inscripcions/new.html.erb:3:in `_app_views_inscripcions_new_html_erb___263839979_86217096'
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-06-15 12:31:55 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (1.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (33.5ms)
+  Rendered inscripcions/new.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 654ms (Views: 627.4ms | ActiveRecord: 8.0ms)
+
+

@@ -1,0 +1,22 @@
+<%= form_with(model: paralelo, local: true) do |form| %>
+  <% if paralelo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(paralelo.errors.count, "error") %> prohibited this paralelo from being saved:</h2>
+
+      <ul>
+      <% paralelo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :letra %>
+    <%= form.text_field :letra, id: :paralelo_letra %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

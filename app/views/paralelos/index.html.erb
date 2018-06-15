@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Paralelos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Letra</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paralelos.each do |paralelo| %>
+      <tr>
+        <td><%= paralelo.letra %></td>
+        <td><%= link_to 'Show', paralelo %></td>
+        <td><%= link_to 'Edit', edit_paralelo_path(paralelo) %></td>
+        <td><%= link_to 'Destroy', paralelo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Paralelo', new_paralelo_path %>

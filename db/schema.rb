@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180601081445) do
+ActiveRecord::Schema.define(version: 20180615165522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 20180601081445) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["teacher_id"], name: "index_courses_on_teacher_id"
+  end
+
+  create_table "cursos", force: :cascade do |t|
+    t.integer "numero"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "fathers", force: :cascade do |t|
@@ -57,6 +63,15 @@ ActiveRecord::Schema.define(version: 20180601081445) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "inscripcions", force: :cascade do |t|
+    t.string "fecha"
+    t.integer "estudiante_id"
+    t.integer "curso_id"
+    t.integer "monto"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "notes", force: :cascade do |t|
     t.bigint "teacher_id"
     t.bigint "student_id"
@@ -73,6 +88,20 @@ ActiveRecord::Schema.define(version: 20180601081445) do
   create_table "padres", force: :cascade do |t|
     t.string "name"
     t.string "apellido"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "paralelos", force: :cascade do |t|
+    t.string "letra"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "perros", force: :cascade do |t|
+    t.string "raza"
+    t.string "color"
+    t.string "fecha_nacimiento"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

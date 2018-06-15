@@ -1,0 +1,2 @@
+class Paralelo < ApplicationRecord
+end

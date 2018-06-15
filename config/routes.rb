@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :paralelos
+  resources :cursos
   resources :inscripcions
   resources :tipo_infraccions
   resources :infraccions

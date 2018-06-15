@@ -4,6 +4,7 @@
     });
 
 </script>
+<div class="card-panel">
 <%= form_with(model: inscripcion, local: true) do |form| %>
   <% if inscripcion.errors.any? %>
     <div id="error_explanation">
@@ -43,3 +44,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

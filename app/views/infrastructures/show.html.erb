@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @infrastructure.nombre %>
+</p>
+
+<p>
+  <strong>Detalle:</strong>
+  <%= @infrastructure.detalle %>
+</p>
+
+<%= link_to 'Edit', edit_infrastructure_path(@infrastructure) %> |
+<%= link_to 'Back', infrastructures_path %>

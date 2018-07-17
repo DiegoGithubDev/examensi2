@@ -1,0 +1,27 @@
+<%= form_with(model: infrastructure, local: true) do |form| %>
+  <% if infrastructure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(infrastructure.errors.count, "error") %> prohibited this infrastructure from being saved:</h2>
+
+      <ul>
+      <% infrastructure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :infrastructure_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :detalle %>
+    <%= form.text_field :detalle, id: :infrastructure_detalle %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

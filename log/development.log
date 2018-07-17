@@ -22150,3 +22150,54 @@ Migrating to CreateInfrastructures (20180717221453)
   [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/inscripcions" for 127.0.0.1 at 2018-07-17 17:21:28 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InscripcionsController#index as HTML
+  Rendering inscripcions/index.html.erb within layouts/application
+  [1m[36mInscripcion Load (1.0ms)[0m  [1m[34mSELECT "inscripcions".* FROM "inscripcions"[0m
+  Rendered inscripcions/index.html.erb within layouts/application (60.7ms)
+Completed 200 OK in 11553ms (Views: 11500.9ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/infrastructures" for 127.0.0.1 at 2018-07-17 17:22:10 -0500
+Processing by InfrastructuresController#index as HTML
+  Rendering infrastructures/index.html.erb within layouts/application
+  [1m[36mInfrastructure Load (2.0ms)[0m  [1m[34mSELECT "infrastructures".* FROM "infrastructures"[0m
+  Rendered infrastructures/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 659ms (Views: 621.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/infrastructures/new" for 127.0.0.1 at 2018-07-17 17:22:14 -0500
+Processing by InfrastructuresController#new as HTML
+  Rendering infrastructures/new.html.erb within layouts/application
+  Rendered infrastructures/_form.html.erb (313.5ms)
+  Rendered infrastructures/new.html.erb within layouts/application (330.0ms)
+Completed 200 OK in 867ms (Views: 839.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 17:22:26 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (36.7ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (45.7ms)
+Completed 200 OK in 602ms (Views: 538.5ms | ActiveRecord: 41.7ms)
+
+
+Started GET "/inscripcions" for 127.0.0.1 at 2018-07-17 17:23:15 -0500
+Processing by InscripcionsController#index as HTML
+  Rendering inscripcions/index.html.erb within layouts/application
+  [1m[36mInscripcion Load (0.0ms)[0m  [1m[34mSELECT "inscripcions".* FROM "inscripcions"[0m
+  Rendered inscripcions/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 533ms (Views: 517.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-07-17 17:23:17 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (71.5ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (166.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (629.9ms)
+  Rendered inscripcions/new.html.erb within layouts/application (1679.2ms)
+Completed 200 OK in 2270ms (Views: 1981.3ms | ActiveRecord: 256.9ms)
+
+

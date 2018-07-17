@@ -17,3 +17,6 @@
 //= require materialize-sprockets
 //= require_tree .
 
+function imprimir() {
+    window.print();
+}

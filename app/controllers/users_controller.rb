@@ -19,9 +19,16 @@ class UsersController < ApplicationController
       if usuario_is_infractor
         redirecionar_a_ver_infracciones
       end
+      if usuario_is_administrador
+        redirecionar_a_inscripcion
+      end
     else
        login
     end
+  end
+
+  def redirecionar_a_inscripcion
+    redirect_to :controller => :inscripcions , :action => :index
   end
 
   def redirecionar_a_ver_infracciones
@@ -107,6 +114,15 @@ class UsersController < ApplicationController
       @user = User.find_by(name: params[:name])
       @password = User.find_by(password: params[:password])
       if @user and @password
+        true
+      else
+        false
+      end
+    end
+
+    def usuario_is_administrador
+      @tipo = params[:type_user]
+      if @tipo =='administrador'
         true
       else
         false

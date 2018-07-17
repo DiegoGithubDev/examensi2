@@ -21926,3 +21926,215 @@ Processing by UsersController#login as HTML
 Completed 200 OK in 5383ms (Views: 5352.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:22:36 -0500
+  [1m[35m (50.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (2.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 2871ms (Views: 2837.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:26:10 -0500
+  [1m[35m (68.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 1738ms (Views: 1714.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:27:09 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 600ms (Views: 582.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:27:32 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 664ms (Views: 641.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:29:23 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 543ms (Views: 522.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:37:06 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 754ms (Views: 726.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:40:33 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 518ms (Views: 503.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:40:40 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 523ms (Views: 506.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:41:18 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 567ms (Views: 550.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/inscripcions" for 127.0.0.1 at 2018-07-17 15:41:24 -0500
+Processing by InscripcionsController#index as HTML
+  Rendering inscripcions/index.html.erb within layouts/application
+  [1m[36mInscripcion Load (71.8ms)[0m  [1m[34mSELECT "inscripcions".* FROM "inscripcions"[0m
+  Rendered inscripcions/index.html.erb within layouts/application (266.6ms)
+Completed 200 OK in 943ms (Views: 607.6ms | ActiveRecord: 199.6ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-07-17 15:43:10 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (75.5ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (110.4ms)
+Completed 200 OK in 669ms (Views: 500.3ms | ActiveRecord: 87.5ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:43:22 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 532ms (Views: 515.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teachers/new" for 127.0.0.1 at 2018-07-17 15:43:24 -0500
+Processing by TeachersController#new as HTML
+  Rendering teachers/new.html.erb within layouts/application
+  Rendered teachers/_form.html.erb (295.2ms)
+  Rendered teachers/new.html.erb within layouts/application (419.9ms)
+Completed 200 OK in 953ms (Views: 914.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:48:40 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 605ms (Views: 589.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:50:33 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 526ms (Views: 511.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:50:36 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 560ms (Views: 544.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:52:01 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 531ms (Views: 517.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:52:13 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 504ms (Views: 489.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:52:40 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 556ms (Views: 537.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:53:24 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 538ms (Views: 511.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 15:54:07 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 529ms (Views: 512.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 16:24:09 -0500
+  [1m[35m (40.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (69.9ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (103.9ms)
+Completed 200 OK in 7170ms (Views: 7066.5ms | ActiveRecord: 78.9ms)
+
+
+Started GET "/estudiantes" for 127.0.0.1 at 2018-07-17 16:24:47 -0500
+Processing by EstudiantesController#index as HTML
+  Rendering estudiantes/index.html.erb within layouts/application
+  [1m[36mEstudiante Load (286.1ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  Rendered estudiantes/index.html.erb within layouts/application (533.3ms)
+Completed 200 OK in 1235ms (Views: 618.8ms | ActiveRecord: 505.3ms)
+
+
+Started GET "/estudiantes" for 127.0.0.1 at 2018-07-17 16:26:45 -0500
+  [1m[35m (30.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EstudiantesController#index as HTML
+  Rendering estudiantes/index.html.erb within layouts/application
+  [1m[36mEstudiante Load (77.1ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  Rendered estudiantes/index.html.erb within layouts/application (217.2ms)
+Completed 200 OK in 6823ms (Views: 6645.8ms | ActiveRecord: 140.1ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 16:27:17 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (48.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (120.4ms)
+Completed 200 OK in 631ms (Views: 542.7ms | ActiveRecord: 70.4ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-07-17 16:28:17 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 524ms (Views: 509.9ms | ActiveRecord: 0.0ms)
+
+

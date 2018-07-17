@@ -18,16 +18,24 @@
       <div class="nav-wrapper">
         <a href="#!" class="brand-logo">Sistemas II</a>
         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a style="color: #eeeeee;padding-top: 15px;" href="/teachers" data-turbolinks="false">Profesores</a></li>
+          <li><a style="color: #eeeeee;padding-top: 15px;" href="/estudiantes" data-turbolinks="false">Estudiante</a></li>
+          <li><a style="color: #eeeeee;padding-top: 15px;" href="/cursos" data-turbolinks="false">Cursos</a></li>
+          <li><a style="color: #eeeeee;padding-top: 15px;" href="/inscripcions" data-turbolinks="false">Inscriopciones</a></li>
+          <li><a style="color: #eeeeee;padding-top: 15px;" href="/users/login" data-turbolinks="false"> Login</a></li>
+        </ul>
       </div>
     </nav>
   </div>
   <ul class="sidenav " id="mobile-demo">
-    <li><a href="/teachers" data-turbolinks="false">Profesores</a></li>
+    <li><a  href="/teachers" data-turbolinks="false">Profesores</a></li>
     <li><a href="/estudiantes" data-turbolinks="false">Estudiante</a></li>
     <li><a href="/cursos" data-turbolinks="false">Cursos</a></li>
     <li><a href="/inscripcions" data-turbolinks="false">Inscriopciones</a></li>
     <li><a href="/users/login" data-turbolinks="false"> Login</a></li>
   </ul>
+
   <body>
     <div class="container">
       <%= yield %>

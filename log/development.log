@@ -22583,3 +22583,152 @@ Processing by CursosController#index as HTML
 Completed 200 OK in 525ms (Views: 506.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/cursos" for 127.0.0.1 at 2018-07-18 09:24:04 -0500
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (54.3ms)
+Completed 200 OK in 1501ms (Views: 1467.3ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-07-18 09:24:36 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 532ms (Views: 515.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-07-18 09:30:02 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (0.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 580ms (Views: 550.9ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-07-18 09:30:07 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (0.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 528ms (Views: 512.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-07-18 09:30:10 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (0.5ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 516ms (Views: 500.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cursos/new" for 127.0.0.1 at 2018-07-18 09:30:16 -0500
+Processing by CursosController#new as HTML
+  Rendering cursos/new.html.erb within layouts/application
+  Rendered cursos/_form.html.erb (28.0ms)
+  Rendered cursos/new.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 560ms (Views: 544.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cursos" for 127.0.0.1 at 2018-07-18 09:30:25 -0500
+Processing by CursosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1updI8IQwoomi7ZBZE44ZKEcG3Qyc+t2SgMKYi+D9kUuWtH3fNp6UITc6URNdPMmEurhQzOgVbFlFA2J/7bKSw==", "curso"=>{"numero"=>"3", "grado"=>"B"}, "commit"=>"Create Curso"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "cursos" ("numero", "created_at", "updated_at", "grado") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["numero", 3], ["created_at", "2018-07-18 14:30:25.463280"], ["updated_at", "2018-07-18 14:30:25.463280"], ["grado", "B"]]
+  [1m[35m (11.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cursos/4
+Completed 302 Found in 25ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/cursos/4" for 127.0.0.1 at 2018-07-18 09:30:25 -0500
+Processing by CursosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCurso Load (0.0ms)[0m  [1m[34mSELECT  "cursos".* FROM "cursos" WHERE "cursos"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering cursos/show.html.erb within layouts/application
+  Rendered cursos/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 533ms (Views: 506.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-07-18 09:30:30 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (0.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 512ms (Views: 496.5ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/cursos/1" for 127.0.0.1 at 2018-07-18 09:30:38 -0500
+Processing by CursosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+vpqg/OYAV9Fn10Zx3yUs6t0c5FSYIPk/TVbLTKfeQICSuZXTVK5hefIAhzuRl/xGIKJplOzPSPSIlzG4qpFDA==", "id"=>"1"}
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT  "cursos".* FROM "cursos" WHERE "cursos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (27.5ms)[0m  [1m[31mDELETE FROM "cursos" WHERE "cursos"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cursos
+Completed 302 Found in 43ms (ActiveRecord: 31.3ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-07-18 09:30:39 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (0.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 551ms (Views: 532.9ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/cursos/2" for 127.0.0.1 at 2018-07-18 09:30:42 -0500
+Processing by CursosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sw36EoSFlIB5CiEByhcR8ExcIx3+VZDkFp/hgKwPaihLvXbGOk8sWttdfgTjLdqy/6rZKv+GLiM5iOZrfDpWJg==", "id"=>"2"}
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT  "cursos".* FROM "cursos" WHERE "cursos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "cursos" WHERE "cursos"."id" = $1[0m  [["id", 2]]
+  [1m[35m (25.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cursos
+Completed 302 Found in 34ms (ActiveRecord: 27.0ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-07-18 09:30:42 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (0.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 544ms (Views: 528.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cursos/new" for 127.0.0.1 at 2018-07-18 09:30:54 -0500
+Processing by CursosController#new as HTML
+  Rendering cursos/new.html.erb within layouts/application
+  Rendered cursos/_form.html.erb (4.0ms)
+  Rendered cursos/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 545ms (Views: 527.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cursos" for 127.0.0.1 at 2018-07-18 09:31:05 -0500
+Processing by CursosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0bihTfKnNgyxg1rIoVx9QM1erPEsnMHFzUFPwClP88EpCC2ZTG2O1hPUBc2IZrYCfqhWxi1PfwLiVkgr+XrPzw==", "curso"=>{"numero"=>"1", "grado"=>"A"}, "commit"=>"Create Curso"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "cursos" ("numero", "created_at", "updated_at", "grado") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["numero", 1], ["created_at", "2018-07-18 14:31:05.723692"], ["updated_at", "2018-07-18 14:31:05.723692"], ["grado", "A"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cursos/5
+Completed 302 Found in 10ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/cursos/5" for 127.0.0.1 at 2018-07-18 09:31:05 -0500
+Processing by CursosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCurso Load (0.0ms)[0m  [1m[34mSELECT  "cursos".* FROM "cursos" WHERE "cursos"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering cursos/show.html.erb within layouts/application
+  Rendered cursos/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 514ms (Views: 494.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-07-18 09:31:09 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 548ms (Views: 530.9ms | ActiveRecord: 1.0ms)
+
+

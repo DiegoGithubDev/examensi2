@@ -22877,3 +22877,54 @@ Processing by InscripcionsController#new as HTML
 Completed 200 OK in 5132ms (Views: 4964.0ms | ActiveRecord: 49.0ms)
 
 
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-07-18 10:58:38 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (1.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (122.1ms)
+  Rendered inscripcions/new.html.erb within layouts/application (142.2ms)
+Completed 200 OK in 1649ms (Views: 1576.6ms | ActiveRecord: 21.0ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-07-18 10:59:40 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (0.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (48.0ms)
+  Rendered inscripcions/new.html.erb within layouts/application (65.0ms)
+Completed 200 OK in 603ms (Views: 550.9ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-07-18 11:00:55 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (1.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (16.0ms)
+  Rendered inscripcions/new.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 747ms (Views: 717.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-07-18 11:02:23 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (0.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (13.0ms)
+  Rendered inscripcions/new.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 610ms (Views: 591.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-07-18 11:03:30 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (1.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (1.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (12.0ms)
+  Rendered inscripcions/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 554ms (Views: 536.1ms | ActiveRecord: 2.0ms)
+
+

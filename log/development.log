@@ -22732,3 +22732,130 @@ Processing by CursosController#index as HTML
 Completed 200 OK in 548ms (Views: 530.9ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/inscripcions" for 127.0.0.1 at 2018-07-18 09:44:31 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InscripcionsController#index as HTML
+  Rendering inscripcions/index.html.erb within layouts/application
+  [1m[36mInscripcion Load (77.7ms)[0m  [1m[34mSELECT "inscripcions".* FROM "inscripcions"[0m
+  Rendered inscripcions/index.html.erb within layouts/application (136.8ms)
+Completed 200 OK in 2264ms (Views: 2050.4ms | ActiveRecord: 84.8ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-07-18 09:45:09 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  Rendered inscripcions/_form.html.erb (155.8ms)
+  Rendered inscripcions/new.html.erb within layouts/application (173.3ms)
+Completed 500 Internal Server Error in 251ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :apellido_paterno:Symbol):
+    26: 
+    27:   <div class="field">
+    28:     <%= form.label :estudiante_id %>
+    29:     <%= form.collection_select :estudiante_id, Estudiante.all, :id, :nombre, :apellido_paterno, :apellido_materno  %>
+    30:   </div>
+    31: 
+    32: 
+  
+app/views/inscripcions/_form.html.erb:29:in `block in _app_views_inscripcions__form_html_erb___635534894_90046320'
+app/views/inscripcions/_form.html.erb:8:in `_app_views_inscripcions__form_html_erb___635534894_90046320'
+app/views/inscripcions/new.html.erb:3:in `_app_views_inscripcions_new_html_erb__907304178_79068624'
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-07-18 09:47:10 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (142.6ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (1.5ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (247.4ms)
+  Rendered inscripcions/new.html.erb within layouts/application (263.4ms)
+Completed 200 OK in 875ms (Views: 696.4ms | ActiveRecord: 163.3ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-07-18 09:47:36 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (0.5ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  Rendered inscripcions/_form.html.erb (24.8ms)
+  Rendered inscripcions/new.html.erb within layouts/application (41.8ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 4..6)):
+    32: 
+    33:   <div class="field">
+    34:     <%= form.label :curso_id %>
+    35:     <%= form.collection_select :curso_id, Curso.all, :id%>
+    36:   </div>
+    37: 
+    38:   <div class="field">
+  
+app/views/inscripcions/_form.html.erb:35:in `block in _app_views_inscripcions__form_html_erb___635534894_107956848'
+app/views/inscripcions/_form.html.erb:8:in `_app_views_inscripcions__form_html_erb___635534894_107956848'
+app/views/inscripcions/new.html.erb:3:in `_app_views_inscripcions_new_html_erb__907304178_107976120'
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-07-18 09:48:15 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (0.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  Rendered inscripcions/_form.html.erb (25.0ms)
+  Rendered inscripcions/new.html.erb within layouts/application (41.0ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 4..6)):
+    32: 
+    33:   <div class="field">
+    34:     <%= form.label :curso_id %>
+    35:     <%= form.collection_select :curso_id, Curso.all, :id %>
+    36:   </div>
+    37: 
+    38:   <div class="field">
+  
+app/views/inscripcions/_form.html.erb:35:in `block in _app_views_inscripcions__form_html_erb___635534894_101824296'
+app/views/inscripcions/_form.html.erb:8:in `_app_views_inscripcions__form_html_erb___635534894_101824296'
+app/views/inscripcions/new.html.erb:3:in `_app_views_inscripcions_new_html_erb__907304178_101869296'
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-07-18 09:48:56 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (1.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  Rendered inscripcions/_form.html.erb (22.0ms)
+  Rendered inscripcions/new.html.erb within layouts/application (41.0ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 4..6)):
+    32: 
+    33:   <div class="field">
+    34:     <%= form.label :curso_id %>
+    35:     <%= form.collection_select :curso_id, Curso.all %>
+    36:   </div>
+    37: 
+    38:   <div class="field">
+  
+app/views/inscripcions/_form.html.erb:35:in `block in _app_views_inscripcions__form_html_erb___635534894_84904692'
+app/views/inscripcions/_form.html.erb:8:in `_app_views_inscripcions__form_html_erb___635534894_84904692'
+app/views/inscripcions/new.html.erb:3:in `_app_views_inscripcions_new_html_erb__907304178_84957012'
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-07-18 09:52:33 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  Rendered inscripcions/_form.html.erb (35.0ms)
+  Rendered inscripcions/new.html.erb within layouts/application (54.7ms)
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :apellido_paterno:Symbol):
+    26: 
+    27:   <div class="field">
+    28:     <%= form.label :estudiante_id %>
+    29:     <%= form.collection_select :estudiante_id, Estudiante.all, :id, :nombre, :apellido_paterno  %>
+    30:   </div>
+    31: 
+    32: 
+  
+app/views/inscripcions/_form.html.erb:29:in `block in _app_views_inscripcions__form_html_erb___635534894_89147352'
+app/views/inscripcions/_form.html.erb:8:in `_app_views_inscripcions__form_html_erb___635534894_89147352'
+app/views/inscripcions/new.html.erb:3:in `_app_views_inscripcions_new_html_erb__907304178_89133612'

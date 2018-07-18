@@ -26,13 +26,13 @@
 
   <div class="field">
     <%= form.label :estudiante_id %>
-    <%= form.collection_select :estudiante_id, Estudiante.all, :id, :nombre, :apellido_paterno  %>
+    <%= form.collection_select :estudiante_id, Estudiante.all, :id, :nombre %>
   </div>
 
 
   <div class="field">
     <%= form.label :curso_id %>
-    <%= form.collection_select :curso_id, Curso.all %>
+    <%= form.collection_select :curso_id, Curso.all, :id, :numero %>
   </div>
 
   <div class="field">

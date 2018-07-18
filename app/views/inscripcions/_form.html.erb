@@ -32,7 +32,7 @@
 
   <div class="field">
     <%= form.label :curso_id %>
-    <%= form.collection_select :curso_id, Curso.all, :id, :numero %>
+    <%= form.collection_select :curso_id, Curso.all, :id, :curso_with_grado %>
   </div>
 
   <div class="field">

@@ -22859,3 +22859,21 @@ ActionView::Template::Error (undefined method `merge' for :apellido_paterno:Symb
 app/views/inscripcions/_form.html.erb:29:in `block in _app_views_inscripcions__form_html_erb___635534894_89147352'
 app/views/inscripcions/_form.html.erb:8:in `_app_views_inscripcions__form_html_erb___635534894_89147352'
 app/views/inscripcions/new.html.erb:3:in `_app_views_inscripcions_new_html_erb__907304178_89133612'
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1954666767916056390)[0m
+  [1m[35m (14.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (42.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-07-18 10:50:52 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (14.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (14.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (290.2ms)
+  Rendered inscripcions/new.html.erb within layouts/application (315.3ms)
+Completed 200 OK in 5132ms (Views: 4964.0ms | ActiveRecord: 49.0ms)
+
+

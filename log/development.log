@@ -22522,3 +22522,64 @@ Migrating to AddGradoToCurso (20180718125305)
   [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cursos" for 127.0.0.1 at 2018-07-18 09:20:31 -0500
+  [1m[35m (29.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (52.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (233.2ms)
+Completed 200 OK in 6653ms (Views: 6479.9ms | ActiveRecord: 116.8ms)
+
+
+Started GET "/cursos/new" for 127.0.0.1 at 2018-07-18 09:21:09 -0500
+Processing by CursosController#new as HTML
+  Rendering cursos/new.html.erb within layouts/application
+  Rendered cursos/_form.html.erb (409.9ms)
+  Rendered cursos/new.html.erb within layouts/application (426.1ms)
+Completed 200 OK in 941ms (Views: 918.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cursos/new" for 127.0.0.1 at 2018-07-18 09:22:14 -0500
+Processing by CursosController#new as HTML
+  Rendering cursos/new.html.erb within layouts/application
+  Rendered cursos/_form.html.erb (6.0ms)
+  Rendered cursos/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 581ms (Views: 562.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cursos/new" for 127.0.0.1 at 2018-07-18 09:22:19 -0500
+Processing by CursosController#new as HTML
+  Rendering cursos/new.html.erb within layouts/application
+  Rendered cursos/_form.html.erb (4.0ms)
+  Rendered cursos/new.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 576ms (Views: 559.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cursos" for 127.0.0.1 at 2018-07-18 09:22:28 -0500
+Processing by CursosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MPCMZoRzFs063GCkz1wV4tGy06/AlolzZ4rYC7aEMCrIQACyOrmuF5iLP6HmZt6gYkQpmMFFN7RInd/gZrEMJA==", "curso"=>{"numero"=>"2", "grado"=>"B"}, "commit"=>"Create Curso"}
+Unpermitted parameter: :grado
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (124.8ms)[0m  [1m[32mINSERT INTO "cursos" ("numero", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["numero", 2], ["created_at", "2018-07-18 14:22:28.492225"], ["updated_at", "2018-07-18 14:22:28.492225"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cursos/3
+Completed 302 Found in 139ms (ActiveRecord: 125.8ms)
+
+
+Started GET "/cursos/3" for 127.0.0.1 at 2018-07-18 09:22:28 -0500
+Processing by CursosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCurso Load (0.0ms)[0m  [1m[34mSELECT  "cursos".* FROM "cursos" WHERE "cursos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering cursos/show.html.erb within layouts/application
+  Rendered cursos/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 579ms (Views: 518.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-07-18 09:22:33 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (0.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 525ms (Views: 506.7ms | ActiveRecord: 0.0ms)
+
+

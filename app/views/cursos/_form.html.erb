@@ -11,9 +11,15 @@
     </div>
   <% end %>
 
+
   <div class="field">
     <%= form.label :numero %>
     <%= form.number_field :numero, id: :curso_numero %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grado %>
+    <%= form.text_field :grado, id: :curso_grado  %>
   </div>
 
   <div class="actions">

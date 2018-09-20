@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180718125305) do
+ActiveRecord::Schema.define(version: 20180920155125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,16 @@ ActiveRecord::Schema.define(version: 20180718125305) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
+    t.text "description"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "notes", force: :cascade do |t|
     t.bigint "teacher_id"
     t.bigint "student_id"
@@ -111,23 +121,6 @@ ActiveRecord::Schema.define(version: 20180718125305) do
 
   create_table "paralelos", force: :cascade do |t|
     t.string "letra"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "perros", force: :cascade do |t|
-    t.string "raza"
-    t.string "color"
-    t.string "fecha_nacimiento"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "police", force: :cascade do |t|
-    t.string "nombre"
-    t.string "apellido_paterno"
-    t.string "apellido_materno"
-    t.string "cargo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,28 +1,54 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+  <meta name="description" content="Ejemplo de GeolocalizaciÃ³n con HTML5" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="web_author" content="Yamil Gonzales" />
+  <title>Ejemplo GeolocalizaciÃ³n con HTML5</title>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+      $(document).ready(function(){
+          $('#ubicame').click(iniciar_geolocalizacion);
+      });
 
-<h1>Cursos</h1>
+      function iniciar_geolocalizacion() {
+          navigator.geolocation.getCurrentPosition(geo_consulta, manejo_errores);
+      }
 
-<table>
-  <thead>
-    <tr>
-      <th>Numero</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      function manejo_errores(error) {
+          switch(error.code) {
+              case error.PERMISSION_DENIED: alert("El usurio no compartiÃ³ su ubicaciÃ³n geogrÃ¡fica");
+                  break;
+              case error.POSITION_UNAVAILABLE: alert("No se pudo detectar la posiciÃ³n geogrÃ¡fica actual");
+                  break;
+              case error.TIMEOUT: alert("Se ha agotado el tiempo de espera al consultar posiciÃ³n geogrÃ¡fica");
+                  break;
+              default: alert("Error desconocido");
+                  break;
+          }
+      }
 
-  <tbody>
-    <% @cursos.each do |curso| %>
-      <tr>
-        <td><%= curso.numero %></td>
-        <td><%= curso.grado %></td>
-        <td><%= link_to 'Show', curso %></td>
-        <td><%= link_to 'Edit', edit_curso_path(curso) %></td>
-        <td><%= link_to 'Destroy', curso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      function geo_consulta(posicion) {
+          var img_url = 'http://maps.google.com/maps/api/staticmap?sensor=false&center=' + posicion.coords.latitude + "," + posicion.coords.longitude + '&zoom=14&size=600x500&markers=color:blue|label:s|' + posicion.coords.latitude + ',' + posicion.coords.longitude;
+          $('#mapa').attr('src', img_url);
+      }
 
-<br>
+  </script>
 
-<%= link_to 'New Curso', new_curso_path %>
+  <style type="text/css">
+    button {
+      width: 200px;
+      height: 50px;
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+
+<button id="ubicame">UbÃ­came</button>
+<img id="mapa" />
+</body>
+</html>

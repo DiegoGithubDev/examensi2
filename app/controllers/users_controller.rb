@@ -5,10 +5,24 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    session[:logueado] = true
+    session[:nombre] = "admin"
+    session[:password] = "admin"
   end
 
   def login
+    if session[:nombre] == "admin" and session[:password]=="123"
+      render text: "usuario logueado";
+    else
+      render text: "usted no esta logueado";
+    end
+  end
 
+  def logout
+    session[:logueado] = false;
+    session[:nombre] = nil;
+    session[:apellido] = nil;
+    render text: "eliminadas variables de sesion";
   end
 
   def verificar_usuario

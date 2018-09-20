@@ -22928,3 +22928,94 @@ Processing by InscripcionsController#new as HTML
 Completed 200 OK in 554ms (Views: 536.1ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/teachers" for 127.0.0.1 at 2018-09-20 02:39:22 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1739ms (Views: 1707.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-09-20 02:42:59 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 1594ms (Views: 1567.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/infrastructures" for 127.0.0.1 at 2018-09-20 02:43:33 -0500
+Processing by InfrastructuresController#index as HTML
+  Rendering infrastructures/index.html.erb within layouts/application
+  [1m[36mInfrastructure Load (0.0ms)[0m  [1m[34mSELECT "infrastructures".* FROM "infrastructures"[0m
+  Rendered infrastructures/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 623ms (Views: 584.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-09-20 02:43:35 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 614ms (Views: 599.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/estudiantes" for 127.0.0.1 at 2018-09-20 02:43:41 -0500
+Processing by EstudiantesController#index as HTML
+  Rendering estudiantes/index.html.erb within layouts/application
+  [1m[36mEstudiante Load (0.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  Rendered estudiantes/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 660ms (Views: 600.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/inscripcions" for 127.0.0.1 at 2018-09-20 02:43:45 -0500
+Processing by InscripcionsController#index as HTML
+  Rendering inscripcions/index.html.erb within layouts/application
+  [1m[36mInscripcion Load (15.7ms)[0m  [1m[34mSELECT "inscripcions".* FROM "inscripcions"[0m
+  Rendered inscripcions/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 688ms (Views: 583.2ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-20 02:43:57 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 613ms (Views: 577.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/inscripcions" for 127.0.0.1 at 2018-09-20 02:44:01 -0500
+Processing by InscripcionsController#index as HTML
+  Rendering inscripcions/index.html.erb within layouts/application
+  [1m[36mInscripcion Load (0.0ms)[0m  [1m[34mSELECT "inscripcions".* FROM "inscripcions"[0m
+  Rendered inscripcions/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 632ms (Views: 586.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/inscripcions/new" for 127.0.0.1 at 2018-09-20 02:44:06 -0500
+Processing by InscripcionsController#new as HTML
+  Rendering inscripcions/new.html.erb within layouts/application
+  [1m[36mEstudiante Load (0.0ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  [1m[36mCurso Load (0.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered inscripcions/_form.html.erb (171.8ms)
+  Rendered inscripcions/new.html.erb within layouts/application (218.8ms)
+Completed 200 OK in 953ms (Views: 792.7ms | ActiveRecord: 109.4ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-09-20 02:44:12 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  [1m[36mCurso Load (0.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  Rendered cursos/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 597ms (Views: 565.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cursos/new" for 127.0.0.1 at 2018-09-20 02:44:15 -0500
+Processing by CursosController#new as HTML
+  Rendering cursos/new.html.erb within layouts/application
+  Rendered cursos/_form.html.erb (0.0ms)
+  Rendered cursos/new.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 690ms (Views: 653.8ms | ActiveRecord: 0.0ms)
+
+

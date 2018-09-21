@@ -5,39 +5,53 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-    session[:logueado] = true
-    session[:nombre] = "admin"
-    session[:password] = "admin"
   end
 
   def login
-    if session[:nombre] == "admin" and session[:password]=="123"
-      render text: "usuario logueado";
+    @users = User.all
+  end
+
+  def usuario_is_trabajador
+    @nombre_bd = User.find_by(name: params[:name])
+    @password_bd = User.find_by(password: params[:password])
+    if @nombre_bd and @password and type_user== params[:type_user]
+      true
     else
-      render text: "usted no esta logueado";
+      false
     end
+
+  end
+
+  def renderizar(vista)
+    if vista=='lista_trabajadores'
+      render plain: 'Lista de trabajadores'
+    end
+    if vista=='capturar_ubicacion'
+      render plain: 'capturar_ubicacion'
+    end
+
   end
 
   def logout
-    session[:logueado] = false;
-    session[:nombre] = nil;
-    session[:apellido] = nil;
-    render text: "eliminadas variables de sesion";
+    session[:logueado] = false
+    session[:nombre] = nil
+    session[:apellido] = nil
+    render plain: "eliminando variables de sesion"
   end
 
   def verificar_usuario
-    if existe_usuario
-      if usuario_is_policia
-        redirecionar_a_crear_boleta
-      end
-      if usuario_is_infractor
-        redirecionar_a_ver_infracciones
-      end
-      if usuario_is_administrador
-        redirecionar_a_inscripcion
-      end
+    session[:logueado] = true
+    session[:nombre] = params[:nombre]
+    session[:password] = params[:password]
+    session[:type_user] = params[:type_user]
+    if usuario_is_administrador
+      renderizar('lista_trabajadores')
     else
-       login
+      if usuario_is_trabajador
+        renderizar('capturar_ubicacion')
+      else
+        render 'index'
+      end
     end
   end
 
@@ -135,8 +149,14 @@ class UsersController < ApplicationController
     end
 
     def usuario_is_administrador
-      @tipo = params[:type_user]
-      if @tipo =='administrador'
+      @nombre = session[:nombre]
+      @password = session[:password]
+      @tipo = session[:type_user]
+
+      @nombre_bd = User.find_by(name: params[:name])
+      @password_bd = User.find_by(password: params[:password])
+      @password_bd = User.find_by(type_user: params[:type_user])
+      if @tipo =='administrador' and @nombre=='admin' and @password=='admin' and @nombre_bd== @nombre and @password_bd==@password
         true
       else
         false

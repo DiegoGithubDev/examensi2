@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get 'users/verificar_usuario'
   get 'users/login'
+  get 'users/logout'
   get 'fathers/read_notes'
   resources :users
   resources :notes
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
   get 'profesores/index'
   get 'mulct/index'
   get 'mulct/new'
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

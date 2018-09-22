@@ -1,3 +1,42 @@
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#ubicame').click(iniciar_geolocalizacion);
+    });
+
+    function iniciar_geolocalizacion() {
+        navigator.geolocation.getCurrentPosition(geo_consulta, manejo_errores);
+    }
+
+    function manejo_errores(error) {
+        switch(error.code) {
+            case error.PERMISSION_DENIED: alert("El usurio no compartiÃ³ su ubicaciÃ³n geogrÃ¡fica");
+                break;
+            case error.POSITION_UNAVAILABLE: alert("No se pudo detectar la posiciÃ³n geogrÃ¡fica actual");
+                break;
+            case error.TIMEOUT: alert("Se ha agotado el tiempo de espera al consultar posiciÃ³n geogrÃ¡fica");
+                break;
+            default: alert("Error desconocido");
+                break;
+        }
+    }
+
+    function geo_consulta(posicion) {
+        var img_url = 'http://maps.google.com/maps/api/staticmap?sensor=false&center=' + posicion.coords.latitude + "," + posicion.coords.longitude + '&zoom=14&size=600x500&markers=color:blue|label:s|' + posicion.coords.latitude + ',' + posicion.coords.longitude;
+        $("#rastreo_latitud").val(posicion.coords.latitude);
+        $("#rastreo_longitud").val(posicion.coords.longitude);
+    }
+
+</script>
+
+<style type="text/css">
+  button {
+    width: 200px;
+    height: 50px;
+    display: block;
+  }
+
+</style>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -19,19 +58,23 @@
 <%= form_for([@empleado, @empleado.rastreos.build]) do |f| %>
   <p>
     <%= f.label :latitud %><br>
-    <%= f.text_field :latitud %>
+    <%= f.text_field :latitud ,id: :rastreo_latitud%>
   </p>
   <p>
     <%= f.label :longitud %><br>
-    <%= f.text_field :longitud %>
+    <%= f.text_field :longitud ,id: :rastreo_longitud%>
   </p>
   <p>
     <%= f.label :image %><br>
-    <%= f.text_field :image %>
+    <%= f.file_field :image %>
   </p>
   <p>
     <%= f.submit %>
   </p>
 <% end %>
+
+<button id="ubicame">mi ubicacion</button>
+<img id="mapa" />
+
 <%= link_to 'Edit', edit_empleado_path(@empleado) %> |
 <%= link_to 'Back', empleados_path %>

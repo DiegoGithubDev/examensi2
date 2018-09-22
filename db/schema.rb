@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180922210319) do
+ActiveRecord::Schema.define(version: 20180922220240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,16 @@ ActiveRecord::Schema.define(version: 20180922210319) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "lugar_de_trabajos", force: :cascade do |t|
+    t.string "zona"
+    t.float "latitud"
+    t.float "longitud"
+    t.bigint "empleado_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["empleado_id"], name: "index_lugar_de_trabajos_on_empleado_id"
+  end
+
   create_table "notes", force: :cascade do |t|
     t.bigint "teacher_id"
     t.bigint "student_id"
@@ -140,6 +150,16 @@ ActiveRecord::Schema.define(version: 20180922210319) do
     t.string "cargo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "rastreos", force: :cascade do |t|
+    t.float "latitud"
+    t.float "longitud"
+    t.string "image"
+    t.bigint "empleado_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["empleado_id"], name: "index_rastreos_on_empleado_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -187,8 +207,10 @@ ActiveRecord::Schema.define(version: 20180922210319) do
   end
 
   add_foreign_key "courses", "teachers"
+  add_foreign_key "lugar_de_trabajos", "empleados"
   add_foreign_key "notes", "students"
   add_foreign_key "notes", "teachers"
+  add_foreign_key "rastreos", "empleados"
   add_foreign_key "students", "courses"
   add_foreign_key "students", "fathers"
 end

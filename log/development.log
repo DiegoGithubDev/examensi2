@@ -24613,3 +24613,222 @@ Processing by UsersController#login as HTML
 Completed 200 OK in 1172ms (Views: 1112.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-09-22 14:54:33 -0500
+  [1m[35m (15.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (15.6ms)
+Completed 200 OK in 266ms (Views: 144.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-09-22 14:58:39 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (46.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (171.9ms)
+Completed 200 OK in 2391ms (Views: 2270.6ms | ActiveRecord: 93.8ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-09-22 14:59:20 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  Rendered cursos/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 844ms (Views: 754.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/location" for 127.0.0.1 at 2018-09-22 15:22:08 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/location"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/locations" for 127.0.0.1 at 2018-09-22 15:22:13 -0500
+Processing by LocationsController#index as HTML
+  Rendering locations/index.html.erb within layouts/application
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered locations/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 1141ms (Views: 1005.8ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/locations/new" for 127.0.0.1 at 2018-09-22 15:22:43 -0500
+Processing by LocationsController#new as HTML
+  Rendering locations/new.html.erb within layouts/application
+  Rendered locations/_form.html.erb (109.4ms)
+  Rendered locations/new.html.erb within layouts/application (187.5ms)
+Completed 200 OK in 1109ms (Views: 1049.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/locations" for 127.0.0.1 at 2018-09-22 15:23:14 -0500
+Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K4S+TQH96YuSw1AoqmnVF/0C7yzeTlGbzHoYauCWniS0k746YzDjcjC76lBE47xsdfLEMvqOKD64P6Hc6PMCfA==", "location"=>{"latitude"=>"", "longitude"=>"", "address"=>"uagrminstalacion antena", "description"=>"", "title"=>"antea"}, "commit"=>"Create Location"}
+  [1m[35m (15.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (93.8ms)[0m  [1m[32mINSERT INTO "locations" ("address", "description", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "uagrminstalacion antena"], ["description", ""], ["title", "antea"], ["created_at", "2018-09-22 20:23:36.047188"], ["updated_at", "2018-09-22 20:23:36.047188"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/locations/1
+Completed 302 Found in 21453ms (ActiveRecord: 109.4ms)
+
+
+Started GET "/locations/1" for 127.0.0.1 at 2018-09-22 15:23:36 -0500
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering locations/show.html.erb within layouts/application
+  Rendered locations/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 813ms (Views: 757.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/locations/1/edit" for 127.0.0.1 at 2018-09-22 15:23:43 -0500
+Processing by LocationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering locations/edit.html.erb within layouts/application
+  Rendered locations/_form.html.erb (0.0ms)
+  Rendered locations/edit.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 969ms (Views: 931.7ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/locations/1" for 127.0.0.1 at 2018-09-22 15:23:56 -0500
+Processing by LocationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KEchZnMYbh8OsPzf2cup//QWWdoEHdxcLUzE0cKH3AW3UCEREdVk5qzIRqc3QcCEfOZyxCDdpflZCX1nyuJAXQ==", "location"=>{"latitude"=>"", "longitude"=>"", "address"=>"uagrminstalacion antena", "description"=>"", "title"=>"antea"}, "commit"=>"Update Location", "id"=>"1"}
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/locations/1
+Completed 302 Found in 21016ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/locations/1" for 127.0.0.1 at 2018-09-22 15:24:17 -0500
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering locations/show.html.erb within layouts/application
+  Rendered locations/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 922ms (Views: 886.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/locations" for 127.0.0.1 at 2018-09-22 15:24:34 -0500
+Processing by LocationsController#index as HTML
+  Rendering locations/index.html.erb within layouts/application
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  Rendered locations/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 828ms (Views: 802.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/locations/1" for 127.0.0.1 at 2018-09-22 15:24:47 -0500
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering locations/show.html.erb within layouts/application
+  Rendered locations/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 891ms (Views: 847.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/locations/1/edit" for 127.0.0.1 at 2018-09-22 15:24:53 -0500
+Processing by LocationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.0ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering locations/edit.html.erb within layouts/application
+  Rendered locations/_form.html.erb (0.0ms)
+  Rendered locations/edit.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 859ms (Views: 814.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-22 16:04:20 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.6) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.6) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1954666767916056390)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmpleados (20180922210319)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (234.4ms)[0m  [1m[35mCREATE TABLE "empleados" ("id" bigserial primary key, "nombre" character varying, "apellido" character varying, "cargo" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (15.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180922210319"]]
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/empleados" for 127.0.0.1 at 2018-09-22 16:05:09 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 13547ms (Views: 13490.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/new" for 127.0.0.1 at 2018-09-22 16:06:06 -0500
+Processing by EmpleadosController#new as HTML
+  Rendering empleados/new.html.erb within layouts/application
+  Rendered empleados/_form.html.erb (46.9ms)
+  Rendered empleados/new.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 938ms (Views: 895.5ms | ActiveRecord: 15.6ms)
+
+

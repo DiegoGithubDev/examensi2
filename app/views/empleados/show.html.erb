@@ -54,6 +54,19 @@
   <%= @empleado.cargo %>
 </p>
 
+<h2>RASTREOS</h2>
+<% @empleado.rastreos.each do |rastreo| %>
+  <p>
+    <strong>Comentarista:</strong>
+    <%= rastreo.latitud %>
+  </p>
+
+  <p>
+    <strong>Comentario:</strong>
+    <%= rastreo.longitud %>
+  </p>
+<% end %>
+
 <h2>Add a rastreo:</h2>
 <%= form_for([@empleado, @empleado.rastreos.build]) do |f| %>
   <p>

@@ -25365,3 +25365,126 @@ Processing by EmpleadosController#show as HTML
 Completed 200 OK in 883ms (Views: 847.2ms | ActiveRecord: 1.5ms)
 
 
+Started GET "/empleados" for 127.0.0.1 at 2018-09-23 11:37:24 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 2078ms (Views: 1984.7ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/empleados/new" for 127.0.0.1 at 2018-09-23 11:37:55 -0500
+Processing by EmpleadosController#new as HTML
+  Rendering empleados/new.html.erb within layouts/application
+  Rendered empleados/_form.html.erb (62.4ms)
+  Rendered empleados/new.html.erb within layouts/application (156.3ms)
+Completed 200 OK in 969ms (Views: 935.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/empleados" for 127.0.0.1 at 2018-09-23 11:38:11 -0500
+Processing by EmpleadosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1n/7Igq9+7gwhaqcdR2pGN4CSptrrPdRwE+8xsbivZ9n36nA9OKHjXV85E21ZG/+BoW1E9q/5wIyewB2zkYMRg==", "empleado"=>{"nombre"=>"felix", "apellido"=>"felic", "cargo"=>"impuestos"}, "commit"=>"Create Empleado"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "empleados" ("nombre", "apellido", "cargo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["nombre", "felix"], ["apellido", "felic"], ["cargo", "impuestos"], ["created_at", "2018-09-23 16:38:11.157097"], ["updated_at", "2018-09-23 16:38:11.157097"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/4
+Completed 302 Found in 78ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/4" for 127.0.0.1 at 2018-09-23 11:38:11 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered empleados/show.html.erb within layouts/application (125.0ms)
+Completed 200 OK in 953ms (Views: 920.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/empleados/4/rastreos" for 127.0.0.1 at 2018-09-23 11:38:20 -0500
+Processing by RastreosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qbk7rDZjUYeR88B1cNCvB543mdVOBavRtTwDC4pdDo7wGWlOyDwtstQKjqSwqWnhRrBmXf8Wu4JHCL+7gvm/Vw==", "rastreo"=>{"latitud"=>"3333333333333", "longitud"=>"33333333333"}, "commit"=>"Create Rastreo", "empleado_id"=>"4"}
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "rastreos" ("latitud", "longitud", "empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["latitud", 3333333333333.0], ["longitud", 33333333333.0], ["empleado_id", 4], ["created_at", "2018-09-23 16:38:20.688458"], ["updated_at", "2018-09-23 16:38:20.688458"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/4
+Completed 302 Found in 31ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/empleados/4" for 127.0.0.1 at 2018-09-23 11:38:20 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 813ms (Views: 778.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=admin&password=[FILTERED]&type_user=administrador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-23 11:41:18 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"admin", "password"=>"[FILTERED]", "type_user"=>"administrador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 31ms (Views: 4.5ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=diego&password=[FILTERED]&type_user=trabajador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-23 11:45:00 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"diego", "password"=>"[FILTERED]", "type_user"=>"trabajador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (31.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "lafdjgalñkj"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 31.3ms)
+
+
+  
+NoMethodError (undefined method `password' for nil:NilClass):
+  
+app/controllers/users_controller.rb:158:in `usuario_is_administrador'
+app/controllers/users_controller.rb:48:in `verificar_usuario'
+Started GET "/users/" for 127.0.0.1 at 2018-09-23 11:45:31 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 844ms (Views: 806.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=diego&password=[FILTERED]&type_user=trabajador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-23 11:45:42 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"diego", "password"=>"[FILTERED]", "type_user"=>"trabajador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "trabajador"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `type_user' for nil:NilClass):
+  
+app/controllers/users_controller.rb:17:in `usuario_is_trabajador'
+app/controllers/users_controller.rb:51:in `verificar_usuario'
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=diego&password=[FILTERED]&type_user=trabajador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-23 11:46:14 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"diego", "password"=>"[FILTERED]", "type_user"=>"trabajador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 31ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+

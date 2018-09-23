@@ -12,9 +12,10 @@ class UsersController < ApplicationController
   end
 
   def usuario_is_trabajador
-    @nombre_bd = User.find_by(name: params[:name])
-    @password_bd = User.find_by(password: params[:password])
-    if @nombre_bd and @password and type_user== params[:type_user]
+    @nombre_bd = (User.find_by(name: params[:name])).name
+    @password_bd = (User.find_by(password: params[:password])).password
+    @tipo_bd = (User.find_by(type_user: params[:type_user])).type_user
+    if @nombre_bd and @password_bd and @tipo_bd== 'trabajador'
       true
     else
       false
@@ -153,10 +154,10 @@ class UsersController < ApplicationController
       @password = session[:password]
       @tipo = session[:type_user]
 
-      @nombre_bd = User.find_by(name: params[:name])
-      @password_bd = User.find_by(password: params[:password])
-      @password_bd = User.find_by(type_user: params[:type_user])
-      if @tipo =='administrador' and @nombre=='admin' and @password=='admin' and @nombre_bd== @nombre and @password_bd==@password
+      @nombre_bd = (User.find_by(name: params[:name])).name
+      @password_bd = (User.find_by(password: params[:password])).password
+      @tipo_bd = (User.find_by(type_user: params[:type_user])).type_user
+      if @tipo_bd =='administrador' and @nombre_bd=='admin' and @password_bd=='admin'
         true
       else
         false

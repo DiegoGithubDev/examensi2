@@ -1,0 +1,32 @@
+<table>
+  <thead>
+  <tr>
+    <th>Nombre</th>
+    <th>Cargo</th>
+    <th>Perfil</th>
+    <th colspan="3"></th>
+    <th>zona</th>
+    <th>latitud</th>
+    <th>longitud</th>
+    <th>rastreo_latitud</th>
+    <th>rastreo_longitud</th>
+    <th>imagen</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @empleados.each do |empleado| %>
+    <tr>
+      <td><%= empleado.nombre %></td>
+      <td><%= empleado.cargo %></td>
+      <td><%= 'foto perfil'%></td>
+      <td><%= empleado.lugar_de_trabajos.zona %></td>
+      <td><%= empleado.lugar_de_trabajos.latitud %></td>
+      <td><%= empleado.empleado.lugar_de_trabajos.longitud %></td>
+      <td><%= empleado.rastreos.latitud %></td>
+      <td><%= empleado.rastreos.longitud %></td>
+      <td><%= empleado.rastreos.image %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

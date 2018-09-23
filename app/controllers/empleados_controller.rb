@@ -3,6 +3,9 @@ class EmpleadosController < ApplicationController
 
   # GET /empleados
   # GET /empleados.json
+  def lugar_rastreo
+    @empleados = Empleado.all
+  end
   def index
     @empleados = Empleado.all
   end

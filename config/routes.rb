@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'empleados/lugar_rastreo'
   resources :empleados do
     resources :rastreos
   end

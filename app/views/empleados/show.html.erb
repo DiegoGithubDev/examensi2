@@ -86,6 +86,25 @@
   </p>
 <% end %>
 
+<h2>Add a lugar de trabajo:</h2>
+<%= form_for([@empleado, @empleado.lugar_de_trabajos.build]) do |f| %>
+  <p>
+    <%= f.label :zona %><br>
+    <%= f.text_field :zona%>
+  </p>
+  <p>
+    <%= f.label :latitud %><br>
+    <%= f.text_field :latitud%>
+  </p>
+  <p>
+    <%= f.label :longitud %><br>
+    <%= f.file_field :longitud %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
 <button id="ubicame">mi ubicacion</button>
 <img id="mapa" />
 

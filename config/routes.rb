@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'empleados/lugar_rastreo'
   resources :empleados do
     resources :rastreos
+    resources :lugar_de_trabajos
   end
   resources :locations
   resources :infrastructures

@@ -1,7 +1,9 @@
 class RastreosController < ApplicationController
   def create
     @empleado = Empleado.find(params[:empleado_id])
-    @rastreo = Rastreo.new(rastreo_params)
+    puts 'parametros empleado'+ params[:empleado_id].inspect
+    puts 'parametros de rastreo' + params[:rastreo_params].inspect
+    @rastreo = @empleado.rastreos.create(rastreo_params)
     @rastreo.save
     redirect_to empleado_path(@empleado)
   end

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: MyString
+  infractor_id: 1
+  policia_id: 1
+  tipo_infraccion_id: 1
+  vehiculo_id: 1
+  monto_infracion: 1
+
+two:
+  fecha: MyString
+  infractor_id: 1
+  policia_id: 1
+  tipo_infraccion_id: 1
+  vehiculo_id: 1
+  monto_infracion: 1

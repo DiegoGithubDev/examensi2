@@ -28,6 +28,38 @@
     }
 
 </script>
+<script>
+  // Initialize Firebase
+  var config = {
+  apiKey: "AIzaSyD0miVM-LBHNt3FzaX-Apmsx4NkOvJowOY",
+  authDomain: "software-eventos.firebaseapp.com",
+  databaseURL: "https://software-eventos.firebaseio.com",
+  projectId: "software-eventos",
+  storageBucket: "software-eventos.appspot.com",
+  messagingSenderId: "580152220271"
+  };
+  firebase.initializeApp(config);
+
+
+  var TablaDeBaseDatos= firebase.database().ref('Imagenes');
+
+  $('#upload-file-selector').change(function(){
+  if(this.files && this.files[0]){
+  var Archivo= new FileReader();
+  Archivo.onload=function(e){
+  var ImagenPequenia= RedimencionarImagen(e.target.result,300,300);
+  var ImagenMediana= RedimencionarImagen(e.target.result,590,590);
+  TablaDeBaseDatos.push({
+  urlLarge:ImagenMediana,
+  url:ImagenPequenia
+  });
+  // Visualizar la imagen en la etiqueta img
+  $('#img').attr('src',ImagenPequenia);
+  };
+  Archivo.readAsDataURL(this.files[0]);
+  }
+  });
+</script>
 
 <style type="text/css">
   button {

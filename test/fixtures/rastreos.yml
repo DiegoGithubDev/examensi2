@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  latitud: 1.5
+  longitud: 1.5
+  image: MyString
+  empleado: one
+
+two:
+  latitud: 1.5
+  longitud: 1.5
+  image: MyString
+  empleado: two

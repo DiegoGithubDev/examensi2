@@ -25755,3 +25755,127 @@ Processing by EmpleadosController#show as HTML
 Completed 200 OK in 910ms (Views: 872.1ms | ActiveRecord: 10.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-09-23 19:22:16 -0500
+  [1m[35m (31.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (15.6ms)
+Completed 200 OK in 188ms (Views: 100.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-23 19:22:26 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (78.2ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (312.5ms)
+Completed 200 OK in 2953ms (Views: 2722.5ms | ActiveRecord: 171.9ms)
+
+
+Started GET "/empleados/new" for 127.0.0.1 at 2018-09-23 19:23:06 -0500
+Processing by EmpleadosController#new as HTML
+  Rendering empleados/new.html.erb within layouts/application
+  Rendered empleados/_form.html.erb (140.6ms)
+  Rendered empleados/new.html.erb within layouts/application (171.9ms)
+Completed 200 OK in 1000ms (Views: 962.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-23 19:27:11 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 922ms (Views: 888.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-23 19:27:17 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (218.8ms)
+Completed 200 OK in 1156ms (Views: 1030.2ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-23 19:33:39 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 859ms (Views: 828.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/empleados/1/rastreos" for 127.0.0.1 at 2018-09-23 19:38:36 -0500
+Processing by RastreosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7xwKbEUxxq2tagQ5vshSj6vjM9Zz2WfLrT2WrGf5ohAdpPCD66kxBK5tFnUwBCA/u7aPK0vYwAdVv2Q/gryibg==", "rastreo"=>{"latitud"=>"-17.8053137", "longitud"=>"-63.114618199999995", "image"=>#<ActionDispatch::Http::UploadedFile:0xaa353c8 @tempfile=#<Tempfile:C:/Users/Diego/AppData/Local/Temp/RackMultipart20180923-5136-vf3iv2.jpg>, @original_filename="Sin tedtulo-1.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"rastreo[image]\"; filename=\"Sin tedtulo-1.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Rastreo", "empleado_id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (218.8ms)[0m  [1m[32mINSERT INTO "rastreos" ("latitud", "longitud", "image", "empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["latitud", -17.8053137], ["longitud", -63.114618199999995], ["image", "#<ActionDispatch::Http::UploadedFile:0xaa353c8>"], ["empleado_id", 1], ["created_at", "2018-09-24 00:38:36.850193"], ["updated_at", "2018-09-24 00:38:36.850193"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/1
+Completed 302 Found in 234ms (ActiveRecord: 218.8ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-23 19:38:37 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (31.3ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 953ms (Views: 894.7ms | ActiveRecord: 31.3ms)
+
+
+Started GET "/empleados/2" for 127.0.0.1 at 2018-09-23 21:43:36 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (2.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (2.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 1296ms (Views: 1237.3ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/empleados/2/rastreos" for 127.0.0.1 at 2018-09-23 21:43:53 -0500
+Processing by RastreosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GXzlgpbQYdspbpax5HnFn+MSj6xGar9n/LS64UH8JYbrxB9tOEiWcipphP1qtbcv80czUX5rGKsENkhypLkl+A==", "rastreo"=>{"latitud"=>"-17.805294399999998", "longitud"=>"-63.11469409999999"}, "commit"=>"Create Rastreo", "empleado_id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "rastreos" ("latitud", "longitud", "empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["latitud", -17.805294399999998], ["longitud", -63.11469409999999], ["empleado_id", 2], ["created_at", "2018-09-24 02:43:53.964100"], ["updated_at", "2018-09-24 02:43:53.964100"]]
+  [1m[35m (46.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/2
+Completed 302 Found in 78ms (ActiveRecord: 46.9ms)
+
+
+Started GET "/empleados/2" for 127.0.0.1 at 2018-09-23 21:43:54 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 844ms (Views: 806.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-09-23 21:46:25 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (31.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 891ms (Views: 815.3ms | ActiveRecord: 31.3ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-23 21:46:34 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 828ms (Views: 803.0ms | ActiveRecord: 0.0ms)
+
+

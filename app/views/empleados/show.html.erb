@@ -28,47 +28,18 @@
     }
 
 </script>
-<script>
-  // Initialize Firebase
-  var config = {
-  apiKey: "AIzaSyD0miVM-LBHNt3FzaX-Apmsx4NkOvJowOY",
-  authDomain: "software-eventos.firebaseapp.com",
-  databaseURL: "https://software-eventos.firebaseio.com",
-  projectId: "software-eventos",
-  storageBucket: "software-eventos.appspot.com",
-  messagingSenderId: "580152220271"
-  };
-  firebase.initializeApp(config);
+<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
 
 
-  var TablaDeBaseDatos= firebase.database().ref('Imagenes');
-
-  $('#upload-file-selector').change(function(){
-  if(this.files && this.files[0]){
-  var Archivo= new FileReader();
-  Archivo.onload=function(e){
-  var ImagenPequenia= RedimencionarImagen(e.target.result,300,300);
-  var ImagenMediana= RedimencionarImagen(e.target.result,590,590);
-  TablaDeBaseDatos.push({
-  urlLarge:ImagenMediana,
-  url:ImagenPequenia
-  });
-  // Visualizar la imagen en la etiqueta img
-  $('#img').attr('src',ImagenPequenia);
-  };
-  Archivo.readAsDataURL(this.files[0]);
+<style media="screen">
+  #uploader {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50%;
+    margin-bottom: 10px;
   }
-  });
-</script>
-
-<style type="text/css">
-  button {
-    width: 200px;
-    height: 50px;
-    display: block;
-  }
-
 </style>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -97,6 +68,15 @@
     <strong>Comentario:</strong>
     <%= rastreo.longitud %>
   </p>
+  <p>
+    <strong>Comentario:</strong>
+    <%= rastreo.longitud %>
+  </p>
+  <p>
+    <strong>Comentario:</strong>
+    <img src= <%= rastreo.image.to_s %>>
+
+  </p>
 <% end %>
 
 <h2>Add a rastreo:</h2>
@@ -110,13 +90,17 @@
     <%= f.text_field :longitud ,id: :rastreo_longitud%>
   </p>
   <p>
+    <progress value="0" max="100" id="uploader">0%</progress>
     <%= f.label :image %><br>
-    <%= f.file_field :image %>
+    <%= f.text_field :image %>
   </p>
   <p>
     <%= f.submit %>
   </p>
 <% end %>
+<button id="ubicame">mi ubicacion</button>
+<input type="file" value="upload" id="fileButton"/>
+
 
 <h2>Add a lugar de trabajo:</h2>
 <%= form_for([@empleado, @empleado.lugar_de_trabajos.build]) do |f| %>
@@ -137,8 +121,71 @@
   </p>
 <% end %>
 
-<button id="ubicame">mi ubicacion</button>
-<img id="mapa" />
+
 
 <%= link_to 'Edit', edit_empleado_path(@empleado) %> |
 <%= link_to 'Back', empleados_path %>
+
+
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyD0miVM-LBHNt3FzaX-Apmsx4NkOvJowOY",
+        authDomain: "software-eventos.firebaseapp.com",
+        databaseURL: "https://software-eventos.firebaseio.com",
+        projectId: "software-eventos",
+        storageBucket: "software-eventos.appspot.com",
+        messagingSenderId: "580152220271"
+    };
+    firebase.initializeApp(config);
+
+    // Obtener Elementos
+    var uploader = document.getElementById('uploader');
+    var fileButton = document.getElementById('fileButton');
+
+    // Vigilar selecciÃ³n archivo
+    fileButton.addEventListener('change', function (e) {
+        //Obtener archivo
+        var file = e.target.files[0];
+
+        // Crear un storage ref
+        var storageRef = firebase.storage().ref('mis_fotos/' + file.name);
+
+
+        // Subir archivo
+        var task = storageRef.put(file);
+        //referenciando a la base de datos
+        var TablaDeBaseDatos = firebase.database().ref('Imagenes');
+
+        // Actualizar barra progreso
+        task.on('state_changed',
+
+            function progress(snapshot) {
+                var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                uploader.value = percentage;
+
+            },
+
+            function error(error) {
+
+            },
+
+
+            function complete() {
+                var downloadURL = task.snapshot.downloadURL;
+                TablaDeBaseDatos.push({
+                    urlLarge: downloadURL,
+                    url: downloadURL,
+                    name: file.name,
+                });
+                $("#rastreo_image").val(downloadURL.toString());
+
+            }
+        )
+
+
+    });
+
+
+</script>
+

@@ -25879,3 +25879,428 @@ Processing by EmpleadosController#index as HTML
 Completed 200 OK in 828ms (Views: 803.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/empleados" for 127.0.0.1 at 2018-09-24 00:38:30 -0500
+  [1m[35m (31.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (31.2ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (7593.8ms)
+Completed 200 OK in 60219ms (Views: 56311.0ms | ActiveRecord: 46.8ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-24 01:47:20 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 1047ms (Views: 1000.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 01:48:26 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (31.3ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (484.4ms)
+Completed 200 OK in 1422ms (Views: 1311.0ms | ActiveRecord: 31.3ms)
+
+
+Started POST "/empleados/1/rastreos" for 127.0.0.1 at 2018-09-24 01:49:13 -0500
+Processing by RastreosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"snjzEFtFqzra1tYw8eU9QABEK07lysyAaovjCTN06UhAwAn/9d1ck9nRxHx/KU/wEBGXs93La0ySCRGa1jHpNg==", "rastreo"=>{"latitud"=>"-17.8052498", "longitud"=>"-63.11464660000001", "image"=>#<ActionDispatch::Http::UploadedFile:0xb4abf00 @tempfile=#<Tempfile:C:/Users/Diego/AppData/Local/Temp/RackMultipart20180924-8784-1nm4w0p.jpg>, @original_filename="Sin tedtulo-3.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"rastreo[image]\"; filename=\"Sin tedtulo-3.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Rastreo", "empleado_id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (15.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (62.5ms)[0m  [1m[32mINSERT INTO "rastreos" ("latitud", "longitud", "image", "empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["latitud", -17.8052498], ["longitud", -63.11464660000001], ["image", "#<ActionDispatch::Http::UploadedFile:0xb4abf00>"], ["empleado_id", 1], ["created_at", "2018-09-24 06:49:13.285613"], ["updated_at", "2018-09-24 06:49:13.285613"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/1
+Completed 302 Found in 109ms (ActiveRecord: 78.2ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 01:49:13 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 891ms (Views: 852.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 01:49:46 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 906ms (Views: 880.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:00:14 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 1109ms (Views: 1056.7ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:00:56 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1156ms (Views: 1127.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:05:48 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1000ms (Views: 947.1ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:06:35 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (328.1ms)
+Completed 200 OK in 11703ms (Views: 11469.4ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-24 02:14:37 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 938ms (Views: 889.3ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:14:42 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 922ms (Views: 897.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-24 02:15:39 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 922ms (Views: 895.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:16:32 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 875ms (Views: 823.3ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:20:33 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 844ms (Views: 819.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/empleados/1/rastreos" for 127.0.0.1 at 2018-09-24 02:20:49 -0500
+Processing by RastreosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UvnMV6MZJd7fIWpSXdR5tOsnRX37boVS2RALXHlzXL6gQTa4DYHSd9wmeB7TGAsE+3L5gMNvIp4hkvnPnDZcwA==", "rastreo"=>{"latitud"=>"", "longitud"=>""}, "empleado_id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (15.6ms)[0m  [1m[32mINSERT INTO "rastreos" ("empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["empleado_id", 1], ["created_at", "2018-09-24 07:20:49.923026"], ["updated_at", "2018-09-24 07:20:49.923026"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/1
+Completed 302 Found in 16ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:20:49 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 938ms (Views: 906.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:21:25 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 859ms (Views: 829.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/empleados/1/rastreos" for 127.0.0.1 at 2018-09-24 02:21:46 -0500
+Processing by RastreosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OTtoxyJrEJpgumng6IN3CvABW0cdLbCOtYVMLEkr7ePLg5IojPPnM2O9e6xmTwW64FTnuiUsF0JNB76/rG7tnQ==", "rastreo"=>{"latitud"=>"", "longitud"=>""}, "empleado_id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "rastreos" ("empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["empleado_id", 1], ["created_at", "2018-09-24 07:21:46.528765"], ["updated_at", "2018-09-24 07:21:46.528765"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/1
+Completed 302 Found in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:21:46 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 938ms (Views: 899.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:21:50 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 844ms (Views: 811.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:22:39 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 922ms (Views: 885.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/empleados/1/rastreos" for 127.0.0.1 at 2018-09-24 02:36:31 -0500
+Processing by RastreosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s6OhCcPW3EksL77OXD/Y8eHjgCibVEQ/zC9IM1xi1NVBG1vmbU4r4C8orILS86pB8bY81aNV4/M0rbqguSfUqw==", "rastreo"=>{"latitud"=>"-17.80525", "longitud"=>"-63.11465029999999", "image"=>#<ActionDispatch::Http::UploadedFile:0xaeeaa38 @tempfile=#<Tempfile:C:/Users/Diego/AppData/Local/Temp/RackMultipart20180924-6992-1yoekow.jpg>, @original_filename="Sin tedtulo-1.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"rastreo[image]\"; filename=\"Sin tedtulo-1.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Rastreo", "empleado_id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "rastreos" ("latitud", "longitud", "image", "empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["latitud", -17.80525], ["longitud", -63.11465029999999], ["image", "#<ActionDispatch::Http::UploadedFile:0xaeeaa38>"], ["empleado_id", 1], ["created_at", "2018-09-24 07:36:31.184301"], ["updated_at", "2018-09-24 07:36:31.184301"]]
+  [1m[35m (78.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/1
+Completed 302 Found in 141ms (ActiveRecord: 78.1ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:36:31 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1016ms (Views: 986.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:40:21 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1000ms (Views: 949.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/empleados/1/rastreos" for 127.0.0.1 at 2018-09-24 02:41:09 -0500
+Processing by RastreosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OqITgkT4X+6MtQsd6J9/fc71UNTUluYLbp2xXEfxo4bIGult6mCoR4+yGVFmUw3N3qDsKeyXQceWH0PPorSj+A==", "rastreo"=>{"latitud"=>"", "longitud"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0xac04610 @tempfile=#<Tempfile:C:/Users/Diego/AppData/Local/Temp/RackMultipart20180924-6992-ghegy8.jpg>, @original_filename="Sin tedtulo-2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"rastreo[image]\"; filename=\"Sin tedtulo-2.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Rastreo", "empleado_id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "rastreos" ("image", "empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "#<ActionDispatch::Http::UploadedFile:0xac04610>"], ["empleado_id", 1], ["created_at", "2018-09-24 07:41:10.047061"], ["updated_at", "2018-09-24 07:41:10.047061"]]
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (15.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/1
+Completed 302 Found in 47ms (ActiveRecord: 31.2ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:41:10 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 953ms (Views: 914.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:42:28 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 859ms (Views: 823.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:45:30 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 891ms (Views: 854.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:46:32 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 859ms (Views: 831.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:47:57 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 875ms (Views: 815.9ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/empleados/1/rastreos" for 127.0.0.1 at 2018-09-24 02:48:20 -0500
+Processing by RastreosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3eUxKWqO3sAhKk+YpxLgjocmZWEMriPhg1o3cgftaKUvXcvGxBYpaSItXdQp3pI+l3PZnDSvhC172MXh4qho2w==", "rastreo"=>{"latitud"=>"", "longitud"=>"", "image"=>"https://firebasestorage.googleapis.com/v0/b/software-eventos.appspot.com/o/mis_fotos%2FSin%20tedtulo-3.jpg?alt=media&token=66ef7ccc-bfaa-4a0f-9961-182a769bd4cb"}, "commit"=>"Create Rastreo", "empleado_id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "rastreos" ("image", "empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://firebasestorage.googleapis.com/v0/b/software-eventos.appspot.com/o/mis_fotos%2FSin%20tedtulo-3.jpg?alt=media&token=66ef7ccc-bfaa-4a0f-9961-182a769bd4cb"], ["empleado_id", 1], ["created_at", "2018-09-24 07:48:20.544572"], ["updated_at", "2018-09-24 07:48:20.544572"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/1
+Completed 302 Found in 31ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:48:20 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 969ms (Views: 910.7ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/empleados/1/rastreos" for 127.0.0.1 at 2018-09-24 02:58:48 -0500
+Processing by RastreosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kjg87aD+N3G14tZ5gGn9gwCe0lu7MsfyR24fXDd9FFDYgMYCDmbA2LblxDUOpY8zEMtupoMzYD6/7O3P0jgULg==", "rastreo"=>{"latitud"=>"-17.8053225", "longitud"=>"-63.114617599999995", "image"=>"https://firebasestorage.googleapis.com/v0/b/software-eventos.appspot.com/o/mis_fotos%2FSin%20tedtulo-1.jpg?alt=media&token=5a84c252-3a66-4990-a32e-8c90d34950c6"}, "commit"=>"Create Rastreo", "empleado_id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (15.6ms)[0m  [1m[32mINSERT INTO "rastreos" ("latitud", "longitud", "image", "empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["latitud", -17.8053225], ["longitud", -63.114617599999995], ["image", "https://firebasestorage.googleapis.com/v0/b/software-eventos.appspot.com/o/mis_fotos%2FSin%20tedtulo-1.jpg?alt=media&token=5a84c252-3a66-4990-a32e-8c90d34950c6"], ["empleado_id", 1], ["created_at", "2018-09-24 07:58:48.630282"], ["updated_at", "2018-09-24 07:58:48.630282"]]
+  [1m[35m (2781.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/1
+Completed 302 Found in 2813ms (ActiveRecord: 2812.5ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 02:58:51 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 875ms (Views: 845.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 03:02:57 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (1.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 976ms (Views: 939.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 03:03:10 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 03:03:10 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 03:03:10 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 03:03:10 -0500
+Processing by EmpleadosController#show as */*
+Processing by EmpleadosController#show as */*
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (12.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-24 03:03:12 -0500
+Processing by EmpleadosController#show as HTML
+  Rendering empleados/show.html.erb within layouts/application
+  Parameters: {"id"=>"1"}
+  [1m[36mRastreo Load (4.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mEmpleado Load (2.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered empleados/show.html.erb within layouts/application (55.0ms)
+  [1m[36mEmpleado Load (19.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (18.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (98.1ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendered empleados/show.html.erb within layouts/application (134.1ms)
+  [1m[36mRastreo Load (29.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (64.5ms)
+  [1m[36mRastreo Load (33.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mEmpleado Load (53.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered empleados/show.html.erb within layouts/application (129.1ms)
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (32.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (88.6ms)
+Completed 200 OK in 8745ms (Views: 7960.1ms | ActiveRecord: 16.5ms)
+
+
+Completed 200 OK in 8987ms (Views: 5339.7ms | ActiveRecord: 994.7ms)
+
+
+Completed 200 OK in 8863ms (Views: 6156.1ms | ActiveRecord: 1048.2ms)
+
+
+Completed 200 OK in 8931ms (Views: 4857.1ms | ActiveRecord: 997.2ms)
+
+
+Completed 200 OK in 7460ms (Views: 3915.7ms | ActiveRecord: 2711.4ms)
+
+

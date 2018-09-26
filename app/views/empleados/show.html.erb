@@ -57,29 +57,25 @@
   <%= @empleado.cargo %>
 </p>
 
-<h2>RASTREOS</h2>
-<% @empleado.rastreos.each do |rastreo| %>
-  <p>
-    <strong>Comentarista:</strong>
-    <%= rastreo.latitud %>
-  </p>
 
-  <p>
-    <strong>Comentario:</strong>
-    <%= rastreo.longitud %>
-  </p>
-  <p>
-    <strong>Comentario:</strong>
-    <%= rastreo.longitud %>
-  </p>
-  <p>
-    <strong>Comentario:</strong>
-    <img src= <%= rastreo.image.to_s %>>
-
-  </p>
-<% end %>
 
 <% if user_is_empleado? %>
+  <h2>Mis ubicaciones rastreadas</h2>
+  <% @empleado.rastreos.each do |rastreo| %>
+    <p>
+      <strong>Latitud:</strong>
+      <%= rastreo.latitud %>
+    </p>
+    <p>
+      <strong>Longitud:</strong>
+      <%= rastreo.longitud %>
+    </p>
+    <p>
+      <strong>Imgagen:</strong>
+      <img src= <%= rastreo.image.to_s %>>
+    </p>
+  <% end %>
+
 <h3>Capturar mi ubicacion</h3>
   <%= form_for([@empleado, @empleado.rastreos.build]) do |f| %>
     <p>

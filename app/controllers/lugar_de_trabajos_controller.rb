@@ -1,4 +1,7 @@
 class LugarDeTrabajosController < ApplicationController
+  def index
+    @lugar_de_trabajo = LugarDeTrabajo.all
+  end
     def create
       @empleado = Empleado.find(params[:empleado_id])
       @lugar_de_trabajo = @empleado.lugar_de_trabajos.create(lugar_de_trabajo_params)

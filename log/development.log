@@ -26549,3 +26549,753 @@ Processing by EmpleadosController#show as HTML
 Completed 200 OK in 828ms (Views: 794.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 10:18:56 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 3344ms (Views: 3270.5ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/infrastructures" for 127.0.0.1 at 2018-09-26 10:21:06 -0500
+Processing by InfrastructuresController#index as HTML
+Started GET "/infrastructures" for 127.0.0.1 at 2018-09-26 10:21:06 -0500
+Processing by InfrastructuresController#index as HTML
+  Rendering infrastructures/index.html.erb within layouts/application
+  Rendering infrastructures/index.html.erb within layouts/application
+  [1m[36mInfrastructure Load (78.1ms)[0m  [1m[34mSELECT "infrastructures".* FROM "infrastructures"[0m
+  Rendered infrastructures/index.html.erb within layouts/application (140.6ms)
+  [1m[36mInfrastructure Load (0.0ms)[0m  [1m[34mSELECT "infrastructures".* FROM "infrastructures"[0m
+  Rendered infrastructures/index.html.erb within layouts/application (187.5ms)
+Completed 200 OK in 1922ms (Views: 1739.9ms | ActiveRecord: 78.1ms)
+
+
+Completed 200 OK in 1828ms (Views: 1574.4ms | ActiveRecord: 109.4ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-09-26 10:21:10 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (15.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 984ms (Views: 922.4ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/estudiantes" for 127.0.0.1 at 2018-09-26 10:21:12 -0500
+Processing by EstudiantesController#index as HTML
+  Rendering estudiantes/index.html.erb within layouts/application
+  [1m[36mEstudiante Load (15.6ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  Rendered estudiantes/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 1000ms (Views: 937.0ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/cursos" for 127.0.0.1 at 2018-09-26 10:21:15 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/application
+  Rendered cursos/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 922ms (Views: 867.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/inscripcions" for 127.0.0.1 at 2018-09-26 10:21:18 -0500
+Processing by InscripcionsController#index as HTML
+  Rendering inscripcions/index.html.erb within layouts/application
+  [1m[36mInscripcion Load (93.8ms)[0m  [1m[34mSELECT "inscripcions".* FROM "inscripcions"[0m
+  Rendered inscripcions/index.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 1016ms (Views: 851.2ms | ActiveRecord: 93.8ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 10:21:21 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 875ms (Views: 825.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:13:26 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 953ms (Views: 924.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=admin&password=[FILTERED]&type_user=admin&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:13:40 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"admin", "password"=>"[FILTERED]", "type_user"=>"admin", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (15.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "admin"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 15.6ms)
+
+
+  
+NoMethodError (undefined method `type_user' for nil:NilClass):
+  
+app/controllers/users_controller.rb:161:in `usuario_is_administrador'
+app/controllers/users_controller.rb:50:in `verificar_usuario'
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:14:09 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:14:12 -0500
+Processing by UsersController#login as HTML
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:14:12 -0500
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 2453ms (Views: 2415.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 4516ms (Views: 4460.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 39813ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    14:     <script>
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__403386904_90514224'
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=admin&password=[FILTERED]&type_user=administrador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:15:05 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"admin", "password"=>"[FILTERED]", "type_user"=>"administrador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados
+Completed 302 Found in 125ms (ActiveRecord: 31.2ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:15:05 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 922ms (Views: 886.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:15:52 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 859ms (Views: 829.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-09-26 11:16:14 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 891ms (Views: 861.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-09-26 11:19:05 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 953ms (Views: 887.8ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:20:21 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 859ms (Views: 833.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=diego&password=[FILTERED]&type_user=trabajador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:20:34 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"diego", "password"=>"[FILTERED]", "type_user"=>"trabajador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (15.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."nombre" = $1 LIMIT $2[0m  [["nombre", "diego"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados/2
+Completed 302 Found in 47ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/empleados/2" for 127.0.0.1 at 2018-09-26 11:20:35 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (406.3ms)
+Completed 200 OK in 1266ms (Views: 1238.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:20:44 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 859ms (Views: 834.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=admin&password=[FILTERED]&type_user=administrador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:21:04 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"admin", "password"=>"[FILTERED]", "type_user"=>"administrador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (15.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados
+Completed 302 Found in 16ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:21:04 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 844ms (Views: 822.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-09-26 11:23:07 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 859ms (Views: 833.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:23:10 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 859ms (Views: 821.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=admin&password=[FILTERED]&type_user=administrador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:23:31 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"admin", "password"=>"[FILTERED]", "type_user"=>"administrador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados
+Completed 302 Found in 31ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:23:31 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 922ms (Views: 877.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:27:08 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1203ms (Views: 1162.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:27:27 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 875ms (Views: 839.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=diego&password=[FILTERED]&type_user=administrador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:27:51 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"diego", "password"=>"[FILTERED]", "type_user"=>"administrador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (31.3ms)
+Completed 500 Internal Server Error in 219ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13:   </thead>
+    14: 
+    15:   <tbody>
+    16:     <% @users.each do |user| %>
+    17:       <tr>
+    18:         <td><%= user.name %></td>
+    19:         <td><%= user.password %></td>
+  
+app/views/users/index.html.erb:16:in `_app_views_users_index_html_erb___7033367_50720856'
+app/controllers/users_controller.rb:56:in `verificar_usuario'
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=diego&password=[FILTERED]&type_user=administrador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:28:58 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"diego", "password"=>"[FILTERED]", "type_user"=>"administrador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (46.9ms)
+Completed 500 Internal Server Error in 312ms (ActiveRecord: 15.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13:   </thead>
+    14: 
+    15:   <tbody>
+    16:     <% @users.each do |user| %>
+    17:       <tr>
+    18:         <td><%= user.name %></td>
+    19:         <td><%= user.password %></td>
+  
+app/views/users/index.html.erb:16:in `_app_views_users_index_html_erb___895519896_49199124'
+app/controllers/users_controller.rb:56:in `verificar_usuario'
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=diego&password=[FILTERED]&type_user=empleado&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:29:37 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"diego", "password"=>"[FILTERED]", "type_user"=>"empleado", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "empleado"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 15.6ms)
+
+
+  
+NoMethodError (undefined method `type_user' for nil:NilClass):
+  
+app/controllers/users_controller.rb:161:in `usuario_is_administrador'
+app/controllers/users_controller.rb:50:in `verificar_usuario'
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:30:10 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 2125ms (Views: 2104.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:30:54 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 2172ms (Views: 2139.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=admin&password=[FILTERED]&type_user=administrador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:33:43 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"admin", "password"=>"[FILTERED]", "type_user"=>"administrador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados
+Completed 302 Found in 125ms (ActiveRecord: 31.3ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:33:44 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 891ms (Views: 826.0ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:36:02 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 2047ms (Views: 2020.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=admin&password=[FILTERED]&type_user=administrador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:37:11 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"admin", "password"=>"[FILTERED]", "type_user"=>"administrador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados
+Completed 302 Found in 125ms (ActiveRecord: 31.3ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:37:12 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 969ms (Views: 919.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:37:17 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 891ms (Views: 843.3ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:37:50 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (31.3ms)
+Completed 500 Internal Server Error in 938ms (ActiveRecord: 15.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `+@' for true:TrueClass):
+    28:         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    29:         <ul class="right hide-on-med-and-down">
+    30:           <li style="padding-top: 15px;"><a class="waves-effect waves-light btn">Reporte</a></li>
+    31:           <% if user_is_admin? %>
+    32:             <li style="padding-top: 15px;"><a  href=" /users" class="waves-effect waves-light btn">user</a></li>
+    33:           <% end %>
+    34:           <li><a style="color: #eeeeee;padding-top: 15px;" href="/infrastructures">Jefe</a></li>
+  
+app/helpers/application_helper.rb:8:in `user_is_admin?'
+app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb__868543319_90218244'
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:38:00 -0500
+Processing by UsersController#login as HTML
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:38:02 -0500
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:38:02 -0500
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:38:02 -0500
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:38:02 -0500
+Processing by UsersController#login as HTML
+Processing by UsersController#login as HTML
+Processing by UsersController#login as HTML
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendering users/login.html.erb within layouts/application
+  Rendering users/login.html.erb within layouts/application
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 1344ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     7:     <link rel="icon" sizes="192x192" href=<%=image_path("agenda.png")%>>
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__868543319_58255620'
+Completed 500 Internal Server Error in 2328ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    14:     <script>
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__868543319_58255620'
+Completed 500 Internal Server Error in 4188ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 4203ms (ActiveRecord: 0.0ms)
+
+
+  
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+ActionView::Template::Error (undefined method `+@' for true:TrueClass):
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    14:     <script>
+Completed 500 Internal Server Error in 4672ms (ActiveRecord: 0.0ms)
+
+
+    28:         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    29:         <ul class="right hide-on-med-and-down">
+    30:           <li style="padding-top: 15px;"><a class="waves-effect waves-light btn">Reporte</a></li>
+    31:           <% if user_is_admin? %>
+    32:             <li style="padding-top: 15px;"><a  href=" /users" class="waves-effect waves-light btn">user</a></li>
+    33:           <% end %>
+    34:           <li><a style="color: #eeeeee;padding-top: 15px;" href="/infrastructures">Jefe</a></li>
+  
+  
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__868543319_58255620'
+ActionView::Template::Error (undefined method `+@' for true:TrueClass):
+app/helpers/application_helper.rb:8:in `user_is_admin?'
+app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb__868543319_58255620'
+    28:         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    29:         <ul class="right hide-on-med-and-down">
+    30:           <li style="padding-top: 15px;"><a class="waves-effect waves-light btn">Reporte</a></li>
+    31:           <% if user_is_admin? %>
+    32:             <li style="padding-top: 15px;"><a  href=" /users" class="waves-effect waves-light btn">user</a></li>
+    33:           <% end %>
+    34:           <li><a style="color: #eeeeee;padding-top: 15px;" href="/infrastructures">Jefe</a></li>
+  
+app/helpers/application_helper.rb:8:in `user_is_admin?'
+app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb__868543319_58255620'
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:39:19 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 2250ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `+@' for true:TrueClass):
+    28:         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    29:         <ul class="right hide-on-med-and-down">
+    30:           <li style="padding-top: 15px;"><a class="waves-effect waves-light btn">Reporte</a></li>
+    31:           <% if user_is_admin? %>
+    32:             <li style="padding-top: 15px;"><a  href=" /users" class="waves-effect waves-light btn">user</a></li>
+    33:           <% end %>
+    34:           <li><a style="color: #eeeeee;padding-top: 15px;" href="/infrastructures">Jefe</a></li>
+  
+app/helpers/application_helper.rb:8:in `user_is_admin?'
+app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb___145249294_31355340'
+Started GET "/" for 127.0.0.1 at 2018-09-26 11:40:51 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 172ms (Views: 77.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/logout" for 127.0.0.1 at 2018-09-26 11:41:09 -0500
+Processing by UsersController#logout as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2018-09-26 11:41:36 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 891ms (Views: 854.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:41:40 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 875ms (Views: 838.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=diego&password=[FILTERED]&type_user=trabajador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:41:53 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"diego", "password"=>"[FILTERED]", "type_user"=>"trabajador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (15.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."nombre" = $1 LIMIT $2[0m  [["nombre", "diego"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados/2
+Completed 302 Found in 78ms (ActiveRecord: 31.3ms)
+
+
+Started GET "/empleados/2" for 127.0.0.1 at 2018-09-26 11:41:54 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (140.6ms)
+Completed 200 OK in 1063ms (Views: 1006.1ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/users/logout" for 127.0.0.1 at 2018-09-26 11:42:09 -0500
+Processing by UsersController#logout as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 0ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/logout" for 127.0.0.1 at 2018-09-26 11:42:11 -0500
+Processing by UsersController#logout as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 0ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2018-09-26 11:42:14 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 859ms (Views: 827.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:42:17 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 938ms (Views: 912.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=admin&password=[FILTERED]&type_user=administrador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:42:27 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"admin", "password"=>"[FILTERED]", "type_user"=>"administrador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados
+Completed 302 Found in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:42:27 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 938ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `+@' for true:TrueClass):
+    28:         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    29:         <ul class="right hide-on-med-and-down">
+    30:           <li style="padding-top: 15px;"><a class="waves-effect waves-light btn">Reporte</a></li>
+    31:           <% if user_is_admin? %>
+    32:             <li style="padding-top: 15px;"><a  href=" /users" class="waves-effect waves-light btn">user</a></li>
+    33:           <% end %>
+    34:           <li><a style="color: #eeeeee;padding-top: 15px;" href="/infrastructures">Jefe</a></li>
+  
+app/helpers/application_helper.rb:4:in `user_is_admin?'
+app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb___145249294_52215828'
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:44:34 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 922ms (Views: 857.6ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:46:08 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 906ms (Views: 870.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/logout" for 127.0.0.1 at 2018-09-26 11:46:21 -0500
+Processing by UsersController#logout as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 16ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2018-09-26 11:46:25 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 891ms (Views: 856.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:46:31 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 844ms (Views: 823.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=admin&password=[FILTERED]&type_user=administrador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:46:44 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"admin", "password"=>"[FILTERED]", "type_user"=>"administrador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados
+Completed 302 Found in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:46:44 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 859ms (Views: 813.2ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 11:50:02 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 906ms (Views: 846.3ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 11:50:17 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 875ms (Views: 840.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=diego&password=[FILTERED]&type_user=empleado&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:50:30 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"diego", "password"=>"[FILTERED]", "type_user"=>"empleado", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "empleado"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `type_user' for nil:NilClass):
+  
+app/controllers/users_controller.rb:161:in `usuario_is_administrador'
+app/controllers/users_controller.rb:50:in `verificar_usuario'
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=diego&password=[FILTERED]&type_user=trabajador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 11:50:57 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"diego", "password"=>"[FILTERED]", "type_user"=>"trabajador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."nombre" = $1 LIMIT $2[0m  [["nombre", "diego"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados/2
+Completed 302 Found in 16ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/empleados/2" for 127.0.0.1 at 2018-09-26 11:50:57 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 984ms (Views: 941.4ms | ActiveRecord: 0.0ms)
+
+

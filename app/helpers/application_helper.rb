@@ -1,6 +1,6 @@
 module ApplicationHelper
   def user_is_admin?
-    if session[:logueado]== true and session[:type_user]== 'admin' and session[:nombre]== 'admin'
+    if session[:logueado]== true and session[:type_user]== 'administrador'
       true
     else
       false

@@ -44,7 +44,7 @@ class UsersController < ApplicationController
 
   def verificar_usuario
     session[:logueado] = true
-    session[:nombre] = params[:nombre]
+    session[:nombre] = params[:name]
     session[:password] = params[:password]
     session[:type_user] = params[:type_user]
     if usuario_is_administrador

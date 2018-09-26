@@ -79,29 +79,31 @@
   </p>
 <% end %>
 
-<h2>Add a rastreo:</h2>
-<%= form_for([@empleado, @empleado.rastreos.build]) do |f| %>
-  <p>
-    <%= f.label :latitud %><br>
-    <%= f.text_field :latitud ,id: :rastreo_latitud%>
-  </p>
-  <p>
-    <%= f.label :longitud %><br>
-    <%= f.text_field :longitud ,id: :rastreo_longitud%>
-  </p>
-  <p>
-    <progress value="0" max="100" id="uploader">0%</progress>
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+<% if user_is_empleado? %>
+<h3>Capturar mi ubicacion</h3>
+  <%= form_for([@empleado, @empleado.rastreos.build]) do |f| %>
+    <p>
+      <%= f.label :latitud %><br>
+      <%= f.text_field :latitud ,id: :rastreo_latitud%>
+    </p>
+    <p>
+      <%= f.label :longitud %><br>
+      <%= f.text_field :longitud ,id: :rastreo_longitud%>
+    </p>
+    <p>
+      <progress value="0" max="100" id="uploader">0%</progress>
+      <%= f.label :image %><br>
+      <%= f.text_field :image %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+  <button id="ubicame">mi ubicacion</button>
+  <input type="file" value="upload" id="fileButton"/>
 <% end %>
-<button id="ubicame">mi ubicacion</button>
-<input type="file" value="upload" id="fileButton"/>
 
-<% if session[:type_user]== 'admin'  %>
+<% if user_is_admin?  %>
   <h2>Add a lugar de trabajo:</h2>
   <%= form_for([@empleado, @empleado.lugar_de_trabajos.build]) do |f| %>
     <p>

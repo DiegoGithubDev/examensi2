@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     session[:nombre] = nil
     session[:apellido] = nil
     session[:type_user] = nil
-    render plain: "eliminando variables de sesion"
+    render 'login'
   end
 
   def verificar_usuario

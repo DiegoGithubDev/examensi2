@@ -38,6 +38,7 @@ class UsersController < ApplicationController
     session[:logueado] = false
     session[:nombre] = nil
     session[:apellido] = nil
+    session[:type_user] = nil
     render plain: "eliminando variables de sesion"
   end
 

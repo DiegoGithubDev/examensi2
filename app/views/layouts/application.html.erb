@@ -28,6 +28,9 @@
         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li style="padding-top: 15px;"><a class="waves-effect waves-light btn">Reporte</a></li>
+          <% if user_is_admin? %>
+            <li style="padding-top: 15px;"><a  href=" users" class="waves-effect waves-light btn">user</a></li>
+          <% end %>
           <li><a style="color: #eeeeee;padding-top: 15px;" href="/infrastructures">Jefe</a></li>
           <li><a style="color: #eeeeee;padding-top: 15px;" href="/teachers" >Empleado</a></li>
           <li><a style="color: #eeeeee;padding-top: 15px;" href="/estudiantes" >Area Trabajo</a></li>

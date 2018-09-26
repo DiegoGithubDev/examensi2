@@ -25,10 +25,11 @@ class UsersController < ApplicationController
 
   def renderizar(vista)
     if vista=='lista_trabajadores'
-      render plain: 'Lista de trabajadores'
+      redirect_to :controller => :empleados , :action => :index
     end
     if vista=='capturar_ubicacion'
-      render plain: 'capturar_ubicacion'
+       @id= Empleado.find_by_nombre(params[:name]).id
+      redirect_to :controller => :empleados , :action => :show, :id => @id
     end
 
   end

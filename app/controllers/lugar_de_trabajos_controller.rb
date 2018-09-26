@@ -8,7 +8,7 @@ class LugarDeTrabajosController < ApplicationController
 
     private
     def lugar_de_trabajo_params
-      params.require(:lugar_de_trabajo).permit(:zona, :latitud, :longitud, :direccion, :descripcion)
+      params.require(:lugar_de_trabajo).permit(:zona, :direccion, :descripcion)
     end
 
 end

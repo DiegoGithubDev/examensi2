@@ -28732,3 +28732,385 @@ Completed 200 OK in 5641ms (Views: 3928.1ms | ActiveRecord: 10.5ms)
 Completed 200 OK in 5671ms (Views: 3625.8ms | ActiveRecord: 396.3ms)
 
 
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 15:36:28 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 1934ms (Views: 1897.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=admin&password=[FILTERED]&type_user=administrador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 15:37:14 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"admin", "password"=>"[FILTERED]", "type_user"=>"administrador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados
+Completed 302 Found in 120ms (ActiveRecord: 26.5ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 15:37:14 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (1.5ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 886ms (Views: 836.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 15:37:18 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendered empleados/show.html.erb within layouts/application (135.6ms)
+Completed 200 OK in 960ms (Views: 926.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/logout" for 127.0.0.1 at 2018-09-26 15:39:11 -0500
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 836ms (Views: 835.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=diego&password=[FILTERED]&type_user=trabajador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 15:40:44 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"diego", "password"=>"[FILTERED]", "type_user"=>"trabajador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."nombre" = $1 LIMIT $2[0m  [["nombre", "diego"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados/2
+Completed 302 Found in 20ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/2" for 127.0.0.1 at 2018-09-26 15:40:44 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (5.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (5.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 876ms (Views: 828.0ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/users/logout" for 127.0.0.1 at 2018-09-26 15:41:26 -0500
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 826ms (Views: 823.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=diego&password=[FILTERED]&type_user=trabajador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 15:41:40 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"diego", "password"=>"[FILTERED]", "type_user"=>"trabajador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (0.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."nombre" = $1 LIMIT $2[0m  [["nombre", "diego"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados/2
+Completed 302 Found in 20ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/empleados/2" for 127.0.0.1 at 2018-09-26 15:41:40 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (0.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (5.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 840ms (Views: 793.9ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/empleados/2/rastreos" for 127.0.0.1 at 2018-09-26 15:42:21 -0500
+Processing by RastreosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5ci8zAsKag4BHAG2SX9b49exQDuMzAMnDEoCfd89veDGjLqVBpG9bljckkBDTw5/+SFhAF+axf0o1kxGoC8INA==", "rastreo"=>{"latitud"=>"33333333", "longitud"=>"33333333333", "image"=>"333333333"}, "commit"=>"Create Rastreo", "empleado_id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "rastreos" ("latitud", "longitud", "image", "empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["latitud", 33333333.0], ["longitud", 33333333333.0], ["image", "333333333"], ["empleado_id", 2], ["created_at", "2018-09-26 20:42:21.630118"], ["updated_at", "2018-09-26 20:42:21.630118"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/2
+Completed 302 Found in 35ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/empleados/2" for 127.0.0.1 at 2018-09-26 15:42:21 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (5.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 835ms (Views: 803.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/empleados/333333333" for 127.0.0.1 at 2018-09-26 15:42:22 -0500
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"333333333"}
+  [1m[36mEmpleado Load (10.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 333333333], ["LIMIT", 1]]
+Completed 404 Not Found in 34ms (ActiveRecord: 10.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Empleado with 'id'=333333333):
+  
+app/controllers/empleados_controller.rb:70:in `set_empleado'
+Started GET "/users/logout" for 127.0.0.1 at 2018-09-26 15:42:32 -0500
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1646ms (Views: 1644.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=admin&password=[FILTERED]&type_user=administrador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 15:42:54 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"admin", "password"=>"[FILTERED]", "type_user"=>"administrador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados
+Completed 302 Found in 12ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 15:42:54 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 839ms (Views: 810.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 15:43:00 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendered empleados/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 847ms (Views: 815.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/empleados/1/lugar_de_trabajos" for 127.0.0.1 at 2018-09-26 15:43:24 -0500
+Processing by LugarDeTrabajosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"klpSziQ0GoHjFVrvViJ+GKZv4txrD2N5r3v3F4iu7xSxHlSXKa/N4brVyRlcEiuEiP/D57hZpaOL57ks97xawA==", "lugar_de_trabajo"=>{"zona"=>"norte", "direccion"=>"la viila primero", "descripcion"=>"reparar antena"}, "commit"=>"Create Lugar de trabajo", "empleado_id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "lugar_de_trabajos" ("zona", "empleado_id", "created_at", "updated_at", "direccion", "descripcion") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["zona", "norte"], ["empleado_id", 1], ["created_at", "2018-09-26 20:43:24.127168"], ["updated_at", "2018-09-26 20:43:24.127168"], ["direccion", "la viila primero"], ["descripcion", "reparar antena"]]
+  [1m[35m (35.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/1
+Completed 302 Found in 50ms (ActiveRecord: 35.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 15:43:24 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (1.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendered empleados/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 833ms (Views: 802.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 15:43:34 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 845ms (Views: 819.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 15:43:50 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendered empleados/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 885ms (Views: 852.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-09-26 15:45:36 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 876ms (Views: 843.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-09-26 15:45:57 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 850ms (Views: 820.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/Clientes" for 127.0.0.1 at 2018-09-26 15:46:08 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/Clientes"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/Ubicaciones" for 127.0.0.1 at 2018-09-26 15:46:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/Ubicaciones"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/teachers" for 127.0.0.1 at 2018-09-26 16:14:35 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 2086ms (Views: 2049.9ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/teachers/new" for 127.0.0.1 at 2018-09-26 16:15:18 -0500
+Processing by TeachersController#new as HTML
+  Rendering teachers/new.html.erb within layouts/application
+  Rendered teachers/_form.html.erb (39.6ms)
+  Rendered teachers/new.html.erb within layouts/application (94.7ms)
+Completed 200 OK in 957ms (Views: 910.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/teachers/new" for 127.0.0.1 at 2018-09-26 16:17:45 -0500
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeachersController#new as HTML
+  Rendering teachers/new.html.erb within layouts/application
+  Rendered teachers/_form.html.erb (70.0ms)
+  Rendered teachers/new.html.erb within layouts/application (114.6ms)
+Completed 200 OK in 2187ms (Views: 2130.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers/new" for 127.0.0.1 at 2018-09-26 16:19:58 -0500
+Processing by TeachersController#new as HTML
+  Rendering teachers/new.html.erb within layouts/application
+  Rendered teachers/_form.html.erb (0.0ms)
+  Rendered teachers/new.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 956ms (Views: 926.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2018-09-26 16:20:37 -0500
+Processing by TeachersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OGWZnx0OoxKoBnpbfg3OvgrU5M5tZkA6AQHOFQSMVMYbIZ/GEJV0cvHG6a10PZsiJETF9b4whuAlnYAue57hEg==", "teacher"=>{"nombre"=>"martinez", "apellido"=>"martinez", "celular"=>"79879879", "direccion"=>"la guardia"}, "commit"=>"Create Teacher"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (17.1ms)[0m  [1m[32mINSERT INTO "teachers" ("nombre", "apellido", "celular", "direccion", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["nombre", "martinez"], ["apellido", "martinez"], ["celular", "79879879"], ["direccion", "la guardia"], ["created_at", "2018-09-26 21:20:37.752303"], ["updated_at", "2018-09-26 21:20:37.752303"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teachers/1
+Completed 302 Found in 30ms (ActiveRecord: 17.6ms)
+
+
+Started GET "/teachers/1" for 127.0.0.1 at 2018-09-26 16:20:37 -0500
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering teachers/show.html.erb within layouts/application
+  Rendered teachers/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 855ms (Views: 806.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 16:20:45 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 1065ms (Views: 1007.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2018-09-26 16:20:50 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 876ms (Views: 842.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lugar_de_trabajos" for 127.0.0.1 at 2018-09-26 16:20:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/lugar_de_trabajos"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'

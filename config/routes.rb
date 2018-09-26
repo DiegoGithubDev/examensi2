@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'empleados/lugar_rastreo'
+  get 'lugar_de_trabajos/index'
   resources :empleados do
     resources :rastreos
     resources :lugar_de_trabajos

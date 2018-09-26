@@ -27811,3 +27811,567 @@ Migrating to AddNewValuesToLugarDeTrabajo (20180926194239)
   [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:47:08 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (203.1ms)
+Completed 200 OK in 2188ms (Views: 2079.7ms | ActiveRecord: 31.3ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:50:20 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:50:20 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:50:20 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:50:20 -0500
+Processing by EmpleadosController#show as */*
+Processing by EmpleadosController#show as */*
+Started GET "/" for 127.0.0.1 at 2018-09-26 14:50:20 -0500
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (62.5ms)
+  [1m[36mEmpleado Load (46.9ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (46.9ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (46.9ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (31.3ms)
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (31.3ms)
+  Rendered empleados/show.html.erb within layouts/application (46.9ms)
+Completed 500 Internal Server Error in 4828ms (ActiveRecord: 593.8ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     7:     <link rel="icon" sizes="192x192" href=<%=image_path("agenda.png")%>>
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__818304495_91861656'
+Completed 200 OK in 6391ms (Views: 5924.2ms | ActiveRecord: 15.6ms)
+
+
+Completed 200 OK in 6453ms (Views: 3939.3ms | ActiveRecord: 609.4ms)
+
+
+Completed 200 OK in 6484ms (Views: 3605.9ms | ActiveRecord: 609.4ms)
+
+
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 172ms (Views: 81.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-09-26 14:50:53 -0500
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 844ms (Views: 815.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=admin&password=[FILTERED]&type_user=administrador&commit=verificar_usuario" for 127.0.0.1 at 2018-09-26 14:51:58 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"admin", "password"=>"[FILTERED]", "type_user"=>"administrador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "administrador"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados
+Completed 302 Found in 35ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/empleados" for 127.0.0.1 at 2018-09-26 14:51:59 -0500
+Processing by EmpleadosController#index as HTML
+  Rendering empleados/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (1.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendered empleados/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 858ms (Views: 826.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:52:07 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (1.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (1.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 866ms (Views: 832.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:52:08 -0500
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (1.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:52:09 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:52:09 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:52:09 -0500
+Processing by EmpleadosController#show as */*
+Processing by EmpleadosController#show as */*
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  Rendering empleados/show.html.erb within layouts/application
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (1.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (1.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (531.9ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRastreo Load (542.4ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (2384.2ms)
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (36.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendered empleados/show.html.erb within layouts/application (93.1ms)
+  [1m[36mRastreo Load (7.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (11.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (39.0ms)
+  Rendered empleados/show.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 7629ms (Views: 6289.1ms | ActiveRecord: 543.9ms)
+
+
+Completed 200 OK in 6084ms (Views: 4937.1ms | ActiveRecord: 37.0ms)
+
+
+Completed 200 OK in 6116ms (Views: 4116.3ms | ActiveRecord: 17.0ms)
+
+
+Completed 200 OK in 6131ms (Views: 3656.2ms | ActiveRecord: 543.4ms)
+
+
+Started POST "/empleados/1/lugar_de_trabajos" for 127.0.0.1 at 2018-09-26 14:52:48 -0500
+Processing by LugarDeTrabajosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P1NKAyUMFuVymtc2H0+xXK3A9ymjwL3h5ubXNrRZh8YcF0xaKJfBhStaRMAVf+TAg1DWEnCWezvCepkNy0syEg==", "lugar_de_trabajo"=>{"zona"=>"norte", "direccion"=>"urbanizacion angel de la guardia km 9"}, "commit"=>"Create Lugar de trabajo", "empleado_id"=>"1"}
+  [1m[36mEmpleado Load (0.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :direccion
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (178.4ms)[0m  [1m[32mINSERT INTO "lugar_de_trabajos" ("zona", "empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["zona", "norte"], ["empleado_id", 1], ["created_at", "2018-09-26 19:52:48.671535"], ["updated_at", "2018-09-26 19:52:48.671535"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/1
+Completed 302 Found in 195ms (ActiveRecord: 180.9ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:52:48 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (1.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (1.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 855ms (Views: 822.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:52:50 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:52:50 -0500
+Processing by EmpleadosController#show as */*
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:52:50 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:52:50 -0500
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (1.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (2.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (449.8ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (743.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (58.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  Rendered empleados/show.html.erb within layouts/application (98.1ms)
+  [1m[36mRastreo Load (6.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (5.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (6.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (28.0ms)
+  Rendered empleados/show.html.erb within layouts/application (27.0ms)
+  Rendered empleados/show.html.erb within layouts/application (46.0ms)
+Completed 500 Internal Server Error in 4335ms (ActiveRecord: 455.3ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     7:     <link rel="icon" sizes="192x192" href=<%=image_path("agenda.png")%>>
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__818304495_105055140'
+Completed 500 Internal Server Error in 5384ms (ActiveRecord: 8.5ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     7:     <link rel="icon" sizes="192x192" href=<%=image_path("agenda.png")%>>
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__818304495_105055140'
+Completed 200 OK in 6616ms (Views: 5689.8ms | ActiveRecord: 59.5ms)
+
+
+Completed 200 OK in 6662ms (Views: 3754.0ms | ActiveRecord: 1205.9ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:53:51 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (1.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 920ms (Views: 885.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:54:48 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:54:48 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:54:48 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:54:48 -0500
+Processing by EmpleadosController#show as */*
+Processing by EmpleadosController#show as */*
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (1.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (1.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (2.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (356.8ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (56.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  Rendered empleados/show.html.erb within layouts/application (259.7ms)
+  [1m[36mRastreo Load (2.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (2.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (4.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (19.0ms)
+  Rendered empleados/show.html.erb within layouts/application (24.0ms)
+  Rendered empleados/show.html.erb within layouts/application (36.5ms)
+Completed 500 Internal Server Error in 5610ms (ActiveRecord: 57.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    14:     <script>
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__818304495_104096376'
+Completed 200 OK in 6452ms (Views: 4577.5ms | ActiveRecord: 3.5ms)
+
+
+Completed 200 OK in 6505ms (Views: 4267.5ms | ActiveRecord: 5.0ms)
+
+
+Completed 200 OK in 6550ms (Views: 3871.6ms | ActiveRecord: 361.3ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:55:23 -0500
+Processing by EmpleadosController#show as */*
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:55:23 -0500
+  Parameters: {"id"=>"1"}
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:55:23 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:55:23 -0500
+Processing by EmpleadosController#show as */*
+  [1m[36mEmpleado Load (58.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (3.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (58.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (498.9ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (355.3ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (738.0ms)
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (6.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (5.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (75.1ms)
+  [1m[36mRastreo Load (36.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (89.1ms)
+  Rendered empleados/show.html.erb within layouts/application (70.1ms)
+Completed 200 OK in 6400ms (Views: 5421.8ms | ActiveRecord: 413.3ms)
+
+
+Completed 200 OK in 5432ms (Views: 3462.3ms | ActiveRecord: 534.9ms)
+
+
+Completed 200 OK in 5494ms (Views: 3913.5ms | ActiveRecord: 63.5ms)
+
+
+Completed 200 OK in 5907ms (Views: 4276.6ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/empleados/1/lugar_de_trabajos" for 127.0.0.1 at 2018-09-26 14:55:44 -0500
+Processing by LugarDeTrabajosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iqo3Ye5SxJsMi8kIXH71XKI/RAOjLWHmB3St5Igj/gKp7jE448kT+1VLWv5WTqDAjK9lOHB7pzwj6OPf9zFL1g==", "lugar_de_trabajo"=>{"zona"=>"sur", "direccion"=>"urbanizacion angel de la guardia km 9", "descripcion"=>"instalar antena"}, "commit"=>"Create Lugar de trabajo", "empleado_id"=>"1"}
+  [1m[36mEmpleado Load (0.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :direccion, :descripcion
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "lugar_de_trabajos" ("zona", "empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["zona", "sur"], ["empleado_id", 1], ["created_at", "2018-09-26 19:55:44.973324"], ["updated_at", "2018-09-26 19:55:44.973324"]]
+  [1m[35m (38.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/1
+Completed 302 Found in 59ms (ActiveRecord: 42.1ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:55:45 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (1.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 845ms (Views: 808.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:55:46 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:55:46 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:55:46 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:55:46 -0500
+Processing by EmpleadosController#show as */*
+Processing by EmpleadosController#show as */*
+Processing by EmpleadosController#show as */*
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (1.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (2.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (0.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (495.4ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (2.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (2.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (1.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (23.0ms)
+  Rendered empleados/show.html.erb within layouts/application (20.5ms)
+  [1m[36mRastreo Load (5.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (25.5ms)
+  Rendered empleados/show.html.erb within layouts/application (28.0ms)
+Completed 500 Internal Server Error in 5296ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    14:     <script>
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__818304495_63500160'
+Completed 200 OK in 6661ms (Views: 3729.8ms | ActiveRecord: 500.4ms)
+
+
+Completed 200 OK in 6725ms (Views: 4656.5ms | ActiveRecord: 4.5ms)
+
+
+Completed 200 OK in 6762ms (Views: 4315.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:57:15 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (1.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (1.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 946ms (Views: 911.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:57:29 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:57:29 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:57:29 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:57:29 -0500
+Processing by EmpleadosController#show as */*
+Processing by EmpleadosController#show as */*
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (2.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (373.3ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (364.8ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (58.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (2.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (1.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (110.1ms)
+  Rendered empleados/show.html.erb within layouts/application (27.0ms)
+  [1m[36mRastreo Load (8.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (31.5ms)
+  Rendered empleados/show.html.erb within layouts/application (40.0ms)
+Completed 500 Internal Server Error in 4436ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     7:     <link rel="icon" sizes="192x192" href=<%=image_path("agenda.png")%>>
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+Completed 500 Internal Server Error in 5220ms (ActiveRecord: 374.3ms)
+
+
+  
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__818304495_104728464'
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    14:     <script>
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__818304495_104728464'
+Completed 200 OK in 6588ms (Views: 5442.1ms | ActiveRecord: 58.5ms)
+
+
+Completed 200 OK in 6629ms (Views: 3971.0ms | ActiveRecord: 372.7ms)
+
+
+Started POST "/empleados/1/lugar_de_trabajos" for 127.0.0.1 at 2018-09-26 14:57:54 -0500
+Processing by LugarDeTrabajosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y48E7DY4PTk6HOIQgQtorPqslpDQJ0HtA4tg/gDvShjoywK1O6PqWWPcceaLOz0w1Dy3qwNxhzcnFy7Ff/3/zA==", "lugar_de_trabajo"=>{"zona"=>"este", "latitud"=>"2222", "longitud"=>"3333333", "direccion"=>"urbanizacion angel de la guardia km 9", "descripcion"=>"instalar antena"}, "commit"=>"Create Lugar de trabajo", "empleado_id"=>"1"}
+  [1m[36mEmpleado Load (1.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :direccion, :descripcion
+  [1m[35m (1027.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (849.1ms)[0m  [1m[32mINSERT INTO "lugar_de_trabajos" ("zona", "latitud", "longitud", "empleado_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["zona", "este"], ["latitud", 2222.0], ["longitud", 3333333.0], ["empleado_id", 1], ["created_at", "2018-09-26 19:57:57.981116"], ["updated_at", "2018-09-26 19:57:57.981116"]]
+  [1m[35m (246.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/1
+Completed 302 Found in 3171ms (ActiveRecord: 2125.8ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:57:59 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (1.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (1.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 889ms (Views: 852.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:58:00 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:58:00 -0500
+Processing by EmpleadosController#show as */*
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:58:00 -0500
+Started GET "/empleados/1" for 127.0.0.1 at 2018-09-26 14:58:00 -0500
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by EmpleadosController#show as */*
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (1.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (3.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (1.5ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (386.8ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (28.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (2.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (42.0ms)
+  [1m[36mRastreo Load (1.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (19.5ms)
+  [1m[36mRastreo Load (8.5ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (25.0ms)
+  Rendered empleados/show.html.erb within layouts/application (41.0ms)
+Completed 500 Internal Server Error in 4875ms (ActiveRecord: 29.5ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+Completed 500 Internal Server Error in 5499ms (ActiveRecord: 395.2ms)
+
+
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    14:     <script>
+  
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__818304495_101843568'
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    14:     <script>
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__818304495_101843568'
+Completed 200 OK in 6844ms (Views: 4990.1ms | ActiveRecord: 5.0ms)
+
+
+Completed 200 OK in 6904ms (Views: 4690.2ms | ActiveRecord: 3.0ms)
+
+

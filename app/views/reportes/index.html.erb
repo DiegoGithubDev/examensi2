@@ -1,2 +1,28 @@
-<h1>Reportes#index</h1>
-<p>Find me in app/views/reportes/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Empleados</h1>
+  <% @empleados.each do |empleado| %>
+  <h3 style="text-align: center">
+    <strong>Nombre Empleado:</strong>
+    <%= empleado.nombre %>
+  </h3>
+      <% empleado.rastreos.each do |empleado_rastreo| %>
+        <p>
+          <strong>Latitud:</strong>
+          <%= empleado_rastreo.latitud %>
+        </p>
+        <p>
+          <strong>Longitud:</strong>
+          <%= empleado_rastreo.longitud %>
+        </p>
+        <p>
+          <strong>Imagen:</strong>
+          <img style="height: 80px" src= <%=  empleado_rastreo.image.to_s %> >
+        </p>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>

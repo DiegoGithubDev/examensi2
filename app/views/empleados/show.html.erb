@@ -63,6 +63,10 @@
   <h2>Mis ubicaciones rastreadas</h2>
   <% @empleado.rastreos.each do |rastreo| %>
     <p>
+      <strong>Fecha y Hora:</strong>
+      <%= rastreo.fecha %>
+    </p>
+    <p>
       <strong>Latitud:</strong>
       <%= rastreo.latitud %>
     </p>

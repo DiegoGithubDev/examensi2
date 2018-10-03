@@ -10,6 +10,6 @@ class RastreosController < ApplicationController
 
   private
   def rastreo_params
-    params.require(:rastreo).permit(:latitud, :longitud, :image)
+    params.require(:rastreo).permit(:latitud, :longitud, :image, :fecha)
   end
 end

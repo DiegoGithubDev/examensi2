@@ -30160,3 +30160,109 @@ Migrating to AddNewValuesToRastreo (20181003002332)
   [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/login" for 127.0.0.1 at 2018-10-03 14:32:05 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 2375ms (Views: 2337.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/verificar_usuario?utf8=%E2%9C%93&name=diego&password=[FILTERED]&type_user=trabajador&commit=verificar_usuario" for 127.0.0.1 at 2018-10-03 14:33:05 -0500
+Processing by UsersController#verificar_usuario as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"diego", "password"=>"[FILTERED]", "type_user"=>"trabajador", "commit"=>"verificar_usuario"}
+  [1m[36mUser Load (15.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "diego"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."password" = $1 LIMIT $2[0m  [["password", "123"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."type_user" = $1 LIMIT $2[0m  [["type_user", "trabajador"], ["LIMIT", 1]]
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."nombre" = $1 LIMIT $2[0m  [["nombre", "diego"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/empleados/2
+Completed 302 Found in 281ms (ActiveRecord: 31.2ms)
+
+
+Started GET "/empleados/2" for 127.0.0.1 at 2018-10-03 14:33:05 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (468.8ms)
+Completed 200 OK in 1422ms (Views: 1368.9ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/empleados/333333333" for 127.0.0.1 at 2018-10-03 14:33:07 -0500
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"333333333"}
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 333333333], ["LIMIT", 1]]
+Completed 404 Not Found in 31ms (ActiveRecord: 15.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Empleado with 'id'=333333333):
+  
+app/controllers/empleados_controller.rb:70:in `set_empleado'
+Started GET "/empleados/2" for 127.0.0.1 at 2018-10-03 14:38:03 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 891ms (Views: 869.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/333333333" for 127.0.0.1 at 2018-10-03 14:38:22 -0500
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"333333333"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 333333333], ["LIMIT", 1]]
+Completed 404 Not Found in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Empleado with 'id'=333333333):
+  
+app/controllers/empleados_controller.rb:70:in `set_empleado'
+Started GET "/empleados/2" for 127.0.0.1 at 2018-10-03 14:39:03 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1000ms (Views: 978.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/333333333" for 127.0.0.1 at 2018-10-03 14:39:17 -0500
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"333333333"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 333333333], ["LIMIT", 1]]
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Empleado with 'id'=333333333):
+  
+app/controllers/empleados_controller.rb:70:in `set_empleado'
+Started GET "/empleados/2" for 127.0.0.1 at 2018-10-03 14:40:09 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 875ms (Views: 839.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/333333333" for 127.0.0.1 at 2018-10-03 14:40:26 -0500
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"333333333"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 333333333], ["LIMIT", 1]]
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Empleado with 'id'=333333333):
+  
+app/controllers/empleados_controller.rb:70:in `set_empleado'

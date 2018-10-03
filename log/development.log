@@ -29887,3 +29887,276 @@ Completed 200 OK in 21156ms (Views: 20477.7ms | ActiveRecord: 109.4ms)
 Completed 200 OK in 18766ms (Views: 18341.4ms | ActiveRecord: 15.6ms)
 
 
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-02 18:44:18 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportesController#index as HTML
+  Rendering reportes/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered reportes/index.html.erb within layouts/application (171.9ms)
+Completed 200 OK in 2109ms (Views: 2047.5ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-02 18:44:43 -0500
+Started GET "/reportes/333333333" for 127.0.0.1 at 2018-10-02 18:44:44 -0500
+  
+Processing by ReportesController#index as */*
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-02 18:44:44 -0500
+ActionController::RoutingError (No route matches [GET] "/reportes/333333333"):
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-02 18:44:44 -0500
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-02 18:44:44 -0500
+  
+Processing by ReportesController#index as */*
+Processing by ReportesController#index as */*
+  Rendering reportes/index.html.erb within layouts/application
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Processing by ReportesController#index as */*
+  Rendering reportes/index.html.erb within layouts/application
+  Rendering reportes/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (125.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendering reportes/index.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered reportes/index.html.erb within layouts/application (156.2ms)
+  [1m[36mEmpleado Load (46.9ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mEmpleado Load (46.9ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered reportes/index.html.erb within layouts/application (1687.5ms)
+  Rendered reportes/index.html.erb within layouts/application (687.5ms)
+  [1m[36mEmpleado Load (937.5ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered reportes/index.html.erb within layouts/application (5234.4ms)
+Completed 200 OK in 16281ms (Views: 15178.0ms | ActiveRecord: 125.0ms)
+
+
+Started GET "/reportes/333333333" for 127.0.0.1 at 2018-10-02 18:45:02 -0500
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-02 18:45:02 -0500
+  
+Processing by ReportesController#index as */*
+ActionController::RoutingError (No route matches [GET] "/reportes/333333333"):
+Completed 200 OK in 19141ms (Views: 18072.4ms | ActiveRecord: 609.4ms)
+
+
+Completed 200 OK in 18047ms (Views: 17154.5ms | ActiveRecord: 203.1ms)
+
+
+  Rendering reportes/index.html.erb within layouts/application
+Completed 200 OK in 16266ms (Views: 14807.0ms | ActiveRecord: 1093.8ms)
+
+
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered reportes/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 14781ms (Views: 14209.8ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-02 19:01:20 -0500
+Processing by ReportesController#index as HTML
+  Rendering reportes/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered reportes/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 922ms (Views: 891.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-02 19:01:32 -0500
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-02 19:01:32 -0500
+Started GET "/reportes/333333333" for 127.0.0.1 at 2018-10-02 19:01:32 -0500
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-02 19:01:32 -0500
+Processing by ReportesController#index as */*
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-02 19:01:33 -0500
+Processing by ReportesController#index as */*
+  
+Processing by ReportesController#index as */*
+Processing by ReportesController#index as */*
+ActionController::RoutingError (No route matches [GET] "/reportes/333333333"):
+  Rendering reportes/index.html.erb within layouts/application
+  
+  Rendering reportes/index.html.erb within layouts/application
+  Rendering reportes/index.html.erb within layouts/application
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering reportes/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (78.1ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered reportes/index.html.erb within layouts/application (218.8ms)
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered reportes/index.html.erb within layouts/application (78.1ms)
+  Rendered reportes/index.html.erb within layouts/application (78.1ms)
+  Rendered reportes/index.html.erb within layouts/application (62.5ms)
+Completed 500 Internal Server Error in 13344ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    14:     <script>
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__617615078_98090604'
+Completed 200 OK in 17110ms (Views: 16623.2ms | ActiveRecord: 15.6ms)
+
+
+Completed 200 OK in 18219ms (Views: 17543.0ms | ActiveRecord: 93.8ms)
+
+
+Completed 200 OK in 15985ms (Views: 15199.4ms | ActiveRecord: 15.6ms)
+
+
+  [1m[35m (15.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1954666767916056390)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNewValuesToEmpleado (20181003001203)
+  [1m[35m (15.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (140.6ms)[0m  [1m[35mALTER TABLE "empleados" ADD "entrada" character varying[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "empleados" ADD "salida" character varying[0m
+  [1m[35mSQL (46.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181003001203"]]
+  [1m[35m (62.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (31.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1954666767916056390)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNewValuesToEmpleado (20181003001203)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (93.8ms)[0m  [1m[35mALTER TABLE "empleados" DROP "salida"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "empleados" DROP "entrada"[0m
+  [1m[35mSQL (31.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20181003001203"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1954666767916056390)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNewValuesToRastreo (20181003002332)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mALTER TABLE "rastreos" ADD "fecha" character varying[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181003002332"]]
+  [1m[35m (78.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(1954666767916056390)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

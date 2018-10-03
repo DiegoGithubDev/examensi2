@@ -25,6 +25,7 @@
         var img_url = 'http://maps.google.com/maps/api/staticmap?sensor=false&center=' + posicion.coords.latitude + "," + posicion.coords.longitude + '&zoom=14&size=600x500&markers=color:blue|label:s|' + posicion.coords.latitude + ',' + posicion.coords.longitude;
         $("#rastreo_latitud").val(posicion.coords.latitude);
         $("#rastreo_longitud").val(posicion.coords.longitude);
+        $('#mapa').attr('src', img_url);
     }
 
 </script>
@@ -39,6 +40,8 @@
     margin-bottom: 10px;
   }
 </style>
+<button id="ubicame">Dibujar Mapa</button>
+<img id="mapa" />
 
 <p id="notice"><%= notice %></p>
 

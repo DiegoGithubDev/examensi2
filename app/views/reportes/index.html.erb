@@ -8,6 +8,10 @@
   </h3>
       <% empleado.rastreos.each do |empleado_rastreo| %>
         <p>
+          <strong>Fecha y Hora:</strong>
+          <%= empleado_rastreo.fecha %>
+        </p>
+        <p>
           <strong>Latitud:</strong>
           <%= empleado_rastreo.latitud %>
         </p>

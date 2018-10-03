@@ -108,6 +108,21 @@
 <% end %>
 
 <% if user_is_admin?  %>
+  <h2>Mis Lugares de trabajo</h2>
+  <% @empleado.lugar_de_trabajos.each do |lugar_de_trabajo| %>
+    <p>
+      <strong>Zona</strong>
+      <%= lugar_de_trabajo.zona %>
+    </p>
+    <p>
+      <strong>Direccion:</strong>
+      <%= lugar_de_trabajo.direccion %>
+    </p>
+    <p>
+      <strong>Descripcion:</strong>
+      <%= lugar_de_trabajo.descripcion%>
+    </p>
+  <% end %>
   <h3>Asignar lugar de trabajo:</h3>
   <%= form_for([@empleado, @empleado.lugar_de_trabajos.build]) do |f| %>
     <p>

@@ -8,10 +8,16 @@ class LugarDeTrabajosController < ApplicationController
       @lugar_de_trabajo.save
       redirect_to empleado_path(@empleado)
     end
+  def google_maps
+    @lugar_de_trabajo = LugarDeTrabajo.all
+  end
 
     private
     def lugar_de_trabajo_params
       params.require(:lugar_de_trabajo).permit(:zona, :direccion, :descripcion)
     end
+
+
+
 
 end

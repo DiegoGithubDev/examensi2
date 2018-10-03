@@ -30266,3 +30266,426 @@ Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms)
 ActiveRecord::RecordNotFound (Couldn't find Empleado with 'id'=333333333):
   
 app/controllers/empleados_controller.rb:70:in `set_empleado'
+Started GET "/empleados/2" for 127.0.0.1 at 2018-10-03 14:45:54 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (171.9ms)
+Completed 200 OK in 2156ms (Views: 2068.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/333333333" for 127.0.0.1 at 2018-10-03 14:46:54 -0500
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"333333333"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 333333333], ["LIMIT", 1]]
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Empleado with 'id'=333333333):
+  
+app/controllers/empleados_controller.rb:70:in `set_empleado'
+Started POST "/empleados/2/rastreos" for 127.0.0.1 at 2018-10-03 14:48:07 -0500
+Processing by RastreosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1gII8PWnCjZ7XZZMy5aK2NqiW8MdpOmxkfG/4BALBCxALbEhjSkl2WTKYFPAI13p46TzB+3BOqXSWUBLjoxCzw==", "rastreo"=>{"latitud"=>"-17.771724799999998", "longitud"=>"-63.197184", "image"=>"https://firebasestorage.googleapis.com/v0/b/software-eventos.appspot.com/o/mis_fotos%2FSin%20tedtulo-4.jpg?alt=media&token=4aecb30b-42a8-4b4d-ab05-5eb382016f9d", "fecha"=>"2018-10-03 14:45:56 -0500"}, "commit"=>"Create Rastreo", "empleado_id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (15.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (187.5ms)[0m  [1m[32mINSERT INTO "rastreos" ("latitud", "longitud", "image", "empleado_id", "created_at", "updated_at", "fecha") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["latitud", -17.771724799999998], ["longitud", -63.197184], ["image", "https://firebasestorage.googleapis.com/v0/b/software-eventos.appspot.com/o/mis_fotos%2FSin%20tedtulo-4.jpg?alt=media&token=4aecb30b-42a8-4b4d-ab05-5eb382016f9d"], ["empleado_id", 2], ["created_at", "2018-10-03 19:48:08.118995"], ["updated_at", "2018-10-03 19:48:08.118995"], ["fecha", "2018-10-03 14:45:56 -0500"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/empleados/2
+Completed 302 Found in 219ms (ActiveRecord: 203.2ms)
+
+
+Started GET "/empleados/2" for 127.0.0.1 at 2018-10-03 14:48:08 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 859ms (Views: 823.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/333333333" for 127.0.0.1 at 2018-10-03 14:48:11 -0500
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"333333333"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 333333333], ["LIMIT", 1]]
+Completed 404 Not Found in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Empleado with 'id'=333333333):
+  
+app/controllers/empleados_controller.rb:70:in `set_empleado'
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-03 14:50:31 -0500
+Processing by ReportesController#index as HTML
+  Rendering reportes/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered reportes/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 984ms (Views: 955.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-03 14:50:34 -0500
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-03 14:50:34 -0500
+Processing by ReportesController#index as */*
+Processing by ReportesController#index as */*
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-03 14:50:35 -0500
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-03 14:50:36 -0500
+Started GET "/reportes/333333333" for 127.0.0.1 at 2018-10-03 14:50:36 -0500
+Processing by ReportesController#index as */*
+  Rendering reportes/index.html.erb within layouts/application
+  Rendering reportes/index.html.erb within layouts/application
+Processing by ReportesController#index as */*
+  
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+ActionController::RoutingError (No route matches [GET] "/reportes/333333333"):
+  Rendering reportes/index.html.erb within layouts/application
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  
+  Rendering reportes/index.html.erb within layouts/application
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered reportes/index.html.erb within layouts/application (1421.9ms)
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered reportes/index.html.erb within layouts/application (1187.5ms)
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mEmpleado Load (31.3ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  Rendered reportes/index.html.erb within layouts/application (375.0ms)
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered reportes/index.html.erb within layouts/application (421.9ms)
+Completed 200 OK in 18235ms (Views: 17392.8ms | ActiveRecord: 15.6ms)
+
+
+Completed 200 OK in 17985ms (Views: 16928.1ms | ActiveRecord: 234.4ms)
+
+
+Completed 200 OK in 15469ms (Views: 14979.1ms | ActiveRecord: 125.0ms)
+
+
+Completed 200 OK in 16438ms (Views: 15884.8ms | ActiveRecord: 140.6ms)
+
+
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-03 14:50:56 -0500
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-03 14:50:56 -0500
+Started GET "/reportes/333333333" for 127.0.0.1 at 2018-10-03 14:50:56 -0500
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-03 14:50:56 -0500
+Processing by ReportesController#index as */*
+Processing by ReportesController#index as */*
+Started GET "/reportes/index" for 127.0.0.1 at 2018-10-03 14:50:56 -0500
+  
+Processing by ReportesController#index as */*
+ActionController::RoutingError (No route matches [GET] "/reportes/333333333"):
+Processing by ReportesController#index as */*
+  Rendering reportes/index.html.erb within layouts/application
+  Rendering reportes/index.html.erb within layouts/application
+  
+  Rendering reportes/index.html.erb within layouts/application
+  [1m[36mEmpleado Load (187.5ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mEmpleado Load (31.3ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  Rendering reportes/index.html.erb within layouts/application
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT "empleados".* FROM "empleados"[0m
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 3]]
+  Rendered reportes/index.html.erb within layouts/application (281.3ms)
+  Rendered reportes/index.html.erb within layouts/application (140.6ms)
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  [1m[36mRastreo Load (15.6ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 4]]
+  Rendered reportes/index.html.erb within layouts/application (78.1ms)
+  Rendered reportes/index.html.erb within layouts/application (125.0ms)
+Completed 200 OK in 17891ms (Views: 16661.6ms | ActiveRecord: 187.5ms)
+
+
+Completed 200 OK in 17813ms (Views: 16670.5ms | ActiveRecord: 31.3ms)
+
+
+Completed 500 Internal Server Error in 16141ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     8:     <title>Sistemas II</title>
+     9:     <%= csrf_meta_tags %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_include_tag 'application' %>
+    12:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    13:     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    14:     <script>
+Completed 200 OK in 15828ms (Views: 15142.4ms | ActiveRecord: 15.6ms)
+
+
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___1073719855_97479828'
+Started GET "/empleados/2" for 127.0.0.1 at 2018-10-03 14:53:02 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1141ms (Views: 1111.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/333333333" for 127.0.0.1 at 2018-10-03 14:53:17 -0500
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"333333333"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 333333333], ["LIMIT", 1]]
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Empleado with 'id'=333333333):
+  
+app/controllers/empleados_controller.rb:70:in `set_empleado'
+Started GET "/empleados/2" for 127.0.0.1 at 2018-10-03 15:03:41 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mRastreo Load (0.0ms)[0m  [1m[34mSELECT "rastreos".* FROM "rastreos" WHERE "rastreos"."empleado_id" = $1[0m  [["empleado_id", 2]]
+  Rendered empleados/show.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 1078ms (Views: 984.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/333333333" for 127.0.0.1 at 2018-10-03 15:04:00 -0500
+Processing by EmpleadosController#show as */*
+  Parameters: {"id"=>"333333333"}
+  [1m[36mEmpleado Load (15.6ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 333333333], ["LIMIT", 1]]
+Completed 404 Not Found in 16ms (ActiveRecord: 15.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Empleado with 'id'=333333333):
+  
+app/controllers/empleados_controller.rb:70:in `set_empleado'
+Started GET "/Ubicaciones" for 127.0.0.1 at 2018-10-03 15:04:05 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/Ubicaciones"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/lugar_de_trabajos/google_maps" for 127.0.0.1 at 2018-10-03 15:06:59 -0500
+Processing by LugarDeTrabajosController#google_maps as HTML
+  Rendering lugar_de_trabajos/google_maps.html.erb within layouts/application
+  Rendered lugar_de_trabajos/google_maps.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 953ms (Views: 921.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lugar_de_trabajos/google_maps" for 127.0.0.1 at 2018-10-03 15:16:53 -0500
+Processing by LugarDeTrabajosController#google_maps as HTML
+  Rendering lugar_de_trabajos/google_maps.html.erb within layouts/application
+  Rendered lugar_de_trabajos/google_maps.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1234ms (Views: 1186.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-03 15:30:58 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (15.6ms)
+Completed 200 OK in 266ms (Views: 155.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2018-10-03 15:31:05 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (31.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (218.7ms)
+Completed 200 OK in 10516ms (Views: 10367.2ms | ActiveRecord: 93.7ms)
+
+
+Started GET "/lugar_de_trabajos/google_maps" for 127.0.0.1 at 2018-10-03 15:33:34 -0500
+Processing by LugarDeTrabajosController#google_maps as HTML
+  Rendering lugar_de_trabajos/google_maps.html.erb within layouts/application
+  Rendered lugar_de_trabajos/google_maps.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 922ms (Views: 877.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/Ubicaciones" for 127.0.0.1 at 2018-10-03 15:35:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/Ubicaciones"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/Ubicaciones" for 127.0.0.1 at 2018-10-03 15:39:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/Ubicaciones"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/lugar_de_trabajos/google_maps" for 127.0.0.1 at 2018-10-03 15:40:03 -0500
+Processing by LugarDeTrabajosController#google_maps as HTML
+  Rendering lugar_de_trabajos/google_maps.html.erb within layouts/application
+  Rendered lugar_de_trabajos/google_maps.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1016ms (Views: 977.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lugar_de_trabajos/google_maps" for 127.0.0.1 at 2018-10-03 15:43:02 -0500
+Processing by LugarDeTrabajosController#google_maps as HTML
+  Rendering lugar_de_trabajos/google_maps.html.erb within layouts/application
+  [1m[36mLugarDeTrabajo Load (15.6ms)[0m  [1m[34mSELECT "lugar_de_trabajos".* FROM "lugar_de_trabajos"[0m
+  Rendered lugar_de_trabajos/google_maps.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 1031ms (Views: 906.0ms | ActiveRecord: 31.3ms)
+
+

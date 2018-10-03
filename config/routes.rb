@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'empleados/lugar_rastreo'
   get 'lugar_de_trabajos/index'
+  get 'lugar_de_trabajos/google_maps'
   resources :empleados do
     resources :rastreos
     resources :lugar_de_trabajos

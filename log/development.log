@@ -30877,3 +30877,93 @@ Processing by EmpleadosController#show as HTML
 Completed 200 OK in 1063ms (Views: 956.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/empleados/1" for 127.0.0.1 at 2018-10-03 18:28:12 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mLugarDeTrabajo Load (0.0ms)[0m  [1m[34mSELECT "lugar_de_trabajos".* FROM "lugar_de_trabajos" WHERE "lugar_de_trabajos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1078ms (Views: 1039.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-10-03 18:30:30 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mLugarDeTrabajo Load (0.0ms)[0m  [1m[34mSELECT "lugar_de_trabajos".* FROM "lugar_de_trabajos" WHERE "lugar_de_trabajos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 984ms (Views: 948.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-10-03 18:31:02 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mLugarDeTrabajo Load (0.0ms)[0m  [1m[34mSELECT "lugar_de_trabajos".* FROM "lugar_de_trabajos" WHERE "lugar_de_trabajos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1094ms (Views: 1047.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-10-03 18:35:57 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mLugarDeTrabajo Load (0.0ms)[0m  [1m[34mSELECT "lugar_de_trabajos".* FROM "lugar_de_trabajos" WHERE "lugar_de_trabajos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1047ms (Views: 1014.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-10-03 18:36:43 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mLugarDeTrabajo Load (0.0ms)[0m  [1m[34mSELECT "lugar_de_trabajos".* FROM "lugar_de_trabajos" WHERE "lugar_de_trabajos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1031ms (Views: 993.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-10-03 18:38:04 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mLugarDeTrabajo Load (0.0ms)[0m  [1m[34mSELECT "lugar_de_trabajos".* FROM "lugar_de_trabajos" WHERE "lugar_de_trabajos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 953ms (Views: 929.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-10-03 18:41:49 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mLugarDeTrabajo Load (0.0ms)[0m  [1m[34mSELECT "lugar_de_trabajos".* FROM "lugar_de_trabajos" WHERE "lugar_de_trabajos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 1406ms (Views: 1368.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-10-03 18:46:12 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mLugarDeTrabajo Load (0.0ms)[0m  [1m[34mSELECT "lugar_de_trabajos".* FROM "lugar_de_trabajos" WHERE "lugar_de_trabajos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 1078ms (Views: 1048.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/empleados/1" for 127.0.0.1 at 2018-10-03 18:47:42 -0500
+Processing by EmpleadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmpleado Load (0.0ms)[0m  [1m[34mSELECT  "empleados".* FROM "empleados" WHERE "empleados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering empleados/show.html.erb within layouts/application
+  [1m[36mLugarDeTrabajo Load (15.6ms)[0m  [1m[34mSELECT "lugar_de_trabajos".* FROM "lugar_de_trabajos" WHERE "lugar_de_trabajos"."empleado_id" = $1[0m  [["empleado_id", 1]]
+  Rendered empleados/show.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 1016ms (Views: 963.2ms | ActiveRecord: 15.6ms)
+
+

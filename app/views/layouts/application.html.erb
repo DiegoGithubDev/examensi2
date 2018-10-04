@@ -24,8 +24,30 @@
     <header>
       <div class="container">
         <ul id="nav-mobile" class="sidenav sidenav-fixed" style="transform: translateX(0px);">
-          <li><a href="#!">First Sidebar Link</a></li>
-          <li><a href="#!">Second Sidebar Link</a></li>
+          <% if user_is_admin? %>
+            <li style="padding-top: 15px;">
+              <a class="waves-effect red btn" href="/users" data-turbolinks="false">nuevo usuario </a></li>
+            <li style="padding-top: 15px;">
+            <li style="padding-top: 15px;">
+              <a class="waves-effect red btn" href="/empleados" data-turbolinks="false">Empleados</a>
+            </li>
+            <li style="padding-top: 15px;">
+              <a class="waves-effect red btn" href="/teachers" data-turbolinks="false">Clientes</a>
+            </li>
+            <li style="padding-top: 15px;">
+              <a class="waves-effect red btn" href="https://www.google.com/maps" data-turbolinks="false" target="_blank">Google
+                Maps</a>
+            </li>
+          <% end %>
+          <li style="padding-top: 15px;">
+            <a class="waves-effect red btn" href="/lugar_de_trabajos/google_maps" data-turbolinks="false">Mis
+              ubicaciones</a>
+          </li>
+          <li style="padding-top: 15px">
+            <a class="waves-effect red btn" href="/users/login" data-turbolinks="false">Login </a></li>
+          <li style="padding-top: 15px;">
+          <li style="padding-top: 15px;">
+            <a class="waves-effect red btn" href="/users/logout" data-turbolinks="false">Logout </a></li>
         </ul>
       </div>
     </header>
